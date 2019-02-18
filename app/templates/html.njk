@@ -1,0 +1,52 @@
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "radios/macro.njk" import govukRadios %}
+{% from "button/macro.njk" import govukButton %}
+{% from "summary-list/macro.njk" import govukSummaryList %}
+
+
+
+{% extends "template.njk" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/assets/styles/main.css">
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/frameworks/",
+    containerClasses: "govuk-width-container",
+    serviceName: "Find a DfE recommended framework for your school",
+    serviceUrl: "/frameworks/"  
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "beta"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  {% if result %}
+    <h2>{{ result }}</h2>
+  {% else %}  
+    <form action="{{ currentUrl }}">
+      {{ govukRadios(radioOptions) }}
+      {{ govukButton({ text: 'Next', type: 'submit'}) }}
+    </form>
+  {% endif %}
+
+  <h2 class="govuk-heading-m">Previous answers</h2>
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: summary
+  }) }}
+
+{% endblock %}
+
+{% block bodyEnd %}
+  <script src="/assets/all.js"></script>
+{% endblock %}

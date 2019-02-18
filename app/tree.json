@@ -1,0 +1,120 @@
+[
+  {
+    "ref": "type",
+    "title": "What is the type of purchase?",
+    "options": [
+      {
+        "ref": "buying",
+        "title": "Buying goods",
+        "next": "what"
+      },
+      {
+        "ref": "leasing",
+        "title": "Leasing goods",
+        "next": "lease-what"
+      },
+      {
+        "ref": "one-off",
+        "title": "One-off service",
+        "next": "require"
+      },
+      {
+        "ref": "on-going",
+        "title": "Ongoing service contract",
+        "next": ""
+      }
+    ]
+  },
+  {
+    "ref": "what",
+    "title": "What are you buying?",
+    "options": [
+      {
+        "ref": "books",
+        "title": "Books and media",
+        "next": "author"
+      }, {
+        "ref": "furniture",
+        "title": "Furniture",
+        "result": "DFS"
+      },
+      {
+        "ref": "ict",
+        "title": "ICT",
+        "result": "Currys"
+      },
+      {
+        "ref": "office-supplies",
+        "title": "Office supplies",
+        "result": "Paper"
+      },
+      {
+        "ref": "printers-copies-etc",
+        "title": "Printers, copiers and multi-functional devices (MFDs)"
+      }
+    ]
+  },
+  {
+    "ref": "author",
+    "title": "Author",
+    "options": [
+      {
+        "ref": "dick-francis",
+        "title": "Dick Francis",
+        "result": "Murder with horses"
+      },
+      {
+        "ref": "agatha-christie",
+        "title": "Agatha Christie",
+        "result": "Who done it?"
+      },
+      {
+        "ref": "jkrowling",
+        "title": "J.K.Rowling",
+        "result": "Wizard"
+      }
+    ]
+  },
+  {
+    "ref": "lease-what",
+    "title": "What are you leasing?",
+    "options": [
+      {
+        "ref": "audit", 
+        "title": "Audit services"
+      },
+      {
+        "ref": "energy-utilities", 
+        "title": "Energy and utilities"
+      },
+      {
+        "ref": "facilities", 
+        "title": "Facilities management and estates"
+      },
+      {
+        "ref": "ict", 
+        "title": "ICT"
+      },
+      {
+        "ref": "insurance", 
+        "title": "Insurance"
+      },
+      {
+        "ref": "legal", 
+        "title": "Legal services"
+      },
+      {
+        "ref": "printers-copies-etc", 
+        "title": "Printers, copiers and multi-functional devices (MFDs)"
+      },
+      {
+        "ref": "professional-services", 
+        "title": "Professional services"
+      },
+      {
+        "ref": "recruitment", 
+        "title": "Recruitment"
+      }
+    ]
+  }
+]
