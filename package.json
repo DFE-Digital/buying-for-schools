@@ -4,19 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app/index.js",
+    "start:dev": "gulp watch",
+    "test": "npm run test:jshint && npm run test:jest",
+    "test:jshint": "jshint app/**/*.js",
+    "test:jest": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "jshintConfig": {
+    "asi": true,
+    "esversion": 6
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-nodemon": "^2.4.2",
     "immutable": "^4.0.0-rc.12",
     "jest": "^24.1.0",
+    "jshint": "^2.10.1",
     "mkdirp": "^0.5.1",
     "nunjucks": "^3.1.7",
     "sass": "^1.17.0"

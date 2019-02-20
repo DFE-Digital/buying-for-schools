@@ -1,3 +1,4 @@
+/* global Map:true */
 const { fromJS, List, Map } = require('immutable')
 const dt = require('./decisionTree')
 

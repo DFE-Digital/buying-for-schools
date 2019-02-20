@@ -1,0 +1,15 @@
+{% extends "buying-for-schools.njk" %}
+
+{% block content %}
+  {% if result %}
+    <h2>{{ result }}</h2>
+  {% else %}  
+    <form action="{{ currentUrl }}">
+      {{ govukRadios(radioOptions) }}
+      {{ govukButton({ text: 'Next', type: 'submit'}) }}
+    </form>
+  {% endif %}
+
+  {% include "summary.njk" %}
+
+{% endblock %}

@@ -2,8 +2,8 @@
 {% from "radios/macro.njk" import govukRadios %}
 {% from "button/macro.njk" import govukButton %}
 {% from "summary-list/macro.njk" import govukSummaryList %}
-
-
+{% from "inset-text/macro.njk" import govukInsetText %}
+{% from "warning-text/macro.njk" import govukWarningText %}
 
 {% extends "template.njk" %}
 
@@ -29,23 +29,7 @@
   }) }}
 {% endblock %}
 
-{% block content %}
-  {% if result %}
-    <h2>{{ result }}</h2>
-  {% else %}  
-    <form action="{{ currentUrl }}">
-      {{ govukRadios(radioOptions) }}
-      {{ govukButton({ text: 'Next', type: 'submit'}) }}
-    </form>
-  {% endif %}
 
-  <h2 class="govuk-heading-m">Previous answers</h2>
-  {{ govukSummaryList({
-    classes: 'govuk-!-margin-bottom-9',
-    rows: summary
-  }) }}
-
-{% endblock %}
 
 {% block bodyEnd %}
   <script src="/assets/all.js"></script>

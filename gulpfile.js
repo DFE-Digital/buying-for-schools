@@ -4,15 +4,20 @@ const mkdirp = require('mkdirp')
 const fs = require('fs')
 const gulp = require('gulp')
 
-function watch () {
+function nodeChanges () {
   return nodemon({
     script: 'app/index.js',
-    ext: 'js,html',
+    ext: 'js,html,njk,json',
     env: { 'NODE_ENV': 'development' },
     cwd: __dirname,
     ignore: ['node_modules/**'],
-    watch: ['app/index.js', 'app/templates/*.njk', 'app/decisionTree/*.js']
+    watch: ['app/index.js', 'app/templates/**/*.njk', 'app/decisionTree/*.js', 'app/*.json']
   })
+}
+
+function watch () {
+  gulp.watch('sass/*.scss', gulp.series(['sass']))
+  return nodeChanges()
 }
 
 function sass () {
@@ -49,5 +54,6 @@ function assets () {
 module.exports = {
   watch,
   sass,
-  assets
+  assets,
+  nodeChanges
 }

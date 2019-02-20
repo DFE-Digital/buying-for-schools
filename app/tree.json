@@ -14,9 +14,9 @@
         "next": "lease-what"
       },
       {
-        "ref": "one-off",
-        "title": "One-off service",
-        "next": "require"
+        "ref": "services",
+        "title": "Service",
+        "next": "service-list"
       },
       {
         "ref": "on-going",
@@ -32,7 +32,7 @@
       {
         "ref": "books",
         "title": "Books and media",
-        "next": "author"
+        "result": "buying-books"
       }, {
         "ref": "furniture",
         "title": "Furniture",
@@ -51,27 +51,6 @@
       {
         "ref": "printers-copies-etc",
         "title": "Printers, copiers and multi-functional devices (MFDs)"
-      }
-    ]
-  },
-  {
-    "ref": "author",
-    "title": "Author",
-    "options": [
-      {
-        "ref": "dick-francis",
-        "title": "Dick Francis",
-        "result": "Murder with horses"
-      },
-      {
-        "ref": "agatha-christie",
-        "title": "Agatha Christie",
-        "result": "Who done it?"
-      },
-      {
-        "ref": "jkrowling",
-        "title": "J.K.Rowling",
-        "result": "Wizard"
       }
     ]
   },
@@ -114,6 +93,111 @@
       {
         "ref": "recruitment", 
         "title": "Recruitment"
+      }
+    ]
+  },
+  {
+    "ref": "service-list",
+    "title": "Type of service",
+    "options": [
+      {
+        "ref": "audit",
+        "title": "Audit",
+        "next": "audit-types"
+      },
+      {
+        "ref": "energy",
+        "title": "Energy",
+        "next": "energy"
+      },
+      {
+        "ref": "fm",
+        "title": "Facilities Management",
+        "next": "facilities-management"
+      }
+    ]
+  },
+  {
+    "ref": "energy",
+    "title": "Energy",
+    "options": [
+      {
+        "ref": "electricity",
+        "title": "Electricity",
+        "next": "electricity"
+      },
+      {
+        "ref": "gas",
+        "title": "Gas",
+        "next": "gas"
+      },
+      {
+        "ref": "efficiency",
+        "title": "Efficiency",
+        "next": "efficiency"
+      },
+      {
+        "ref": "loans",
+        "title": "Loans",
+        "result": "energy-savings"
+      },
+      {
+        "ref": "water-waste",
+        "title": "Water or waste",
+        "result": "water-waste"
+      }
+    ]
+  },
+  {
+    "ref": "electricity",
+    "title": "Electricity",
+    "options": [
+      {
+        "ref": "half-non-half-unmetered",
+        "title": "Electricity - half hourly, non-half hourly and unmetered supply",
+        "result": "electricity"
+      },
+      {
+        "ref": "non-half-ancillary",
+        "title": "Electricity - non-half-hourly and Ancillary Services",
+        "result": "electricity-non-half-ancillary"
+      },
+      {
+        "ref": "half-ancillary",
+        "title": "Electricity - half-hourly and Ancillary Services",
+        "result": "electricity-half-ancillary"
+      }
+    ]
+  },
+  {
+    "ref": "gas",
+    "title": "Gas",
+    "options": [
+      {
+        "ref": "natural-gas-ancillary",
+        "title": "Supply of natural gas (daily/non-daily metered) and ancillary services",
+        "result": "natural-gas-ancillary"
+      },
+      {
+        "ref": "firm-mains-gas",
+        "title": "Firm mains gas",
+        "result": "firm-mains-gas"
+      }
+    ]
+  },
+  {
+    "ref": "efficiency",
+    "title": "Efficiency",
+    "options": [
+      {
+        "ref": "national-energy-performance",
+        "title": "National Energy Performance Contracting Framework",
+        "result": "national-energy-performance"
+      },
+      {
+        "ref": "improvements-retrofit",
+        "title": "Energy efficiency improvements from Retrofit",
+        "result": "improvements-retrofit"
       }
     ]
   }

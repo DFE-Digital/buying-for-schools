@@ -1,4 +1,6 @@
 /* global describe it expect */
+/* global Map:true */
+
 const { is, Map, fromJS } = require('immutable')
 
 const dtr = require('./decisionTreeRoute')

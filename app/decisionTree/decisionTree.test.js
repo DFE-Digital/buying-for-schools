@@ -1,4 +1,5 @@
 /* global describe it expect */
+/* global Map:true */
 
 const {List, Map, fromJS} = require('immutable')
 const dt = require('./decisionTree')

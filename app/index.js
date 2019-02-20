@@ -3,6 +3,7 @@ const serveStatic = require('serve-static')
 const nunjucks = require('nunjucks')
 const path = require('path')
 const dtr = require('./decisionTree/decisionTreeRoute')
+const dtres = require('./decisionTree/decisionTreeResults')
 const dt = require('./decisionTree/decisionTree')
 const url = require('url')
 
@@ -10,6 +11,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const tree = dt.makeTree(require('./tree.json'))
+const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
 
 nunjucks.configure(path.resolve(__dirname, './templates'))
 
@@ -28,8 +30,6 @@ app.use('/frameworks', (req, res, next) => {
   const pairs = dtr.getQuestionAnswerPairSlugs(urlInfo.pathname)
   const baseUrl = req.baseUrl
 
-  console.log(urlInfo)
-
   if (req.query && req.query['decision-tree']) {
     return res.redirect(302, req.query['decision-tree'])
   }
@@ -37,7 +37,6 @@ app.use('/frameworks', (req, res, next) => {
   if (!dtr.validateQuestionAnswerPairs(tree, pairs)) {
     const sanitisedPairs = dtr.getSanitisedQuestionAnswerPairs(tree, pairs)
     const newUrl = baseUrl + '/' + dtr.getUrlFromPairs(sanitisedPairs)
-    // return res.send(newUrl)
     return res.redirect(302, newUrl)
   }
 
@@ -54,6 +53,17 @@ app.use('/frameworks', (req, res, next) => {
   }
 
   const result = currentSelectedAnswer ? currentSelectedAnswer.get('result') : undefined
+
+  const summary = dtr.getQuestionAnswerSummary(branchPath, baseUrl)
+
+  if (result) {
+    const resultMeta = dtres.getFramework(frameworks, result)
+    const template = resultMeta ? resultMeta.get('template') : undefined
+    const resultTemplate = template ? `frameworks/${template}.njk` : undefined
+    const renderedResult = nunjucks.render('result.njk', {result, resultTemplate, summary})
+    return res.send(renderedResult)
+  }
+
   const radioOptions = {
     idPrefix: 'decision-tree-' + currentBranch.get('ref'),
     name: 'decision-tree',
@@ -78,9 +88,7 @@ app.use('/frameworks', (req, res, next) => {
     radioOptions.errorMessage = { text: 'Please choose an option' }
   }
 
-  const summary = dtr.getQuestionAnswerSummary(branchPath, baseUrl)
-
-  const render = nunjucks.render('html.njk', { pairs, currentUrl, currentBranch, radioOptions, summary, branchPath, JSON, result, baseUrl })
+  const render = nunjucks.render('question.njk', { pairs, currentUrl, currentBranch, radioOptions, summary, branchPath, JSON, result, baseUrl })
   res.send(render)
 })
 

@@ -1,0 +1,7 @@
+{% if summary.size %}
+  <h2 class="govuk-heading-m">Previous answers</h2>
+  {{ govukSummaryList({
+    classes: 'govuk-!-margin-bottom-9',
+    rows: summary
+  }) }}
+{% endif %}
