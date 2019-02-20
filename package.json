@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app/index.js",
+    "start": "node app.js",
     "start:dev": "gulp watch",
     "test": "npm run test:jshint && npm run test:jest",
     "test:jshint": "jshint app/**/*.js",
