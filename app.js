@@ -2,6 +2,8 @@ const http = require('http')
 const port = process.env.PORT || 3000
 const nunjucks = require('nunjucks')
 const path = require('path')
+// const basicAuth = require('express-basic-auth')
+// app.use(basicAuth({ users: { 'admin': 'supersecret' }}))
 nunjucks.configure([
   path.resolve(__dirname, './app/templates'),
   path.resolve(__dirname, './node_modules/govuk-frontend/'),

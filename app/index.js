@@ -8,6 +8,15 @@ const dt = require('./decisionTree/decisionTree')
 const url = require('url')
 
 const app = express()
+const basicAuth = require('express-basic-auth')
+
+const authUser = process.env.AUTHUSER || 'test'
+const authPass = process.env.AUTHPASS || 'test'
+if (authUser && authPass) {
+  const auth = { users: {}, challenge: true }
+  auth.users[authUser] = authPass
+  app.use(basicAuth(auth))
+}
 const port = process.env.PORT || 3000
 
 const tree = dt.makeTree(require('./tree.json'))

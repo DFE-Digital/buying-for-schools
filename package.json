@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install && gulp sass && gulp assets && node app.js",
+    "start": "npm install && gulp sass && gulp assets && node app/index.js",
     "start:dev": "gulp watch",
     "test": "npm run test:jshint && npm run test:jest",
     "test:jshint": "jshint app/**/*.js",
@@ -30,6 +30,7 @@
     "sass": "^1.17.0"
   },
   "dependencies": {
+    "express-basic-auth": "^1.1.6",
     "govuk-frontend": "^2.7.0",
     "gulp-copy": "^4.0.1",
     "serve-static": "^1.13.2"
