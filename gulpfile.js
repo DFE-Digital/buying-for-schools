@@ -3,6 +3,7 @@ const sassjs = require('sass')
 const mkdirp = require('mkdirp')
 const fs = require('fs')
 const gulp = require('gulp')
+const jest = require('gulp-jest').default
 
 function nodeChanges () {
   return nodemon({
@@ -51,9 +52,29 @@ function assets () {
     .pipe(gulp.dest('public/assets'))
 }
 
+
+ 
+function jestTest () {
+  return gulp
+    .src('app/**/*.test.js')
+    .pipe(jest({
+    "preprocessorIgnorePatterns": [
+      "<rootDir>/public/", "<rootDir>/node_modules/"
+    ],
+    "automock": false
+    }))
+}
+
+function build (done) {
+  return gulp.series(assets, sass, jestTest)(done)
+}
+
+// exports.default = build
+
 module.exports = {
   watch,
   sass,
   assets,
-  nodeChanges
+  nodeChanges,
+  default: build
 }

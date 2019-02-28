@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite id="0" name="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTree.test.js" errors="0" package="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTree.test.js" hostname="localhost" tests="9" failures="0" time="3.203" timestamp="2019-02-28T10:56:08">
+  <testsuite id="0" name="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTree.test.js" errors="0" package="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTree.test.js" hostname="localhost" tests="9" failures="0" time="0.567" timestamp="2019-02-28T11:44:33">
     <properties>
     </properties>
     <testcase classname="makeTree" name="should return an immutable List" time="0">
@@ -24,7 +24,7 @@
     <system-out/>
     <system-err/>
   </testsuite>
-  <testsuite id="1" name="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTreeRoute.test.js" errors="0" package="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTreeRoute.test.js" hostname="localhost" tests="34" failures="0" time="3.616" timestamp="2019-02-28T10:56:08">
+  <testsuite id="1" name="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTreeRoute.test.js" errors="0" package="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTreeRoute.test.js" hostname="localhost" tests="34" failures="0" time="0.603" timestamp="2019-02-28T11:44:33">
     <properties>
     </properties>
     <testcase classname="getQuestionAnswerPairSlugs" name="should separate url paths into pairs of question and answer slugs" time="0">
