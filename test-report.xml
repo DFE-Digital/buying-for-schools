@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite id="0" name="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTree.test.js" errors="0" package="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTree.test.js" hostname="localhost" tests="9" failures="0" time="3.203" timestamp="2019-02-28T10:56:08">
+    <properties>
+    </properties>
+    <testcase classname="makeTree" name="should return an immutable List" time="0">
+    </testcase>
+    <testcase classname="getBranch" name="should be able to find a branch by it&apos;s ref" time="0">
+    </testcase>
+    <testcase classname="getBranch" name="should return undefined if there is no branch with that ref" time="0">
+    </testcase>
+    <testcase classname="getOption" name="should be able to find a specific option by ref" time="0">
+    </testcase>
+    <testcase classname="getOption" name="should return undefined if there is no option with that ref" time="0">
+    </testcase>
+    <testcase classname="getOptionKey" name="should be able to find a specific option&apos;s index by ref" time="0">
+    </testcase>
+    <testcase classname="getOptionKey" name="should return undefined if there is no option with that ref" time="0">
+    </testcase>
+    <testcase classname="setSelectedOption" name="should update the option to selected true" time="0">
+    </testcase>
+    <testcase classname="setSelectedOption" name="should return the unchanged branch if an invalid option is chosen" time="0">
+    </testcase>
+    <system-out/>
+    <system-err/>
+  </testsuite>
+  <testsuite id="1" name="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTreeRoute.test.js" errors="0" package="/Users/stuartc/Documents/DfE/buying-for-schools/app/decisionTree/decisionTreeRoute.test.js" hostname="localhost" tests="34" failures="0" time="3.616" timestamp="2019-02-28T10:56:08">
+    <properties>
+    </properties>
+    <testcase classname="getQuestionAnswerPairSlugs" name="should separate url paths into pairs of question and answer slugs" time="0">
+    </testcase>
+    <testcase classname="get the branches that have been selected by question answer pairs" name="should work with short branches" time="0">
+    </testcase>
+    <testcase classname="get the branches that have been selected by question answer pairs" name="should work with longer branches" time="0">
+    </testcase>
+    <testcase classname="get the branches that have been selected by question answer pairs" name="should find branches that end without a chosen answer" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are possible" name="should pass env/farm/animals/pigs/pork/bacon" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are possible" name="should pass env/farm/animals/pigs/pork/" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are possible" name="should pass env/farm/animals/pigs/pork" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are possible" name="should pass env/farm/animals/pigs" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are possible" name="should pass env/farm/" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are possible" name="should pass env/office/drinks/tea" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are possible" name="should pass env/home/housetypes/detatched" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are possible" name="should pass env/home/housetypes" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are NOT possible" name="should NOT pass env/farm/drinks/tea" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are NOT possible" name="should NOT pass env/office/animals/pigs/pork/" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are NOT possible" name="should NOT pass env/office/animals/housetypes/pork" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are NOT possible" name="should NOT pass env/home/animals/pigs" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are NOT possible" name="should NOT pass env/home/drinks" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are NOT possible" name="should NOT pass env/office/drinks/bacon" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are NOT possible" name="should NOT pass env/home/pork/hotpot" time="0">
+    </testcase>
+    <testcase classname="validate that the question answer pairs are NOT possible" name="should NOT pass env/home/colour/blue" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise notapplicable into env" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/farm/animals/pigs/pork/bacon into env/farm/animals/pigs/pork/bacon" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/office/drinks/tea into env/office/drinks/tea" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/office/drinks/ into env/office/drinks" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/farm/drinks/tea into env/farm" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/office/animals/pigs/pork/ into env/office" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/office/animals/housetypes/pork into env/office" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/home/animals/pigs into env/home" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/home/drinks into env/home" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/office/drinks/bacon into env/office/drinks" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/home/pork/hotpot into env/home" time="0">
+    </testcase>
+    <testcase classname="getSanitisedQuestionAnswerPairs" name="should sanitise env/home/colour/blue into env/home" time="0">
+    </testcase>
+    <testcase classname="getUrlFromPairs" name="should be able to take pairs and convert to a Url" time="0">
+    </testcase>
+    <testcase classname="getUrlFromPairs" name="should be able to take pairs with an answer undefined and convert to a Url" time="0">
+    </testcase>
+    <system-out/>
+    <system-err/>
+  </testsuite>
+</testsuites>
