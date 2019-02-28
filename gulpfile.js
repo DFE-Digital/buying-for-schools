@@ -61,7 +61,8 @@ function jestTest () {
     "preprocessorIgnorePatterns": [
       "<rootDir>/public/", "<rootDir>/node_modules/"
     ],
-    "automock": false
+    "automock": false,
+    "coverage": true
     }))
 }
 
