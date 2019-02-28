@@ -150,7 +150,7 @@
   },
   {
     "ref": "electricity",
-    "title": "What type electricity supply?",
+    "title": "What type of electricity supply?",
     "options": [
       {
         "ref": "half-non-half-unmetered",
