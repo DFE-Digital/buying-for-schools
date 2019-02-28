@@ -2,3 +2,4 @@
 node_modules
 coverage
 public
+test-report.xml

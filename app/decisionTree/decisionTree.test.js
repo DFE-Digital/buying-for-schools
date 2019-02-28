@@ -135,4 +135,10 @@ describe('decisionTree', () => {
       expect(branchWithSelection === testBranch).toBeTruthy()
     })
   })
+
+  describe('deliberate error', () => {
+    it('must error', () => {
+      expect(true).toBeFalsy()
+    }) 
+  })
 })
