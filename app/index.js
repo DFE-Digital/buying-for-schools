@@ -10,8 +10,8 @@ const url = require('url')
 const app = express()
 const basicAuth = require('express-basic-auth')
 
-const authUser = process.env.AUTHUSER || 'test'
-const authPass = process.env.AUTHPASS || 'test'
+const authUser = process.env.AUTHUSER || null
+const authPass = process.env.AUTHPASS || null
 if (authUser && authPass) {
   const auth = { users: {}, challenge: true }
   auth.users[authUser] = authPass

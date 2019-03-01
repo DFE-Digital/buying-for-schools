@@ -70,6 +70,13 @@ function build (done) {
   return gulp.series(assets, sass, jestTest)(done)
 }
 
+function cucum () {
+  return gulp.src('*features/*').pipe(cucumber({
+    'steps': '*features/steps/*.js',
+    'support': '*features/support/*.js'
+   }))
+}
+
 // exports.default = build
 
 module.exports = {

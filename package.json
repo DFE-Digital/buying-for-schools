@@ -21,9 +21,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chromedriver": "^2.46.0",
+    "cucumber": "^5.1.0",
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
+    "gulp-cucumber": "0.0.23",
     "gulp-jest": "^4.0.2",
     "gulp-nodemon": "^2.4.2",
     "immutable": "^4.0.0-rc.12",
@@ -33,7 +38,9 @@
     "jshint": "^2.10.1",
     "mkdirp": "^0.5.1",
     "nunjucks": "^3.1.7",
-    "sass": "^1.17.0"
+    "sass": "^1.17.0",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "underscore": "^1.9.1"
   },
   "dependencies": {
     "express-basic-auth": "^1.1.6",
