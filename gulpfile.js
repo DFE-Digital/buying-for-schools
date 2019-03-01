@@ -4,6 +4,7 @@ const mkdirp = require('mkdirp')
 const fs = require('fs')
 const gulp = require('gulp')
 const jest = require('gulp-jest').default
+// const cucumber = require('gulp-cucumber')
 
 function nodeChanges () {
   return nodemon({
@@ -70,11 +71,18 @@ function build (done) {
   return gulp.series(assets, sass, jestTest)(done)
 }
 
-function cucum () {
-  return gulp.src('*features/*').pipe(cucumber({
-    'steps': '*features/steps/*.js',
-    'support': '*features/support/*.js'
-   }))
+function cucum (done) {
+  return gulp.series(cuke)(done)
+}
+
+function cuke (done) {
+  return gulp
+    .src('*features/*')
+    .pipe(cucumber({
+      'steps': '*features/steps/*.js',
+      'support': '*features/support/*.js'
+    }))
+
 }
 
 // exports.default = build
@@ -84,5 +92,7 @@ module.exports = {
   sass,
   assets,
   nodeChanges,
-  default: build
+  default: build,
+  // cucumber: cucum,
+  jest: jestTest
 }
