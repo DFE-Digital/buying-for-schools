@@ -17,7 +17,7 @@ if (authUser && authPass) {
   auth.users[authUser] = authPass
   app.use(basicAuth(auth))
 }
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 
 const tree = dt.makeTree(require('./tree.json'))
 const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
@@ -33,6 +33,21 @@ nunjucks.configure([
 })
 
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
+
+app.get('/', (req, res, next) => {
+  const render = nunjucks.render('framework-benefits.njk')
+  res.send(render)
+})
+
+app.get('/selection', (req, res, next) => {
+  const render = nunjucks.render('framework-selection.njk')
+  res.send(render)
+})
+
+app.get('/service-output', (req, res, next) => {
+  const render = nunjucks.render('service-output.njk')
+  res.send(render)
+})
 
 app.use('/frameworks', (req, res, next) => {
   const urlInfo = url.parse(req.url)

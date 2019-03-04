@@ -41,6 +41,8 @@ function sass () {
           }
           return resolve()
         })
+      } else {
+        console.log('ERROR', err)
       }
     })
   })
