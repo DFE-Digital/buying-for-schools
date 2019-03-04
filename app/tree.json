@@ -5,7 +5,7 @@
     "options": [
       {
         "ref": "buying",
-        "title": "Buying GOODS",
+        "title": "Buying goods",
         "next": "what"
       },
       {

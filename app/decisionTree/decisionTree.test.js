@@ -6,9 +6,9 @@ const dt = require('./decisionTree')
 
 describe('decisionTree', () => {
 
-  it('FORCE FAIL', () => {
-    expect(true).toBeFalsy()
-  })
+  // it('FORCE FAIL', () => {
+  //   expect(true).toBeFalsy()
+  // })
   describe('makeTree', () => {
     it('should return an immutable List', () => {
       const testOjb = [{ref: 'hello', title: 'Hello world'}]
