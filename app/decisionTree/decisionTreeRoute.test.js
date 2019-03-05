@@ -34,6 +34,9 @@ describe('decisionTreeRoute', () => {
         q1: 'type',
         q2: undefined
       })))
+
+      const blankSlash = dtr.getQuestionAnswerPairSlugs('/') 
+      expect(is(blankSlash, Map({})))
     })
   })
 
@@ -168,6 +171,7 @@ describe('decisionTreeRoute', () => {
     ])
 
     const validUrls = [
+      'env',
       'env/farm/animals/pigs/pork/bacon',
       'env/farm/animals/pigs/pork/',
       'env/farm/animals/pigs/pork',
@@ -179,6 +183,7 @@ describe('decisionTreeRoute', () => {
     ]
 
     const inValidUrls = [
+      '/',
       'env/farm/drinks/tea',
       'env/office/animals/pigs/pork/',
       'env/office/animals/housetypes/pork',
@@ -209,6 +214,8 @@ describe('decisionTreeRoute', () => {
 
       describe('getSanitisedQuestionAnswerPairs', () => {
         const sanitisedUrls = [
+          ['', 'env'],
+          ['/', 'env'],
           ['notapplicable', 'env'],
           ['env/farm/animals/pigs/pork/bacon', 'env/farm/animals/pigs/pork/bacon'],
           ['env/office/drinks/tea', 'env/office/drinks/tea'],

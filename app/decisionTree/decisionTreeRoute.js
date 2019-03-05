@@ -4,6 +4,9 @@ const dt = require('./decisionTree')
 
 const getQuestionAnswerPairSlugs = (url) => {
   const trimmedSlashes = url.replace(/^\/+|\/+$/g, '')
+  if (trimmedSlashes === '') {
+    return fromJS({})
+  } 
   const urlPaths = trimmedSlashes.split('/')
   const keys = urlPaths.filter((p, i) => i % 2 === 0)
   const vals = urlPaths.filter((p, i) => i % 2 === 1)
@@ -40,6 +43,9 @@ const getBranchPath = (tree, pairs) => {
 const validateQuestionAnswerPairs = (tree, pairs) => {
   const questionRefs = pairs.keySeq(k => k)
   const answerRefs = pairs.valueSeq(v => v)
+  if (questionRefs.size === 0) {
+    return false
+  }
   return questionRefs.every((questionRef, i) => {
     const branch = dt.getBranch(tree, questionRef)
     const answerRef = answerRefs.get(i)
