@@ -53,8 +53,6 @@ app.use('/frameworks', (req, res, next) => {
   const urlInfo = url.parse(req.url)
   const pairs = dtr.getQuestionAnswerPairSlugs(urlInfo.pathname)
   const baseUrl = req.baseUrl
-  console.log(pairs.toJS())
-  console.log(JSON.stringify(urlInfo, null, '  '))
 
   if (req.query && req.query['decision-tree']) {
     return res.redirect(302, req.query['decision-tree'])

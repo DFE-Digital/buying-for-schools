@@ -1,13 +1,17 @@
 {% extends "buying-for-schools.njk" %}
 
 {% block content %}
-  {% if resultTemplate %}
-    {% include resultTemplate %}
-  {% else %}
-    <h1>Result</h1>
-    <h2>{{ result }}</h2>
-  {% endif %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if resultTemplate %}
+      {% include resultTemplate %}
+    {% else %}
+      <h1>Result</h1>
+      <h2>{{ result }}</h2>
+    {% endif %}
 
-  {% include "summary.njk" %}
+    {% include "summary.njk" %}
+  </div>
+</div>
 
 {% endblock %}

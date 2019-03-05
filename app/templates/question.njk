@@ -1,15 +1,18 @@
 {% extends "buying-for-schools.njk" %}
 
 {% block content %}
-  {% if result %}
-    <h2>{{ result }}</h2>
-  {% else %}  
-    <form action="{{ currentUrl }}">
-      {{ govukRadios(radioOptions) }}
-      {{ govukButton({ text: 'Next', type: 'submit'}) }}
-    </form>
-  {% endif %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {% if result %}
+      <h2>{{ result }}</h2>
+    {% else %}  
+      <form action="{{ currentUrl }}">
+        {{ govukRadios(radioOptions) }}
+        {{ govukButton({ text: 'Next', type: 'submit'}) }}
+      </form>
+    {% endif %}
 
-  {% include "summary.njk" %}
-
+    {% include "summary.njk" %}
+  </div>
+</div>
 {% endblock %}

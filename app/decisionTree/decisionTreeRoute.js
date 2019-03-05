@@ -49,7 +49,6 @@ const validateQuestionAnswerPairs = (tree, pairs) => {
   return questionRefs.every((questionRef, i) => {
     const branch = dt.getBranch(tree, questionRef)
     const answerRef = answerRefs.get(i)
-    // console.log(questionRef, i, branch, answerRef)
     if (!branch) {
       // no branch with given ref
       return false
