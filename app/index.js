@@ -100,11 +100,18 @@ app.use('/frameworks', (req, res, next) => {
     }
   }
 
+  const hint = currentBranch.get('hint')
+  if (hint) {
+    radioOptions.hint = { text: hint }
+  }
+
   radioOptions.items = currentBranch.get('options').map(option => {
     const optionUrl = [currentUrl, option.get('ref'), option.get('next')]
+    const optionHint = option.get('hint')
     return {
       value: optionUrl.join('/'),
-      text: option.get('title')
+      text: option.get('title'),
+      hint: optionHint ? { text: optionHint } : null
     }
   })
 

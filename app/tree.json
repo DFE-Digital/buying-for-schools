@@ -144,6 +144,7 @@
   {
     "ref": "software-catalog",
     "title": "Do you want to buy from an online catalogue?",
+    "hint": "A catalogue lets you search for and buy specific products online.",
     "options": [
       {
         "ref": "yes",
@@ -161,6 +162,7 @@
   {
     "ref": "hardware-catalog",
     "title": "Do you want to buy from an online catalogue?",
+    "hint": "A catalogue lets you search for and buy specific products online.",
     "options": [
       {
         "ref": "yes",
@@ -301,12 +303,14 @@
     "options": [
       {
         "ref": "helpdesk",
+        "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
         "result": "helpdesk"
       },
       {
         "ref": "specific",
         "title": "Schools focused",
+        "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
         "result": "specific"
       }
     ],
@@ -318,12 +322,14 @@
     "options": [
       {
         "ref": "helpdesk",
+        "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
         "result": "helpdesk2"
       },
       {
         "ref": "specific",
         "title": "Schools focused",
+        "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
         "result": "specific2"
       }
     ],
@@ -352,12 +358,14 @@
     "options": [
       {
         "ref": "helpdesk",
+        "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
         "result": "helpdesk3"
       },
       {
         "ref": "specific",
         "title": "Schools focused",
+        "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
         "result": "specific3"
       }
     ],
@@ -430,12 +438,14 @@
     "options": [
       {
         "ref": "helpdesk",
+        "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
         "result": "helpdesk4"
       },
       {
         "ref": "specific",
         "title": "Schools focused",
+        "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
         "result": "specific4"
       }
     ],
@@ -469,10 +479,12 @@
       {
         "ref": "specific",
         "title": "Schools focused",
+        "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
         "result": "choice"
       },
       {
         "ref": "helpdesk",
+        "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
         "result": "helpdesk5"
       }
