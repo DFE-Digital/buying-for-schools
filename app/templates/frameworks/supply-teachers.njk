@@ -1,0 +1,23 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Hiring supply teachers and agency workers',
+  'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
+) }}
+ 
+{{ results.offers([
+  'ability to find and hire a worker using an agency',
+  'hire of a specific person using an agency (‘nominated worker’)',
+  'a managed service provider who will take on your temporary staff needs',
+  'breakdown of rates agencies charge',
+  'downloadable shortlist of agencies based on your needs',
+  'calculation of the maximum you could be charged to make your agency worker permanent'
+]) }}
+
+{{ results.benefits([
+  'transparent mark-ups',
+  'avoid temp-to-perm fees',
+  'completed background and safeguarding checks'
+]) }}
+
+ 

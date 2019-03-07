@@ -1,0 +1,26 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation('ICT solutions and supply network infrastructure', 'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.') }}
+
+{{ results.offers([
+  'servers and associated equipment',
+  'enterprise storage solutions',
+  'data backup and archiving solutions',
+  'networking equipment ',
+  'wireless network systems',
+  'Local Area Networks (LAN) virtualisation',
+  'digital infrastructure',
+  'online and Cloud storage solutions',
+  'network security systems',
+  'separate maintenance, installation, and support services'
+]) }}
+ 
+{{ results.benefits([
+  'free quote tool',
+  'management support'
+]) }}
+
+{{ results.button(
+  'Continue to the CPC website',
+  'https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=188'
+) }}

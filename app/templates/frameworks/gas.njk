@@ -1,0 +1,28 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Supply of natural gas (daily/non-daily metered) and ancillary services', 
+  'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
+) }}
+
+ 
+{{ results.offers([
+  'liquefied petroleum gas',
+  [ 'solid fuels including:',
+    'biomass',
+    'lubricants and grease',
+    'metering',
+    'fuel services'
+  ]
+]) }}
+
+{{ results.benefits([
+  'a customer service team to help you',
+  'savings on administration costs',
+  'clear, not-for-profit charging structure'
+]) }}
+
+
+
+ 
+

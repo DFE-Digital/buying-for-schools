@@ -1,0 +1,26 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'ICT services for education',
+  'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
+) }}
+
+{{ results.offers([
+  'supply and fit',
+  'support and maintenance',
+  'systems configuration and management',
+  'partial or fully managed ICT services',
+  'integrating new systems with existing ICT',
+  'repurposing of existing ICT',
+  'complete integrated service with other technologies and partners',
+  'supply and integration of solutions into green field (new build) situations and legacy environments'
+]) }}
+
+{{ results.benefits([
+  'support with running mini-competitions'
+]) }}
+
+{{ results.button(
+  'Continue to the CCS website',
+  'https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1050'
+) }}

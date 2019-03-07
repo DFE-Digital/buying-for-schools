@@ -1,0 +1,19 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Audit services',
+  'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
+) }}
+ 
+{{ results.offers([
+  'internal audit',
+  'external audit',
+  'assurance',
+  'audit-related services',
+  'financial control services'
+]) }}
+
+{{ results.benefits([
+  'free quote tool'
+]) }}
+

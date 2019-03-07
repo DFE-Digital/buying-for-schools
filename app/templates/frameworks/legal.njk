@@ -1,0 +1,26 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation('Legal services', 'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.') }}
+
+{{ results.offers([
+  'academy conversion and post-conversion',
+  'commercial, contracts and procurement law',
+  'human resources and employment law',
+  'property and land law',
+  'education and charity law',
+  'construction and estates management',
+  'corporate governance',
+  'data protection and freedom of information',
+  'health and safety',
+  'intellectual property rights and licensing',
+  'litigation and dispute resolution',
+  'private finance initiatives (PFI)',
+  'shared services',
+  'student matters (including admissions, exclusions and safeguarding)'
+]) }}
+
+{{ results.benefits([
+  'free quote tool',
+  'free initial legal advice',
+  'competitive pricing with discounts on market rates'
+]) }}

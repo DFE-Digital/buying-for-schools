@@ -1,0 +1,29 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Leasing services',
+  'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
+) }}
+ 
+{{ results.offers([
+  'ICT equipment',
+  'sports and gym equipment',
+  'scientific and research equipment',
+  'plant equipment',
+  'medical equipment',
+  'multi-functional devices (MFD) operating and finance',
+  'commercial vehicles and cars',
+  'furniture and infrastructure',
+  'modular buildings',
+  'solar PV',
+  'LED lighting',
+  'synthetic sports pitches',
+  'engineering plant and machinery'
+]) }}
+
+{{ results.benefits([
+  'free quote tool',
+  'large discounts on market prices'
+]) }}
+
+

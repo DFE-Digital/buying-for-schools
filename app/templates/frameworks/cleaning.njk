@@ -1,0 +1,19 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Building cleaning services',
+  'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
+) }}
+ 
+{{ results.offers([
+  'janitorial services',
+  'deep / periodic cleaning',
+  'high-level cleaning',
+  'window cleaning'
+], 'Lets you procure fully-managed outsourced building cleaning services including:') }}
+
+{{ results.benefits([
+  'free quote tool',
+  'DBS-checked personnel',
+  'expert support'
+]) }}

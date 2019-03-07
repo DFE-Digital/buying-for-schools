@@ -1,0 +1,39 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Library resources', 
+  'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC).'
+) }}
+
+{{ results.offers([
+  'academic books from a range of publishers (early years to KS4 and higher education)',
+  'professional books and publications',
+  'learning aids',
+  'e-books',
+  'newspapers, journals and periodicals',
+  'e-journals',
+  'audio books',
+  'audio summary',
+  [
+    'library discovery tools and services including:',
+    'search functionality',
+    'database provision',
+    'Online Public Access Catalogue (OPAC)',
+    'web resources',
+    'publisher packages',
+    'catalogue records',
+    'electronic and print resources'
+  ]
+]) }}
+
+
+{{ results.benefits([
+  'free quote tool',
+  'discounts against publishers’ list prices',
+  'comprehensive range of resources'
+]) }}
+
+{{ results.button(
+  'Continue to the CPC website',
+  'https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=6&frameworkID=177'
+)}}

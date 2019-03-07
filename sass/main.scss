@@ -3,6 +3,17 @@
 @import "./components/flash-card";
 
 
+.govuk-summary-list__key, .govuk-summary-list__value {
+  word-break: break-word;
+}
+
+
+@media (min-width: 40.0625em) {
+  .govuk-summary-list__key {
+    width: 40%;
+  }
+}
+
 .text-right {
   text-align: right;
 }

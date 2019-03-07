@@ -1,0 +1,22 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Water, wastewater and ancillary services',
+  'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
+) }}
+
+{{ results.offers([
+  'water supply',
+  'sewerage',
+  'services that reduce water use'
+]) }}
+
+{{ results.benefits([
+  'discount prices'  
+]) }}
+
+
+{{ results.button(
+  'Continue to the CCS website',
+  'https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3790'
+) }}

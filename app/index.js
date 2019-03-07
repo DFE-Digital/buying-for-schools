@@ -22,6 +22,8 @@ const port = process.env.PORT || 5000
 const tree = dt.makeTree(require('./tree.json'))
 const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
 
+const serviceName = 'Find a framework'
+
 nunjucks.configure(path.resolve(__dirname, './templates'))
 
 nunjucks.configure([
@@ -35,17 +37,26 @@ nunjucks.configure([
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
 
 app.get('/', (req, res, next) => {
-  const render = nunjucks.render('framework-benefits.njk')
+  const render = nunjucks.render('framework-benefits.njk', {
+    serviceName,
+    pageTitle: 'Benefits of using a framework'
+  })
   res.send(render)
 })
 
 app.get('/selection', (req, res, next) => {
-  const render = nunjucks.render('framework-selection.njk')
+  const render = nunjucks.render('framework-selection.njk', {
+    serviceName,
+    pageTitle: 'How frameworks are selected'
+  })
   res.send(render)
 })
 
 app.get('/service-output', (req, res, next) => {
-  const render = nunjucks.render('service-output.njk')
+  const render = nunjucks.render('service-output.njk', {
+    serviceName,
+    pageTitle: 'After you’ve used the service'
+  })
   res.send(render)
 })
 
@@ -81,21 +92,28 @@ app.use('/frameworks', (req, res, next) => {
   const summary = dtr.getQuestionAnswerSummary(branchPath, baseUrl)
 
   if (result) {
-    const resultMeta = dtres.getFramework(frameworks, result)
-    const template = resultMeta ? resultMeta.get('template') : undefined
-    const resultTemplate = template ? `frameworks/${template}.njk` : undefined
-    const renderedResult = nunjucks.render('result.njk', {result, resultTemplate, summary})
+    // const resultMeta = dtres.getFramework(frameworks, result)
+    // const template = resultMeta ? resultMeta.get('template') : undefined
+    const resultTemplate = `frameworks/${result}.njk`
+    const renderedResult = nunjucks.render('result.njk', {
+      result, 
+      resultTemplate, 
+      summary,
+      serviceName,
+      pageTitle: 'A result'
+    })
     return res.send(renderedResult)
   }
 
+  const id = 'decision-tree-' + currentBranch.get('ref')
   const radioOptions = {
-    idPrefix: 'decision-tree-' + currentBranch.get('ref'),
+    idPrefix: id,
     name: 'decision-tree',
     fieldset: {
       legend: {
         text: currentBranch.get('title'),
         isPageHeading: true,
-        classes: 'govuk-fieldset__legend--xl'
+        classes: 'govuk-fieldset__legend--l'
       }
     }
   }
@@ -115,11 +133,46 @@ app.use('/frameworks', (req, res, next) => {
     }
   })
 
+  
+  if (radioOptions.items.getIn([0, 'text']) !== 'Yes'){
+    radioOptions.items = radioOptions.items.sortBy(item => item.text)
+  }  
+
+  let err = null
   if (urlInfo.search) {
-    radioOptions.errorMessage = { text: 'Please choose an option' }
+    const errMsg = currentBranch.get('err') || 'Please choose an option'
+    radioOptions.errorMessage = { text: errMsg }
+    err = {
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: errMsg,
+          href: `#${id}-1`
+        }
+      ]
+    }
   }
 
-  const render = nunjucks.render('question.njk', { pairs, currentUrl, currentBranch, radioOptions, summary, branchPath, JSON, result, baseUrl })
+  const prefix = currentBranch.get('prefix')
+   // ? nunjucks.render(currentBranch.get('prefix')) : ''
+  const suffix = currentBranch.get('suffix') ? nunjucks.render(currentBranch.get('suffix')) : ''
+
+  const pageTitle = err ? 'Error: ' + currentBranch.get('title') : currentBranch.get('title')
+
+  const render = nunjucks.render('question.njk', { 
+    currentUrl, 
+    currentBranch, 
+    radioOptions, 
+    err,
+    summary, 
+    branchPath,
+    result, 
+    baseUrl,
+    suffix,
+    prefix,
+    serviceName,
+    pageTitle
+  })
   res.send(render)
 })
 

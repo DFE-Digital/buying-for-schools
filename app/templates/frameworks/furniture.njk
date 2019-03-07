@@ -1,0 +1,14 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation('Furniture', 'Based on your answers, we think you should use the North East Procurement Organisation (NEPO).') }}
+
+{{ results.offers([
+  'office furniture',
+  'educational furniture',
+  'residential and domestic furniture'
+]) }}
+
+{{ results.benefits([
+  'select a supplier for projects less than £25,000 (this is called a direct award)',
+  'no obligation design and consultancy service for large projects'
+]) }}

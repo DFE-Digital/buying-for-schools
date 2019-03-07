@@ -1,0 +1,21 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Firms mains gas',
+  'Based on your answers, we think you should use the Yorkshire Purchasing Organisation (YPO) framework.'
+) }}
+
+{{ results.offers([
+  'gas',
+  'additional support and associated services'  
+]) }}
+
+{{ results.benefits([
+  'fixed rate deal for those needing budget certainty',
+  [ 'range of tariff options including:',
+    'fixed',
+    'flexible',
+    'flex+ green',
+    'bespoke contracts'
+  ]
+]) }}

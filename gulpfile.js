@@ -51,7 +51,7 @@ function sass () {
 function assets () {
   // /node_modules/govuk-frontend/assets
   return gulp
-    .src(['node_modules/govuk-frontend/assets/**/*.*', 'node_modules/govuk-frontend/all.js'])
+    .src(['node_modules/govuk-frontend/assets/**/*.*', 'node_modules/govuk-frontend/all.js', 'app/assets/**/*.*'])
     .pipe(gulp.dest('public/assets'))
 }
 

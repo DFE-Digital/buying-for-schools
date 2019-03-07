@@ -1,0 +1,13 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation('Electricity supply and ancillary services (non-half hourly)', 'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.') }}
+
+{{ results.offers([
+  'non-half hourly metered electricity supply',
+  'ancillary services'
+]) }}
+
+{{ results.benefits([
+  'a customer service team to help you',
+  'discounts in wholesale energy markets'
+]) }}

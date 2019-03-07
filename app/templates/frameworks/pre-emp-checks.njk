@@ -1,0 +1,34 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Employee screening services',
+  'Based on your answers we think you should use the Crescent Purchasing Consortium (CPC) framework.'
+) }}
+ 
+{{ results.offers([
+  'right to work checks',
+  'credit checks',
+  'reference checks',
+  'DVLA driving checks',
+  'international fraud and sanction checks',
+  'BS7858 and Baseline Personnel Security Standard (BPSS) checks',
+  'Disclosure Barring Service (DBS) checks',
+  'employment history checks (including gap verification)',
+  'identity verification (including passport verification)',
+  'professional and educational qualifications',
+  [ 'a range of value-added services including:',
+    'Financial Conduct Authority',
+    'MOT and insurance',
+    'Energy and Utility Skills Register',
+    'Health and Safety and Fraud and Abuse Control Information System (FACIS) checks'
+  ]
+]) }}
+
+{{ results.benefits([
+  'free quote tool',
+  'access to automated online DBS check system',
+  'select a supplier for projects less than £25,000 (this is called a direct award)'
+]) }}
+ 
+
+

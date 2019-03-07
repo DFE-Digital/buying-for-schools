@@ -3,11 +3,17 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    {% if err %}
+      {{ govukErrorSummary(err) }}
+    {% endif %}
+
     {% if result %}
       <h2>{{ result }}</h2>
     {% else %}  
       <form action="{{ currentUrl }}">
+        {{ prefix }}
         {{ govukRadios(radioOptions) }}
+        {{ suffix | safe }}
         {{ govukButton({ text: 'Next', type: 'submit'}) }}
       </form>
     {% endif %}

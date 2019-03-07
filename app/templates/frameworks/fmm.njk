@@ -1,0 +1,30 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Facilities management (FM) marketplace',
+  'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
+) }}
+
+{{ results.offers([
+  'maintenance services',
+  'catering services',
+  'cleaning services',
+  'workplace FM services',
+  'miscellaneous FM services',
+  'reception services',
+  'security services',
+  'horticultural services',
+  'waste services',
+  'contract management',
+  'contract mobilisation',
+  'statutory obligations',
+  'computer-aided facilities management (CAFM)',
+  'helpdesk services',
+  'management of billable works'
+]) }}
+
+{{ results.benefits([
+  'clear not-for-profit charges',
+  'regular updates on purchases and prices to help you budget',
+  'choice of regional and national suppliers'
+]) }}

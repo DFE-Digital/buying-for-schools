@@ -1,0 +1,21 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation('Specialist professional services from NEPRO',
+'Based on your answers, we think you should use the North East Procurement Organisation (NEPO) framework.') }}
+
+{{ results.offers([
+  'curriculum advice',
+  'facilities management ',
+  'health and wellbeing',
+  'marketing',
+  'organisational and change management',
+  'safeguarding',
+  'school management and improvement support'
+], '19 categories of spend including transformation, finance, ICT, HR. Also provides schools advisors help with:') }}
+
+{{ results.benefits([
+  'choice of regional and national suppliers',
+  'only pay when work is completed to your satisfaction',
+  'neutral vendor managed service (suppliers are managed for you)',
+  'direct award available for some purchases'
+]) }}
