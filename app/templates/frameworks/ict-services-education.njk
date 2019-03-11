@@ -20,7 +20,4 @@
   'support with running mini-competitions'
 ]) }}
 
-{{ results.button(
-  'Continue to the CCS website',
-  'https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1050'
-) }}
+{{ results.button(resultMeta.get('title'), resultMeta.get('url')) }}

@@ -5,9 +5,7 @@ const makeFrameworks = frameworkJson => {
 }
 
 const getFramework = (frameworks, ref) => {
-  return frameworks.find(framework => {
-    return framework.get('ref') === ref
-  })
+  return frameworks.find(framework => framework.get('ref') === ref)
 }
 
 module.exports = {

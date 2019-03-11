@@ -36,27 +36,6 @@
     "used": true
   },
   {
-    "ref": "B",
-    "title": "New branch",
-    "options": []
-  },
-  {
-    "ref": "C",
-    "title": "New branch",
-    "options": []
-  },
-  {
-    "ref": "D",
-    "title": "New branch with ref D",
-    "options": []
-  },
-  {
-    "ref": "E",
-    "title": "New branch with ref E",
-    "options": [],
-    "used": true
-  },
-  {
     "ref": "what",
     "title": "What goods do you need?",
     "options": [
@@ -68,7 +47,9 @@
       {
         "ref": "furniture",
         "title": "Furniture",
-        "result": "furniture"
+        "result": [
+          "furniture"
+        ]
       },
       {
         "ref": "ict",
@@ -78,26 +59,11 @@
       {
         "ref": "mfd",
         "title": "Printers, copiers and multi-functional devices (MFDs)",
-        "next": "mfd-direct",
-        "result": ""
+        "next": "mfd-direct"
       }
     ],
     "used": true,
     "err": "Select which goods you need"
-  },
-  {
-    "ref": "dir",
-    "title": "New branch with ref dir",
-    "options": []
-  },
-  {
-    "title": "New branch with ref undefined",
-    "options": []
-  },
-  {
-    "ref": "",
-    "title": "New branch with ref ",
-    "options": []
   },
   {
     "ref": "class-library",
@@ -106,12 +72,16 @@
       {
         "ref": "classroom",
         "title": "Classroom supplies",
-        "result": "books"
+        "result": [
+          "books"
+        ]
       },
       {
         "ref": "library",
         "title": "Library supplies",
-        "result": "library"
+        "result": [
+          "library"
+        ]
       }
     ],
     "used": true,
@@ -124,7 +94,9 @@
       {
         "ref": "networking",
         "title": "Networking equipment",
-        "result": "network"
+        "result": [
+          "network"
+        ]
       },
       {
         "ref": "software",
@@ -148,12 +120,17 @@
       {
         "ref": "yes",
         "title": "Yes",
-        "result": "ict-catalog"
+        "result": [
+          "ict-catalog"
+        ]
       },
       {
         "ref": "no",
         "title": "No, I want a supplier to give me a quote",
-        "result": "choice"
+        "result": [
+          "software-licenses",
+          "ict-cloud"
+        ]
       }
     ],
     "used": true,
@@ -167,12 +144,16 @@
       {
         "ref": "yes",
         "title": "Yes",
-        "result": "ict-catalog"
+        "result": [
+          "ict-catalog"
+        ]
       },
       {
         "ref": "no",
         "title": "No, I want a supplier to give me a quote",
-        "result": "choice"
+        "result": [
+          "choice"
+        ]
       }
     ],
     "used": true,
@@ -185,12 +166,16 @@
       {
         "ref": "yes",
         "title": "Yes",
-        "result": "photocopier-printer-scanner"
+        "result": [
+          "photocopier-printer-scanner"
+        ]
       },
       {
         "ref": "no",
         "title": "No, I want multiple suppliers to give me quotes",
-        "result": "choice"
+        "result": [
+          "choice"
+        ]
       }
     ],
     "used": true,
@@ -203,12 +188,16 @@
       {
         "ref": "legal",
         "title": "Legal",
-        "result": "legal"
+        "result": [
+          "legal"
+        ]
       },
       {
         "ref": "professional",
         "title": "Professional",
-        "result": "professional"
+        "result": [
+          "professional"
+        ]
       },
       {
         "ref": "energy",
@@ -261,7 +250,9 @@
       {
         "ref": "water-drains-sewarage",
         "title": "Water, drains and sewerage",
-        "result": "water"
+        "result": [
+          "water"
+        ]
       }
     ],
     "used": true,
@@ -274,7 +265,9 @@
       {
         "ref": "yes",
         "title": "Yes",
-        "result": "school-switch"
+        "result": [
+          "school-switch"
+        ]
       },
       {
         "ref": "no",
@@ -312,13 +305,17 @@
         "ref": "helpdesk",
         "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
-        "result": "elec-half-hourly-ancillary"
+        "result": [
+          "elec-half-hourly-ancillary"
+        ]
       },
       {
         "ref": "specific",
         "title": "Schools focused",
         "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
-        "result": "elec-unmetered"
+        "result": [
+          "elec-unmetered"
+        ]
       }
     ],
     "used": true,
@@ -332,13 +329,17 @@
         "ref": "helpdesk",
         "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
-        "result": "elec-non-half-hourly-ancillary"
+        "result": [
+          "elec-non-half-hourly-ancillary"
+        ]
       },
       {
         "ref": "specific",
         "title": "Schools focused",
         "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
-        "result": "elec-unmetered"
+        "result": [
+          "elec-unmetered"
+        ]
       }
     ],
     "used": true,
@@ -351,7 +352,9 @@
       {
         "ref": "yes",
         "title": "Yes",
-        "result": "school-switch"
+        "result": [
+          "school-switch"
+        ]
       },
       {
         "ref": "no",
@@ -370,13 +373,17 @@
         "ref": "helpdesk",
         "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
-        "result": "gas"
+        "result": [
+          "gas"
+        ]
       },
       {
         "ref": "specific",
         "title": "Schools focused",
         "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
-        "result": "gas-firm"
+        "result": [
+          "gas-firm"
+        ]
       }
     ],
     "used": true,
@@ -389,12 +396,16 @@
       {
         "ref": "yes",
         "title": "Yes",
-        "result": "national-energy-performance-contracting"
+        "result": [
+          "national-energy-performance-contracting"
+        ]
       },
       {
         "ref": "no",
         "title": "No, I want products supplied and fitted",
-        "result": "retrofit"
+        "result": [
+          "retrofit"
+        ]
       }
     ],
     "used": true,
@@ -408,7 +419,9 @@
       {
         "ref": "multi-service",
         "title": "Yes",
-        "result": "fmm"
+        "result": [
+          "fmm"
+        ]
       },
       {
         "ref": "specific",
@@ -426,17 +439,23 @@
       {
         "ref": "removal-relocation",
         "title": "Removal and relocation",
-        "result": "removal-relocation"
+        "result": [
+          "removal-relocation"
+        ]
       },
       {
         "ref": "construction",
         "title": "Construction consultancy",
-        "result": "construction"
+        "result": [
+          "construction"
+        ]
       },
       {
         "ref": "testing",
         "title": "Application testing",
-        "result": "testing"
+        "result": [
+          "testing"
+        ]
       },
       {
         "ref": "support",
@@ -446,32 +465,44 @@
       {
         "ref": "catering",
         "title": "Catering",
-        "result": "fmm"
+        "result": [
+          "fmm"
+        ]
       },
       {
         "ref": "maintenance",
         "title": "Maintenance",
-        "result": "fmm"
+        "result": [
+          "fmm"
+        ]
       },
       {
         "ref": "horticultural",
         "title": "Horticultural",
-        "result": "fmm"
+        "result": [
+          "fmm"
+        ]
       },
       {
         "ref": "security",
         "title": "Security",
-        "result": "fmm"
+        "result": [
+          "fmm"
+        ]
       },
       {
         "ref": "waste",
         "title": "Waste",
-        "result": "fmm"
+        "result": [
+          "fmm"
+        ]
       },
       {
         "ref": "wfm",
         "title": "Workplace facilities management",
-        "result": "fmm"
+        "result": [
+          "fmm"
+        ]
       }
     ],
     "used": true,
@@ -485,13 +516,17 @@
         "ref": "helpdesk",
         "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
-        "result": "fmm"
+        "result": [
+          "fmm"
+        ]
       },
       {
         "ref": "specific",
         "title": "Schools focused",
         "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
-        "result": "cleaning"
+        "result": [
+          "cleaning"
+        ]
       }
     ],
     "used": true,
@@ -509,7 +544,9 @@
       {
         "ref": "cloud",
         "title": "Cloud",
-        "result": "choice"
+        "result": [
+          "choice"
+        ]
       },
       {
         "ref": "mfd",
@@ -528,13 +565,17 @@
         "ref": "specific",
         "title": "Schools focused",
         "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
-        "result": "choice"
+        "result": [
+          "choice"
+        ]
       },
       {
         "ref": "helpdesk",
         "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
         "title": "General helpdesk",
-        "result": "ict-services-education"
+        "result": [
+          "ict-services-education"
+        ]
       }
     ],
     "used": true,
@@ -547,12 +588,16 @@
       {
         "ref": "yes",
         "title": "Yes",
-        "result": "photocopier-printer-scanner"
+        "result": [
+          "photocopier-printer-scanner"
+        ]
       },
       {
         "ref": "no",
         "title": "No, I want multiple suppliers to give me quotes",
-        "result": "choice"
+        "result": [
+          "choice"
+        ]
       }
     ],
     "used": true,
@@ -565,22 +610,30 @@
       {
         "ref": "audit",
         "title": "Audit",
-        "result": "audit"
+        "result": [
+          "audit"
+        ]
       },
       {
         "ref": "cost-recovery",
         "title": "Cost recovery",
-        "result": "cost-recovery"
+        "result": [
+          "cost-recovery"
+        ]
       },
       {
         "ref": "insurance",
         "title": "Insurance",
-        "result": "insurance"
+        "result": [
+          "insurance"
+        ]
       },
       {
         "ref": "leasing",
         "title": "Leasing",
-        "result": "leasing"
+        "result": [
+          "leasing"
+        ]
       }
     ],
     "used": true,
@@ -593,15 +646,23 @@
       {
         "ref": "pre-emp-checks",
         "title": "Pre-employment checks",
-        "result": "pre-emp-checks"
+        "result": [
+          "pre-emp-checks"
+        ]
       },
       {
         "ref": "supply-teachers",
         "title": "Supply teachers",
-        "result": "supply-teachers"
+        "result": [
+          "supply-teachers"
+        ]
       }
     ],
     "used": true,
     "err": "Select which services you are looking for"
+  },
+  {
+    "title": "New branch with ref undefined",
+    "options": []
   }
 ]

@@ -1,4 +1,9 @@
+const path = require('path')
 const { fromJS } = require('immutable')
+
+const uniq = arr => {
+  return arr.filter((v, i, self) => self.indexOf(v) === i)
+}
 
 const makeTree = treeJson => {
   return fromJS(treeJson)
@@ -33,11 +38,59 @@ const setSelectedOption = (branch, optionRef) => {
   return branch.setIn(['options', optionKey, 'selected'], true)
 }
 
+const getAllBranchPaths = (thetree, ref) => {
+  const questionPaths = []
+  const redirectToQuestionPaths = []
+  const redirectToResultPaths = []
+  const resultPaths = []
+  const multiplePaths = []
+  
+  if (!ref) {
+    ref = thetree.getIn([0, 'ref'])
+    console.log(ref)
+  }
+  const recursion = (basePath, qref) => {
+    const branch = getBranch(thetree, qref)
+    const questionPath = path.join(basePath, qref)
+    const options = branch.get('options')
+    questionPaths.push(questionPath)
+    options.forEach(opt => {
+      const answerPath = path.join(questionPath, opt.get('ref'))
+      const nxt = opt.get('next')
+      const results = opt.get('result')
+      if (nxt) {
+        redirectToQuestionPaths.push(answerPath)
+        recursion(answerPath, nxt)
+      }
+      if (results) {
+        if (results.size === 1) {
+          redirectToResultPaths.push(answerPath)
+        } else {
+          multiplePaths.push(answerPath)
+        }
+        results.forEach(res => {
+          resultPaths.push(path.join(answerPath, res))
+        })
+      }
+    })
+  }
+
+  recursion('', ref)
+  return {
+    questions: uniq(questionPaths),
+    redirectToQuestion: uniq(redirectToQuestionPaths),
+    redirectToResult: uniq(redirectToResultPaths),
+    results: uniq(resultPaths),
+    multiple: uniq(multiplePaths)
+  }
+}
+
 module.exports = {
   makeTree,
   getBranch,
   getOption,
   getOptionKey,
   getSelectedOption,
-  setSelectedOption
+  setSelectedOption,
+  getAllBranchPaths
 }

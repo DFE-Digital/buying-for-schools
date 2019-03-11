@@ -1,6 +1,7 @@
 /* global Map:true */
 const { fromJS, List, Map } = require('immutable')
 const dt = require('./decisionTree')
+const dtres = require('./decisionTreeResults')
 
 const getQuestionAnswerPairSlugs = (url) => {
   const trimmedSlashes = url.replace(/^\/+|\/+$/g, '')
@@ -40,7 +41,7 @@ const getBranchPath = (tree, pairs) => {
   return branches
 }
 
-const validateQuestionAnswerPairs = (tree, pairs) => {
+const validateQuestionAnswerPairs = (tree, pairs, frameworks = []) => {
   const questionRefs = pairs.keySeq(k => k)
   const answerRefs = pairs.valueSeq(v => v)
   if (questionRefs.size === 0) {
@@ -49,6 +50,12 @@ const validateQuestionAnswerPairs = (tree, pairs) => {
   return questionRefs.every((questionRef, i) => {
     const branch = dt.getBranch(tree, questionRef)
     const answerRef = answerRefs.get(i)
+    const result = dtres.getFramework(frameworks, questionRef)
+ 
+    if (result) {
+      return true
+    }
+
     if (!branch) {
       // no branch with given ref
       return false
@@ -67,6 +74,11 @@ const validateQuestionAnswerPairs = (tree, pairs) => {
 
     if (i === questionRefs.size - 1) {
       // at the end of the question pairs
+      return true
+    }
+
+    const results = answeredOption.get('result')
+    if (results && results.includes(questionRefs.get(i + 1))) {
       return true
     }
 

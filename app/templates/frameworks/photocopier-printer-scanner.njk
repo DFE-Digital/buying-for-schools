@@ -10,7 +10,4 @@
   'schools report savings of around 40%'
 ]) }}
 
-{{ results.button(
-  'Continue to the CCS website',
-  'https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3781'
-) }}
+{{ results.button(resultMeta.get('title'), resultMeta.get('url')) }}

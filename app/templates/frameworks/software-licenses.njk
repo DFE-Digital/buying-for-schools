@@ -1,21 +1,17 @@
 {% import "macros/results.njk" as results %}
 
 {{ results.recommendation(
-  'Building cleaning services',
+  'Software licenses and associated services for academies and schools',
   'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
 ) }}
- 
+
 {{ results.offers([
-  'janitorial services',
-  'deep / periodic cleaning',
-  'high-level cleaning',
-  'window cleaning'
-], 'Lets you procure fully-managed outsourced building cleaning services including:') }}
+  'software licenses and associated supporting services'  
+]) }}
 
 {{ results.benefits([
   'free quote tool',
-  'DBS-checked personnel',
-  'expert support'
+  'contract manager assistance and support'
 ]) }}
 
 {{ results.button(resultMeta.get('title'), resultMeta.get('url')) }}

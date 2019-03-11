@@ -33,7 +33,4 @@
   'comprehensive range of resources'
 ]) }}
 
-{{ results.button(
-  'Continue to the CPC website',
-  'https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=6&frameworkID=177'
-)}}
+{{ results.button(resultMeta.get('title'), resultMeta.get('url')) }}

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm install && gulp sass && gulp assets && node app/index.js",
     "start:dev": "gulp watch",
-    "test": "npm run test:jshint && npm run test:jest",
+    "start:testing": "jest --watch",
+    "test": "npm run test:jshint && npm run test:jest && npm run test:coverage",
     "test:jshint": "jshint app/**/*.js",
     "test:jest": "jest",
     "test:coverage": "jest --coverage"

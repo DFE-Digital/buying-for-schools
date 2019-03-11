@@ -36,11 +36,26 @@
   {{ govBulletList(items) }}
 {% endmacro %}
 
-
 {% macro button(text, href) %}
   {{ govukButton({
-    text: text,
+    text: 'Visit the ' + text + ' website',
     href: href,
     classes: 'govuk-!-margin-top-5'
   }) }}
+{% endmacro %}
+
+{% macro cards(items) %}
+  {% for item in items %}
+    <dl class="card">
+      <a href="{{ item.nextUrl }}"></a>
+      <div class="card__header">
+        <dt class="govuk-visually-hidden">Framework name:</dt>
+        <dd class="card__title">{{ item.title }}</dd>
+      </div>
+      <div class="card__content">
+        <dt>Provider:</dt>
+        <dd>{{ item.title }}</dd>
+      </div>
+    </dl>
+  {% endfor %}
 {% endmacro %}

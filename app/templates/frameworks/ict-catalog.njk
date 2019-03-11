@@ -12,7 +12,4 @@
   'over 350,000 items' 
 ]) }}
 
-{{ results.button(
-  'Continue to the CCS website',
-  'https://purchasingplatform.crowncommercial.gov.uk/mp-welcome'
-) }}
+{{ results.button(resultMeta.get('title'), resultMeta.get('url')) }}

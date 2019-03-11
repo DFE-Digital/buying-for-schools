@@ -5,6 +5,7 @@ const { is, Map, fromJS } = require('immutable')
 
 const dtr = require('./decisionTreeRoute')
 const dt = require('./decisionTree')
+const dtres = require('./decisionTreeResults')
 
 describe('decisionTreeRoute', () => {
   describe('getQuestionAnswerPairSlugs', () => {
@@ -147,8 +148,8 @@ describe('decisionTreeRoute', () => {
       {
         ref: 'pork',
         options: [
-          { ref: 'sausages' },
-          { ref: 'bacon' }
+          { ref: 'sausages', result: ['apple'] },
+          { ref: 'bacon', result: ['apple', 'banana'] }
         ]
       },
       {
@@ -169,7 +170,10 @@ describe('decisionTreeRoute', () => {
         ]
       }
     ])
-
+    const frameworks = dtres.makeFrameworks([
+      { ref: 'apple' },
+      { ref: 'banana' }
+    ])
     const validUrls = [
       'env',
       'env/farm/animals/pigs/pork/bacon',
@@ -179,7 +183,11 @@ describe('decisionTreeRoute', () => {
       'env/farm/',
       'env/office/drinks/tea',
       'env/home/housetypes/detatched',
-      'env/home/housetypes'
+      'env/home/housetypes',
+      'env/farm/animals/pigs/pork/bacon/apple',
+      'env/farm/animals/pigs/pork/bacon/banana',
+      'env/farm/animals/pigs/pork/sausages/apple',
+
     ]
 
     const inValidUrls = [
@@ -191,14 +199,16 @@ describe('decisionTreeRoute', () => {
       'env/home/drinks',
       'env/office/drinks/bacon',
       'env/home/pork/hotpot',
-      'env/home/colour/blue'
+      'env/home/colour/blue',
+      'env/farm/animals/pigs/pork/bacon/pear',
+      'env/farm/animals/pigs/pork/bacon/appletise',
     ]
     describe('validateBranchPath', () => {
       describe('validate that the question answer pairs are possible', () => {
         validUrls.forEach(url => {
           it(`should pass ${url}`, () => {
             const pairs = dtr.getQuestionAnswerPairSlugs(url)
-            expect(dtr.validateQuestionAnswerPairs(tree, pairs)).toBeTruthy()
+            expect(dtr.validateQuestionAnswerPairs(tree, pairs, frameworks)).toBeTruthy()
           })
         })
       })

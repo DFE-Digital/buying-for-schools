@@ -1,0 +1,16 @@
+{% extends "buying-for-schools.njk" %}
+{% import "macros/results.njk" as results %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">Matching frameworks</h1>
+    <p class="govuk-body-l govuk-!-margin-bottom-6">Based on your answers, there are multiple approved frameworks to choose from.</p>
+
+    {{ results.cards(resultList) }}
+
+    {% include "summary.njk" %}
+  </div>
+</div>
+
+{% endblock %}
