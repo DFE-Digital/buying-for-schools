@@ -2,13 +2,16 @@
 {% import "macros/results.njk" as results %}
 
 {% block recommendation %}
-{{ results.recommendation('Electricity (half hourly, non-half hourly and unmetered)', 'Based on your answers, we think you should use the Yorkshire Purchasing Organisation (YPO) framework.') }}
+{{ results.recommendation(
+  'Electricity (half hourly, non-half hourly and unmetered)', 
+  'Based on your answers, we think you should use the Yorkshire Purchasing Organisation (YPO) framework.'
+) }}
 {% endblock %}
 
 {% block resultContent %}
  
 {{ results.offers([
-  'half hourly, non-half hourly and unmetered electricity supply,'
+  'half hourly, non-half hourly and unmetered electricity supply',
   'ancillary services including demand side response, energy storage, EV charging energy efficiency surveys and Power Purchase Agreements'
 ]) }}
 
