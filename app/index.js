@@ -72,8 +72,8 @@ const questionPage = (req, res) => {
     return res.redirect(302, req.query['decision-tree'])
   }
   const baseUrl = req.baseUrl
-  const trimmedSlashes = req.url.replace(/^\/+|\/+$/g, '')
   const urlInfo = url.parse(req.url)
+  const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
   const urlBits = trimmedSlashes.split('/')
   const questionRef = urlBits[urlBits.length -1]
   const branch = dt.getBranch(tree, questionRef)
@@ -96,7 +96,7 @@ const questionPage = (req, res) => {
   }
 
   radioOptions.items = branch.get('options').map(option => {
-    const optionUrl = path.join(req.url, option.get('ref'))
+    const optionUrl = path.join(urlInfo.pathname, option.get('ref'))
     const optionHint = option.get('hint')
     return {
       value: optionUrl,
@@ -147,8 +147,8 @@ const questionPage = (req, res) => {
 }
 
 const redirectToQuestion = (req, res) => {
-  const trimmedSlashes = req.url.replace(/^\/+|\/+$/g, '')
   const urlInfo = url.parse(req.url)
+  const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
   const urlBits = trimmedSlashes.split('/')
   const questionRef = urlBits[urlBits.length -2]
   const answerRef = urlBits[urlBits.length -1]
@@ -156,13 +156,13 @@ const redirectToQuestion = (req, res) => {
   const branch = dt.getBranch(tree, questionRef)
   const answer = dt.getOption(branch, answerRef)
   const nxt = answer.get('next')
-  const nxtUrl = path.join(req.originalUrl, nxt)
+  const nxtUrl = path.join(urlInfo.pathname, nxt)
   return res.redirect(302, nxtUrl)
 }
 
 const redirectToResult = (req, res) => {
-  const trimmedSlashes = req.url.replace(/^\/+|\/+$/g, '')
   const urlInfo = url.parse(req.url)
+  const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
   const urlBits = trimmedSlashes.split('/')
   const questionRef = urlBits[urlBits.length -2]
   const answerRef = urlBits[urlBits.length -1]
@@ -170,13 +170,13 @@ const redirectToResult = (req, res) => {
   const branch = dt.getBranch(tree, questionRef)
   const answer = dt.getOption(branch, answerRef)
   const result = answer.getIn(['result', 0])
-  const nxtUrl = path.join(req.originalUrl, result)
+  const nxtUrl = path.join(urlInfo.pathname, result)
   return res.redirect(302, nxtUrl)
 }
 
 const multiplePage = (req, res) => {
-  const trimmedSlashes = req.url.replace(/^\/+|\/+$/g, '')
   const urlInfo = url.parse(req.url)
+  const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
   const urlBits = trimmedSlashes.split('/')
   const questionRef = urlBits[urlBits.length -2]
   const answerRef = urlBits[urlBits.length -1]
