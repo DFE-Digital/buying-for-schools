@@ -22,7 +22,7 @@ const port = process.env.PORT || 5000
 const tree = dt.makeTree(require('./tree.json'))
 const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
 
-const serviceName = 'Find a framework'
+const serviceName = 'Find a DfE approved framework for your school'
 const frameworkPath = '/frameworks'
 
 nunjucks.configure(path.resolve(__dirname, './templates'))
@@ -193,7 +193,8 @@ const multiplePage = (req, res) => {
   const renderedResult = nunjucks.render('results.njk', {
     resultList,
     serviceName,
-    summary
+    summary,
+    pageTitle: 'Matching frameworks'
   })
   return res.send(renderedResult)
 }
@@ -215,7 +216,7 @@ const resultPage = (req, res) => {
     resultTemplate, 
     summary,
     serviceName,
-    pageTitle: 'A result'
+    pageTitle: resultMeta.get('title')
   })
   return res.send(renderedResult)
 }
