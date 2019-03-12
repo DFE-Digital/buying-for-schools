@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Desktop hardware',
   'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'a range of ICT equipment and supporting services'
 ]) }}
@@ -13,5 +17,4 @@
   'free quote tool',
   'substantial savings on IT brands'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

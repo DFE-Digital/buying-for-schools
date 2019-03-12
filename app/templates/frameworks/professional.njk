@@ -1,8 +1,12 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation('Specialist professional services from NEPRO',
 'Based on your answers, we think you should use the North East Procurement Organisation (NEPO) framework.') }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'curriculum advice',
   'facilities management ',
@@ -19,5 +23,4 @@
   'neutral vendor managed service (suppliers are managed for you)',
   'direct award available for some purchases'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

@@ -1,7 +1,11 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation('Electricity (half hourly, non-half hourly and unmetered)', 'Based on your answers, we think you should use the Yorkshire Purchasing Organisation (YPO) framework.') }}
+{% endblock %}
 
+{% block resultContent %}
  
 {{ results.offers([
   'half hourly, non-half hourly and unmetered electricity supply,'
@@ -12,6 +16,4 @@
   'dedicated account managers',
   'a choice of flexible and fixed contracts'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
-
+{% endblock %}

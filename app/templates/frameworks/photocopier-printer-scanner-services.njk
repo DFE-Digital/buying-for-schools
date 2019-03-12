@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Multi-functional devices (MFD) and associated print services and supplies', 
   'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.') 
 }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'managed print services',
   'free-of-charge print audits',
@@ -26,5 +30,4 @@
   'a range of support and consultancy services',
   'large discounts on market prices'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

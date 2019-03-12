@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Library resources', 
   'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC).'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'academic books from a range of publishers (early years to KS4 and higher education)',
   'professional books and publications',
@@ -32,5 +36,4 @@
   'discounts against publishers’ list prices',
   'comprehensive range of resources'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Portable appliance and fixed wire testing (PAT)',
   'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'suppliers for portable appliance and fixed wire testing'
 ]) }}
@@ -13,5 +17,4 @@
   'free quote tool',
   'choice of regional and national pre-approved suppliers'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

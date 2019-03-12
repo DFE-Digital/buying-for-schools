@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Employee screening services',
   'Based on your answers we think you should use the Crescent Purchasing Consortium (CPC) framework.'
 ) }}
- 
+{% endblock %}
+
+{% block resultContent %}
 {{ results.offers([
   'right to work checks',
   'credit checks',
@@ -29,5 +33,4 @@
   'access to automated online DBS check system',
   'select a supplier for projects less than £25,000 (this is called a direct award)'
 ]) }}
- 
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

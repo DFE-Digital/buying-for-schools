@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Insurance for academies, free schools and similar institutions',
   'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'insurance and insurance related services, designed primarily for use by academies, free schools and academy trusts.'  
 ]) }}
@@ -13,5 +17,4 @@
   'free quote tool',
   'advice on insurance services not covered by DfE’s risk protection arrangement'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

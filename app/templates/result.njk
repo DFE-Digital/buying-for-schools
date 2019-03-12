@@ -1,17 +1,29 @@
 {% extends "buying-for-schools.njk" %}
+{% import "macros/results.njk" as results %}
 
 {% block content %}
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    {% block recommendation %}
+    {% endblock %}
+  </div>
   <div class="govuk-grid-column-two-thirds">
-    {% if resultTemplate %}
-      {% include resultTemplate %}
-    {% else %}
-      <h1>Result</h1>
-      <h2>{{ result }}</h2>
-    {% endif %}
+    {% block resultContent %}
+    {% endblock %}
+
+    <p class="govuk-body">All frameworks also offer:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>comliance with The Official Journal of the European Union (OJEU) principles and regulations</li>
+      <li>a list of checked suppliers</li>
+      <li>pre-agreed terms and conditions</li>
+    </ul>
+
+    {{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
 
     {% include "summary.njk" %}
   </div>
+
+  {% include "includes/framework-aside.njk" %}
 </div>
 
 {% endblock %}

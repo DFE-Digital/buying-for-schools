@@ -1,7 +1,11 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation('Legal services', 'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.') }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'academy conversion and post-conversion',
   'commercial, contracts and procurement law',
@@ -24,5 +28,4 @@
   'free initial legal advice',
   'competitive pricing with discounts on market rates'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

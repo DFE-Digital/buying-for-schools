@@ -55,11 +55,6 @@
         "ref": "ict",
         "title": "ICT",
         "next": "ict-categories"
-      },
-      {
-        "ref": "mfd",
-        "title": "Printers, copiers and multi-functional devices (MFDs)",
-        "next": "mfd-direct"
       }
     ],
     "used": true,
@@ -67,7 +62,7 @@
   },
   {
     "ref": "class-library",
-    "title": "What goods are you looking for in books and related materials",
+    "title": "What goods are you looking for in books and related materials?",
     "options": [
       {
         "ref": "classroom",
@@ -89,7 +84,7 @@
   },
   {
     "ref": "ict-categories",
-    "title": "What goods are you looking for in ICT",
+    "title": "What goods are you looking for in ICT?",
     "options": [
       {
         "ref": "networking",
@@ -107,6 +102,14 @@
         "ref": "hardware",
         "title": "Hardware",
         "next": "hardware-catalog"
+      },
+      {
+        "ref": "mfd",
+        "title": "Printers, copiers and multi-functional devices (MFDs)",
+        "next": "mfd-direct",
+        "result": [
+          ""
+        ]
       }
     ],
     "used": true,
@@ -455,7 +458,7 @@
       },
       {
         "ref": "testing",
-        "title": "Application testing",
+        "title": "Application testing (PAT)",
         "result": [
           "testing"
         ]
@@ -537,7 +540,7 @@
   },
   {
     "ref": "ict-services",
-    "title": "What services are you looking for in ICT",
+    "title": "What services are you looking for in ICT?",
     "options": [
       {
         "ref": "managed-ict",

@@ -182,7 +182,7 @@ const multiplePage = (req, res) => {
   const answerRef = urlBits[urlBits.length -1]
   const branch = dt.getBranch(tree, questionRef)
   const answer = dt.getOption(branch, answerRef)
-  const results = answer.get('result')
+  const results = answer.get('result').sortBy(r => Math.random())
   const summary = getSummary(req)
   const resultList = results.map(r => {
     const result = dtres.getFramework(frameworks, r).toJS()
@@ -209,7 +209,7 @@ const resultPage = (req, res) => {
   const summary = getSummary(req)
   const resultMeta = dtres.getFramework(frameworks, resultRef)
   const resultTemplate = `frameworks/${resultRef}.njk`
-  const renderedResult = nunjucks.render('result.njk', {
+  const renderedResult = nunjucks.render(resultTemplate, {
     result : resultRef,
     resultMeta,
     resultTemplate, 
@@ -242,135 +242,8 @@ allPaths.results.forEach(r => {
   app.get(path.join(frameworkPath, r), resultPage)
 })
 
-app.use('/frameworksX', (req, res, next) => {
-  const urlInfo = url.parse(req.url)
-  const pairs = dtr.getQuestionAnswerPairSlugs(urlInfo.pathname)
-  const baseUrl = req.baseUrl
-
-  if (req.query && req.query['decision-tree']) {
-    return res.redirect(302, req.query['decision-tree'])
-  }
-
-  if (!dtr.validateQuestionAnswerPairs(tree, pairs, frameworks)) {
-    const sanitisedPairs = dtr.getSanitisedQuestionAnswerPairs(tree, pairs)
-    const newUrl = baseUrl + '/' + dtr.getUrlFromPairs(sanitisedPairs)
-    return res.redirect(302, newUrl)
-  }
-
-  const branchPath = dtr.getBranchPath(tree, pairs)
-  const currentUrl = baseUrl + '/' + dtr.getUrlFromPairs(pairs)
-  const currentBranch = branchPath.last()
-  const currentSelectedAnswer = dt.getSelectedOption(currentBranch)
-  if (currentSelectedAnswer) {
-    const newUrl = baseUrl + '/' + dtr.getUrlFromPairs(pairs)
-    const next = currentSelectedAnswer.get('next')
-    if (next) {
-      return res.redirect(302, newUrl + '/' + next)
-    }
-  }
-
-  const results = currentSelectedAnswer ? currentSelectedAnswer.get('result') : undefined
-
-  const summary = dtr.getQuestionAnswerSummary(branchPath, baseUrl)
-
-  if (results) {
-    if (results.size === 1) {
-      const result = results.get(0)
-      const resultMeta = dtres.getFramework(frameworks, result)
-      const resultTemplate = `frameworks/${result}.njk`
-      const renderedResult = nunjucks.render('result.njk', {
-        result,
-        resultMeta,
-        resultTemplate, 
-        summary,
-        serviceName,
-        pageTitle: 'A result'
-      })
-      return res.send(renderedResult)
-    }
-
-    const resultList = results.map(r => {
-      const result = dtres.getFramework(frameworks, r).toJS()
-      result.nextUrl = currentUrl + '/' + r
-      return result
-    })
-
-    const renderedResult = nunjucks.render('results.njk', {
-      resultList,
-      serviceName,
-      summary
-    })
-    return res.send(renderedResult)
-  }
-
-  const id = 'decision-tree-' + currentBranch.get('ref')
-  const radioOptions = {
-    idPrefix: id,
-    name: 'decision-tree',
-    fieldset: {
-      legend: {
-        text: currentBranch.get('title'),
-        isPageHeading: true,
-        classes: 'govuk-fieldset__legend--l'
-      }
-    }
-  }
-
-  const hint = currentBranch.get('hint')
-  if (hint) {
-    radioOptions.hint = { text: hint }
-  }
-
-  radioOptions.items = currentBranch.get('options').map(option => {
-    const optionUrl = [currentUrl, option.get('ref'), option.get('next')]
-    const optionHint = option.get('hint')
-    return {
-      value: optionUrl.join('/'),
-      text: option.get('title'),
-      hint: optionHint ? { text: optionHint } : null
-    }
-  })
-
-  
-  if (radioOptions.items.getIn([0, 'text']) !== 'Yes'){
-    radioOptions.items = radioOptions.items.sortBy(item => item.text)
-  }  
-
-  let err = null
-  if (urlInfo.search) {
-    const errMsg = currentBranch.get('err') || 'Please choose an option'
-    radioOptions.errorMessage = { text: errMsg }
-    err = {
-      titleText: "There is a problem",
-      errorList: [
-        {
-          text: errMsg,
-          href: `#${id}-1`
-        }
-      ]
-    }
-  }
-
-  const prefix = currentBranch.get('prefix')
-   // ? nunjucks.render(currentBranch.get('prefix')) : ''
-  const suffix = currentBranch.get('suffix') ? nunjucks.render(currentBranch.get('suffix')) : ''
-
-  const pageTitle = err ? 'Error: ' + currentBranch.get('title') : currentBranch.get('title')
-
-  const render = nunjucks.render('question.njk', { 
-    currentUrl, 
-    currentBranch, 
-    radioOptions, 
-    err,
-    summary, 
-    branchPath,
-    baseUrl,
-    suffix,
-    prefix,
-    serviceName,
-    pageTitle
-  })
-  res.send(render)
+app.get(frameworkPath, (req, res) => {
+  res.redirect(302, path.join(frameworkPath, tree.getIn([0, 'ref'])))
 })
 
 app.get('*', (req, res) => {

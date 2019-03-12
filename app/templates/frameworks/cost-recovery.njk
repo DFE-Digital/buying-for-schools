@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Spend analysis and recovery services',
   'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
 ) }}
- 
+{% endblock %}
+
+{% block resultContent %}
 {{ results.offers([
   'retrospective audit and analysis of core spend and transactions',
   'identify and recover overpayments from suppliers'
@@ -15,5 +19,4 @@
   'no win, no fee',
   'minimal resource needed from schools'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

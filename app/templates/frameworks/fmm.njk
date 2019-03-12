@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Facilities management (FM) marketplace',
   'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'maintenance services',
   'catering services',
@@ -28,5 +32,4 @@
   'regular updates on purchases and prices to help you budget',
   'choice of regional and national suppliers'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

@@ -1,7 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
-{{ results.recommendation('Multifunctional Devices, Managed Print and Content Services and Records and Information Management', 'Based on your answers, we think you should use the Crown Commercial Services (CCS) framework.') }}
+{% block recommendation %}
+{{ results.recommendation(
+  'Multifunctional Devices, Managed Print and Content Services and Records and Information Management', 
+  'Based on your answers, we think you should use the Crown Commercial Services (CCS) framework.'
+) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'photocopiers, printers and scanners (multi-functional devices, MFDs) at a nationally negotiated rate'
 ]) }}
@@ -9,5 +16,4 @@
 {{ results.benefits([
   'schools report savings of around 40%'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

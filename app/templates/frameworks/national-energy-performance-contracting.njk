@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'National energy performance contracting', 
   'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'streamlines procurement process for energy services',
   'helps retrofit energy efficiency and local energy generation measures to your buildings or estate, reducing annual energy expenditure and carbon emissions'
@@ -15,5 +19,4 @@
   'reduces carbon emissions and achieves annual savings on energy',
   'guaranteed level of energy savings – offering a secure financial saving over period of agreement'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

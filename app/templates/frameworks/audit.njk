@@ -1,20 +1,23 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
-{{ results.recommendation(
-  'Audit services',
-  'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
-) }}
- 
-{{ results.offers([
-  'internal audit',
-  'external audit',
-  'assurance',
-  'audit-related services',
-  'financial control services'
-]) }}
+{% block recommendation %}
+  {{ results.recommendation(
+    'Audit services',
+    'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
+  ) }}
+{% endblock %}
 
-{{ results.benefits([
-  'free quote tool'
-]) }}
+{% block resultContent %}
+  {{ results.offers([
+    'internal audit',
+    'external audit',
+    'assurance',
+    'audit-related services',
+    'financial control services'
+  ]) }}
 
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+  {{ results.benefits([
+    'free quote tool'
+  ]) }}
+{% endblock %}

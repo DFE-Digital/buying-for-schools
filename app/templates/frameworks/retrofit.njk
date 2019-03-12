@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Energy efficiency improvements from Retrofit',
   'Based on your answers, we think you should use the Fusion 21 framework.'
 ) }}
- 
+{% endblock %}
+
+{% block resultContent %} 
 {{ results.offers([
   'insulation',
   'heating and energy systems',
@@ -17,5 +21,4 @@
   'choice of regional and national suppliers',
   'single or fully integrated solutions'
 ) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Water, wastewater and ancillary services',
   'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'water supply',
   'sewerage',
@@ -14,5 +18,4 @@
 {{ results.benefits([
   'discount prices'  
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

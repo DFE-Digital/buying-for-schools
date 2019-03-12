@@ -23,11 +23,12 @@
   color: $govuk-secondary-text-colour;
 }
 
-// Changes to check your answers to match 'Smart answers'
-.app-check-your-answers {
-  width: 100%;
+.govuk-summary-list__row {
+  font-weight: normal;
+  font-size: 16px;
 }
-.app-check-your-answers__question {
+
+.govuk-summary-list__key {
   font-weight: normal;
 }
 

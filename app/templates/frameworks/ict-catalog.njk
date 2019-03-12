@@ -1,7 +1,11 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation('The purchasing platform', 'Based on your answers, we think you should use the Crown Commercial Service (CCS) catalogue.') }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'hardware',
   'software',
@@ -11,5 +15,4 @@
 {{ results.benefits([ 
   'over 350,000 items' 
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

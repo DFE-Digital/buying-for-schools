@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Firms mains gas',
   'Based on your answers, we think you should use the Yorkshire Purchasing Organisation (YPO) framework.'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'gas',
   'additional support and associated services'  
@@ -19,5 +23,4 @@
     'bespoke contracts'
   ]
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

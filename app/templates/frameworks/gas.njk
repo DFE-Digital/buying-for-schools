@@ -1,11 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Supply of natural gas (daily/non-daily metered) and ancillary services', 
   'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
 ) }}
+{% endblock %}
 
- 
+{% block resultContent %}
 {{ results.offers([
   'liquefied petroleum gas',
   [ 'solid fuels including:',
@@ -21,5 +24,4 @@
   'savings on administration costs',
   'clear, not-for-profit charging structure'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

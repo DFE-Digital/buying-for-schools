@@ -1,10 +1,14 @@
+{% extends "result.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% block recommendation %}
 {{ results.recommendation(
   'Software licenses and associated services for academies and schools',
   'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.'
 ) }}
+{% endblock %}
 
+{% block resultContent %}
 {{ results.offers([
   'software licenses and associated supporting services'  
 ]) }}
@@ -13,5 +17,4 @@
   'free quote tool',
   'contract manager assistance and support'
 ]) }}
-
-{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
+{% endblock %}

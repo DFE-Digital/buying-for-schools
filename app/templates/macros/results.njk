@@ -1,9 +1,9 @@
 {% from "button/macro.njk" import govukButton %}
 
 {% macro recommendation(title, text) %}
-  <span class="govuk-caption-l">Your recommendation</span>
-  <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{ title }}</h1>
-  <p class="govuk-body-l govuk-!-margin-bottom-6">{{ text }}</p>
+    <span class="govuk-caption-l">Your recommendation</span>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-3">{{ title }}</h1>
+    <p class="govuk-body-l govuk-!-margin-bottom-6">{{ text }}</p>
 {% endmacro %}
 
 {% macro govBulletList(items) %}
@@ -54,7 +54,7 @@
       </div>
       <div class="card__content">
         <dt>Provider:</dt>
-        <dd>{{ item.title }}</dd>
+        <dd>{{ item.supplier }}</dd>
       </div>
     </dl>
   {% endfor %}
