@@ -1,0 +1,19 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Digital Marketplace (G-Cloud 10)',
+  'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
+) }}
+
+{{ results.offers([
+  'cloud computing services covering infrastructure, platform, software and specialist cloud services'
+]) }}
+
+{{ results.benefits([
+  'access to nearly 25,000 services and 3,500 suppliers',
+  'scalable services which can be expanded or shrunk as demand requires',
+  'rapid deployment',
+  'much reduced costs and total cost of ownership compared to running your own data centre'
+]) }}
+
+{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}

@@ -1,0 +1,30 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'Multi-functional devices (MFD) and associated print services and supplies', 
+  'Based on your answers, we think you should use the Crescent Purchasing Consortium (CPC) framework.') 
+}}
+
+{{ results.offers([
+  'managed print services',
+  'free-of-charge print audits',
+  'recycled technologies',
+  'IT cloud services',
+  'IT support services',
+  'scanning and archiving services',
+  'mailroom management and mailing services',
+  'offset and specialist printing',
+  'data storage, workflow and management solutions',
+  'MFD and print consultancy',
+  'specialist print services',
+  'a full range of MFD, IT and office-related consumables'
+]) }}
+
+{{ results.benefits([
+  'free quote tool',
+  'you can buy or lease',
+  'a range of support and consultancy services',
+  'large discounts on market prices'
+]) }}
+
+{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}

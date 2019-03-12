@@ -1,0 +1,17 @@
+{% import "macros/results.njk" as results %}
+
+{{ results.recommendation(
+  'ICT, cloud, support and related services (Think IT)',
+  'Based on your answers, we think you should use the E2BN framework.'
+) }}
+
+
+{{ results.offers([
+  'educational cloud services specifically designed for schools, academies and other learning centres'
+]) }}
+
+{{ results.benefits([
+  'online quotes'
+]) }}
+
+{{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}

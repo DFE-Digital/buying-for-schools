@@ -152,7 +152,9 @@
         "ref": "no",
         "title": "No, I want a supplier to give me a quote",
         "result": [
-          "choice"
+          "ict-services-education",
+          "ict-cloud",
+          "ict-hardware"
         ]
       }
     ],
@@ -174,7 +176,8 @@
         "ref": "no",
         "title": "No, I want multiple suppliers to give me quotes",
         "result": [
-          "choice"
+          "photocopier-printer-scanner-services",
+          "photocopier-printer-scanner-toner"
         ]
       }
     ],
@@ -545,7 +548,8 @@
         "ref": "cloud",
         "title": "Cloud",
         "result": [
-          "choice"
+          "ict-cloud",
+          "digital-marketplace"
         ]
       },
       {
@@ -566,7 +570,8 @@
         "title": "Schools focused",
         "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
         "result": [
-          "choice"
+          "ict-cloud",
+          "ict-hardware"
         ]
       },
       {
@@ -596,7 +601,8 @@
         "ref": "no",
         "title": "No, I want multiple suppliers to give me quotes",
         "result": [
-          "choice"
+          "photocopier-printer-scanner-services",
+          "photocopier-printer-scanner-toner"
         ]
       }
     ],
