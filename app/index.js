@@ -132,7 +132,8 @@ const questionPage = (req, res) => {
   const pageTitle = err ? 'Error: ' + branch.get('title') : branch.get('title')
   const summary = getSummary(req)
 
-  const render = nunjucks.render('question.njk', { 
+  const render = nunjucks.render('question.njk', {
+    frameworkPath,
     branch, 
     radioOptions, 
     err,
@@ -194,6 +195,7 @@ const multiplePage = (req, res) => {
     resultList,
     serviceName,
     summary,
+    frameworkPath,
     pageTitle: 'Matching frameworks'
   })
   return res.send(renderedResult)
@@ -216,6 +218,7 @@ const resultPage = (req, res) => {
     resultTemplate, 
     summary,
     serviceName,
+    frameworkPath,
     pageTitle: resultMeta.get('title')
   })
   return res.send(renderedResult)
