@@ -11,7 +11,7 @@ const {setWorldConstructor, AfterAll} = require('cucumber')
 const os = require('os')
 
 // config
-const headless = true// (process.env.HEADLESS !== false && process.env.HEADLESS !== 'false')
+const headless = false// (process.env.HEADLESS !== false && process.env.HEADLESS !== 'false')
 const getNewBrowser = function (name) {
   var builder = new seleniumWebdriver.Builder()
   var opts = new chrome.Options()

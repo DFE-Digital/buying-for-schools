@@ -7,10 +7,11 @@
     "start": "npm install && gulp sass && gulp assets && node app/index.js",
     "start:dev": "gulp watch",
     "start:testing": "jest --watch",
-    "test": "npm run test:jshint && npm run test:jest && npm run test:coverage",
+    "test": "npm run test:jshint && npm run test:jest && npm run test:coverage && npm run test:bdd",
     "test:jshint": "jshint app/**/*.js",
     "test:jest": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "test:bdd": "./node_modules/.bin/cucumber-js --format node_modules/cucumber-pretty"
   },
   "jshintConfig": {
     "asi": true,
@@ -44,5 +45,12 @@
     "govuk-frontend": "^2.7.0",
     "gulp-copy": "^4.0.1",
     "serve-static": "^1.13.2"
+  },
+  "optionalDependencies": {
+    "chromedriver": "^2.46.0",
+    "cucumber": "^5.1.0",
+    "cucumber-pretty": "^1.5.0",
+    "gulp-cucumber": "0.0.23",
+    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }

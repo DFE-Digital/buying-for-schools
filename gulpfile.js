@@ -77,14 +77,14 @@ function cucum (done) {
   return gulp.series(cuke)(done)
 }
 
-function cuke (done) {
+function cuke () {
+  const cucumber = require('gulp-cucumber')
   return gulp
     .src('*features/*')
     .pipe(cucumber({
       'steps': '*features/steps/*.js',
       'support': '*features/support/*.js'
     }))
-
 }
 
 // exports.default = build
@@ -95,6 +95,6 @@ module.exports = {
   assets,
   nodeChanges,
   default: build,
-  // cucumber: cucum,
+  cucumber: cucum,
   jest: jestTest
 }
