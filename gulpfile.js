@@ -4,7 +4,6 @@ const mkdirp = require('mkdirp')
 const fs = require('fs')
 const gulp = require('gulp')
 const jest = require('gulp-jest').default
-// const cucumber = require('gulp-cucumber')
 
 function nodeChanges () {
   return nodemon({
@@ -51,7 +50,11 @@ function sass () {
 function assets () {
   // /node_modules/govuk-frontend/assets
   return gulp
-    .src(['node_modules/govuk-frontend/assets/**/*.*', 'node_modules/govuk-frontend/all.js', 'app/assets/**/*.*'])
+    .src([
+      'node_modules/govuk-frontend/assets/**/*.*', 
+      'node_modules/govuk-frontend/all.js', 
+      'app/assets/**/*.*'
+    ])
     .pipe(gulp.dest('public/assets'))
 }
 
@@ -73,21 +76,15 @@ function build (done) {
   return gulp.series(assets, sass, jestTest)(done)
 }
 
-function cucum (done) {
-  return gulp.series(cuke)(done)
+function cucumber(done) {
+  const exec = require('child_process').exec
+  exec('./node_modules/.bin/cucumber-js --format node_modules/cucumber-pretty', { maxBuffer: 1024 * 500 }, (err, stdout, stderr) => {
+    console.log(stdout)
+    console.log(stderr)
+    console.log(!!err)
+    done(err)
+  })
 }
-
-function cuke () {
-  const cucumber = require('gulp-cucumber')
-  return gulp
-    .src('*features/*')
-    .pipe(cucumber({
-      'steps': '*features/steps/*.js',
-      'support': '*features/support/*.js'
-    }))
-}
-
-// exports.default = build
 
 module.exports = {
   watch,
@@ -95,6 +92,6 @@ module.exports = {
   assets,
   nodeChanges,
   default: build,
-  cucumber: cucum,
+  cucumber,
   jest: jestTest
 }

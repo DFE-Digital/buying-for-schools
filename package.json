@@ -47,8 +47,10 @@
     "serve-static": "^1.13.2"
   },
   "optionalDependencies": {
+    "child_process": "^1.0.2",
     "chromedriver": "^2.46.0",
     "cucumber": "^5.1.0",
+    "cucumber-junit": "^1.7.1",
     "cucumber-pretty": "^1.5.0",
     "gulp-cucumber": "0.0.23",
     "selenium-webdriver": "^4.0.0-alpha.1"
