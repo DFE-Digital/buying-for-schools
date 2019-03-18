@@ -1,6 +1,5 @@
 // require OUR APPLICATION THAT WE'RE TESTING
-require('../../app/index.js')
-//
+const { server } = require('../../app/index.js')
 
 require('chromedriver')
 
@@ -36,6 +35,8 @@ function CustomWorld (done) {
 }
 
 setWorldConstructor(CustomWorld)
+
 AfterAll(function (done) {
-  process.exit()
+  server.close()
+  done()
 })

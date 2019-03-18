@@ -126,6 +126,10 @@ app.get('*', (req, res) => {
   res.send(render)
 })
 
-app.listen(port, function () {
+const server = app.listen(port, function () {
   console.log('Magic happens on port ' + port)
 })
+
+module.exports = {
+  server
+}
