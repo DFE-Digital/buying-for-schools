@@ -5,9 +5,9 @@ require('chromedriver')
 
 const seleniumWebdriver = require('selenium-webdriver')
 const chrome = require('selenium-webdriver/chrome')
-const {setWorldConstructor, AfterAll} = require('cucumber')
+const { setWorldConstructor, AfterAll } = require('cucumber')
 
-const os = require('os')
+// const os = require('os')
 
 // config
 const headless = true// (process.env.HEADLESS !== false && process.env.HEADLESS !== 'false')
@@ -31,7 +31,7 @@ const globalDriver = getNewBrowser('chrome')
 
 function CustomWorld (done) {
   this.driver = globalDriver
-  this.driver.get('http://127.0.0.1:3000/frameworks').then(done)
+  // this.driver.get('http://localhost:3000/frameworks').then(done)
 }
 
 setWorldConstructor(CustomWorld)

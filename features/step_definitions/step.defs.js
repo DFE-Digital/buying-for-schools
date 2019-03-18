@@ -198,7 +198,7 @@ const whenAllDone = function (promises) {
 
 When(/^user is on page (.+)$/, {timeout: 10 * 1000}, function (str) {
   const d = this.driver
-  return d.get('http://127.0.0.1:5000' + str).then(function () {
+  return d.get('http://localhost:5000' + str).then(function () {
     return d.navigate().refresh()
   })
 })
