@@ -37,21 +37,17 @@
     "jshint": "^2.10.1",
     "mkdirp": "^0.5.1",
     "nunjucks": "^3.1.7",
+    "puppeteer": "^1.13.0",
     "sass": "^1.17.0",
-    "underscore": "^1.9.1"
+    "underscore": "^1.9.1",
+    "cucumber": "^5.1.0",
+    "cucumber-pretty": "^1.5.0",
+    "gulp-cucumber": "0.0.23"
   },
   "dependencies": {
     "express-basic-auth": "^1.1.6",
     "govuk-frontend": "^2.7.0",
     "gulp-copy": "^4.0.1",
     "serve-static": "^1.13.2"
-  },
-  "optionalDependencies": {
-    "child_process": "^1.0.2",
-    "chromedriver": "^2.46.0",
-    "cucumber": "^5.1.0",
-    "cucumber-pretty": "^1.5.0",
-    "gulp-cucumber": "0.0.23",
-    "selenium-webdriver": "^4.0.0-alpha.1"
   }
 }

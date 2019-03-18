@@ -1,42 +1,64 @@
-// require OUR APPLICATION THAT WE'RE TESTING
-const { server } = require('../../app/index.js')
+const { server } = require('../../app/index')
 
-require('chromedriver')
+const { setWorldConstructor } = require("cucumber")
+const { expect } = require("chai")
+const puppeteer = require("puppeteer")
 
-const seleniumWebdriver = require('selenium-webdriver')
-const chrome = require('selenium-webdriver/chrome')
-const { setWorldConstructor, AfterAll } = require('cucumber')
+const HOMEPAGE = "http://localhost:5000"
 
-// const os = require('os')
-
-// config
-const headless = true// (process.env.HEADLESS !== false && process.env.HEADLESS !== 'false')
-const getNewBrowser = function (name) {
-  var builder = new seleniumWebdriver.Builder()
-  var opts = new chrome.Options()
-  if (headless) {
-    opts.addArguments(['headless', 'no-sandbox'])
+class B4SWorld {
+  constructor() {
+    this.todo = ""
   }
-  opts.addArguments('disable-extensions')
-  // opts.setChromeBinaryPath('/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary')
-  builder.setChromeOptions(opts)
 
-  var forBrowser = builder.forBrowser(name)
+  async gotoPage(page) {
 
-  var driver = forBrowser.build()
-  // driver.manage().window().setSize(1280, 1024)
-  return driver
+    this.browser = await puppeteer.launch()
+    this.page = await this.browser.newPage()
+    console.log('page', HOMEPAGE + page)
+    return await this.page.goto(HOMEPAGE + page)
+  }
+
+  setTodo(todo) {
+    this.todo = todo
+  }
+
+  async writeTodo() {
+    const inputSelector = "section input"
+    await this.page.waitForSelector(inputSelector)
+    this.inputElement = await this.page.$(inputSelector)
+    await this.inputElement.type(this.todo)
+  }
+
+  async submit() {
+    await this.inputElement.press("Enter")
+  }
+
+  async checkTodoIsInList() {
+    const todoSelector = "h1"
+    await this.page.waitForSelector(todoSelector)
+    const todo = await this.page.evaluate(
+      todoSelector => document.querySelector(todoSelector).innerText,
+      todoSelector
+    )
+    expect(this.todo).to.eql(todo)
+  }
+
+  async checkText(selector, string) {
+    await this.page.waitForSelector(selector)
+
+    const result = await this.page.evaluate(
+      selector => document.querySelector(selector).innerText,
+      selector
+    )
+
+    expect(string).to.eql(result)
+  }
+
+  async closeTodoPage() {
+    await this.browser.close()
+    server.close()
+  }
 }
-const globalDriver = getNewBrowser('chrome')
 
-function CustomWorld (done) {
-  this.driver = globalDriver
-  // this.driver.get('http://localhost:3000/frameworks').then(done)
-}
-
-setWorldConstructor(CustomWorld)
-
-AfterAll(function (done) {
-  server.close()
-  done()
-})
+setWorldConstructor(B4SWorld)
