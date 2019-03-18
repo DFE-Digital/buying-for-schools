@@ -2,10 +2,8 @@ const express = require('express')
 const serveStatic = require('serve-static')
 const nunjucks = require('nunjucks')
 const path = require('path')
-const dtr = require('./decisionTree/decisionTreeRoute')
-const dtres = require('./decisionTree/decisionTreeResults')
-const dt = require('./decisionTree/decisionTree')
 const url = require('url')
+const port = process.env.PORT || 5000
 
 const app = express()
 const basicAuth = require('express-basic-auth')
@@ -17,13 +15,31 @@ if (authUser && authPass) {
   auth.users[authUser] = authPass
   app.use(basicAuth(auth))
 }
-const port = process.env.PORT || 5000
+
+const dtr = require('./decisionTree/decisionTreeRoute')
+const dtres = require('./decisionTree/decisionTreeResults')
+const dt = require('./decisionTree/decisionTree')
+
 
 const tree = dt.makeTree(require('./tree.json'))
 const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
 
 const serviceName = 'Find a DfE approved framework for your school'
 const frameworkPath = '/frameworks'
+app.locals = {
+  serviceName,
+  frameworkPath,
+  tree,
+  frameworks
+}
+
+const resultPage = require('./resultPage')(app)
+const redirects = require('./redirects')
+const redirectToResult = redirects.redirectToResult(app)
+const redirectToQuestion = redirects.redirectToQuestion(app)
+const redirectIfAnswered = redirects.redirectIfAnswered
+const multiplePage = require('./multiplePage')(app)
+const questionPage = require('./questionPage')(app)
 
 nunjucks.configure(path.resolve(__dirname, './templates'))
 
@@ -34,6 +50,14 @@ nunjucks.configure([
 ], {
   autoescape: true
 })
+
+const getSummary = (req) => {
+  const pairs = dtr.getQuestionAnswerPairSlugs(req.url.substr(frameworkPath.length))
+  const branchPath = dtr.getBranchPath(tree, pairs)
+  return dtr.getQuestionAnswerSummary(branchPath, frameworkPath)
+}
+
+const allPaths = dt.getAllBranchPaths(tree)
 
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
 
@@ -61,172 +85,19 @@ app.get('/service-output', (req, res, next) => {
   res.send(render)
 })
 
-const getSummary = (req) => {
-  const pairs = dtr.getQuestionAnswerPairSlugs(req.url.substr(frameworkPath.length))
-  const branchPath = dtr.getBranchPath(tree, pairs)
-  return dtr.getQuestionAnswerSummary(branchPath, frameworkPath)
-}
-
-const questionPage = (req, res) => {
-  if (req.query && req.query['decision-tree']) {
-    return res.redirect(302, req.query['decision-tree'])
-  }
-  const baseUrl = req.baseUrl
+app.get(`${frameworkPath}*`, (req, res, next) => {
   const urlInfo = url.parse(req.url)
   const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
   const urlBits = trimmedSlashes.split('/')
-  const questionRef = urlBits[urlBits.length -1]
-  const branch = dt.getBranch(tree, questionRef)
-  const id = 'decision-tree-' + questionRef
-  const radioOptions = {
-    idPrefix: id,
-    name: 'decision-tree',
-    fieldset: {
-      legend: {
-        text: branch.get('title'),
-        isPageHeading: true,
-        classes: 'govuk-fieldset__legend--l'
-      }
-    }
-  }
-
-  const hint = branch.get('hint')
-  if (hint) {
-    radioOptions.hint = { text: hint }
-  }
-
-  radioOptions.items = branch.get('options').map(option => {
-    const optionUrl = path.join(urlInfo.pathname, option.get('ref'))
-    const optionHint = option.get('hint')
-    return {
-      value: optionUrl,
-      text: option.get('title'),
-      hint: optionHint ? { text: optionHint } : null
-    }
-  })
-
-  
-  if (radioOptions.items.getIn([0, 'text']) !== 'Yes'){
-    radioOptions.items = radioOptions.items.sortBy(item => item.text)
-  }  
-
-  let err = null
-  if (urlInfo.search) {
-    const errMsg = branch.get('err') || 'Please choose an option'
-    radioOptions.errorMessage = { text: errMsg }
-    err = {
-      titleText: "There is a problem",
-      errorList: [
-        {
-          text: errMsg,
-          href: `#${id}-1`
-        }
-      ]
-    }
-  }
-
-  const prefix = branch.get('prefix')
-   // ? nunjucks.render(branch.get('prefix')) : ''
-  const suffix = branch.get('suffix') ? nunjucks.render(branch.get('suffix')) : ''
-
-  const pageTitle = err ? 'Error: ' + branch.get('title') : branch.get('title')
-  const summary = getSummary(req)
-
-  const render = nunjucks.render('question.njk', {
-    frameworkPath,
-    branch, 
-    radioOptions, 
-    err,
-    summary, 
-    baseUrl,
-    suffix,
-    prefix,
-    serviceName,
-    pageTitle
-  })
-  res.send(render)
-}
-
-const redirectToQuestion = (req, res) => {
-  const urlInfo = url.parse(req.url)
-  const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
-  const urlBits = trimmedSlashes.split('/')
-  const questionRef = urlBits[urlBits.length -2]
-  const answerRef = urlBits[urlBits.length -1]
-
-  const branch = dt.getBranch(tree, questionRef)
-  const answer = dt.getOption(branch, answerRef)
-  const nxt = answer.get('next')
-  const nxtUrl = path.join(urlInfo.pathname, nxt)
-  return res.redirect(302, nxtUrl)
-}
-
-const redirectToResult = (req, res) => {
-  const urlInfo = url.parse(req.url)
-  const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
-  const urlBits = trimmedSlashes.split('/')
-  const questionRef = urlBits[urlBits.length -2]
-  const answerRef = urlBits[urlBits.length -1]
-
-  const branch = dt.getBranch(tree, questionRef)
-  const answer = dt.getOption(branch, answerRef)
-  const result = answer.getIn(['result', 0])
-  const nxtUrl = path.join(urlInfo.pathname, result)
-  return res.redirect(302, nxtUrl)
-}
-
-const multiplePage = (req, res) => {
-  const urlInfo = url.parse(req.url)
-  const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
-  const urlBits = trimmedSlashes.split('/')
-  const questionRef = urlBits[urlBits.length -2]
-  const answerRef = urlBits[urlBits.length -1]
-  const branch = dt.getBranch(tree, questionRef)
-  const answer = dt.getOption(branch, answerRef)
-  const results = answer.get('result').sortBy(r => Math.random())
-  const summary = getSummary(req)
-  const resultList = results.map(r => {
-    const result = dtres.getFramework(frameworks, r).toJS()
-    result.nextUrl = path.join(req.url, r)
-    return result
-  })
-
-  const renderedResult = nunjucks.render('results.njk', {
-    resultList,
-    serviceName,
-    summary,
-    frameworkPath,
-    pageTitle: 'Matching frameworks'
-  })
-  return res.send(renderedResult)
-}
-
-const resultPage = (req, res) => {
-  const trimmedSlashes = req.url.replace(/^\/+|\/+$/g, '')
-  const urlInfo = url.parse(req.url)
-  const urlBits = trimmedSlashes.split('/')
-  const questionRef = urlBits[urlBits.length -3]
-  const answerRef = urlBits[urlBits.length -2]
-  const resultRef = urlBits[urlBits.length -1]
-
-  const summary = getSummary(req)
-  const resultMeta = dtres.getFramework(frameworks, resultRef)
-  const resultTemplate = `frameworks/${resultRef}.njk`
-  const renderedResult = nunjucks.render(resultTemplate, {
-    result : resultRef,
-    resultMeta,
-    resultTemplate, 
-    summary,
-    serviceName,
-    frameworkPath,
-    pageTitle: resultMeta.get('title')
-  })
-  return res.send(renderedResult)
-}
-
-const allPaths = dt.getAllBranchPaths(tree)
+  res.locals.urlInfo = urlInfo
+  res.locals.trimmedSlashes = trimmedSlashes
+  res.locals.urlBits = urlBits
+  res.locals.summary = getSummary(req)
+  next()
+})
 
 allPaths.questions.forEach(q => {
+  app.get(path.join(frameworkPath, q), redirectIfAnswered)
   app.get(path.join(frameworkPath, q), questionPage)
 })
 
