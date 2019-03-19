@@ -13,14 +13,20 @@ class B4SWorld {
 
   async gotoPage(page) {
     let result = null
+
+
+
+
     try {
       this.browser = await puppeteer.launch()
-      this.page = await this.browser.newPage()
-      const result = await this.page.goto(HOMEPAGE + page)
-      console.log('page', HOMEPAGE + page)
     } catch (e) {
       console.log(e)
     }
+    this.page = await this.browser.newPage()
+    result = await this.page.goto(HOMEPAGE + page)
+    console.log('page', HOMEPAGE + page)
+    console.log('this.browser', this.browser)
+    console.log('this.page', this.page)
     return result
   }
 
