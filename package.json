@@ -49,5 +49,7 @@
     "puppeteer": "^1.13.0",
     "serve-static": "^1.13.2"
   },
-  "optionalDependencies": {}
+  "optionalDependencies": {
+    "fsevents": "^1.2.7"
+  }
 }
