@@ -25,6 +25,8 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "cucumber": "^5.1.0",
+    "cucumber-pretty": "^1.5.0",
     "express": "^4.16.4",
     "gulp": "^4.0.0",
     "gulp-cli": "^2.0.1",
@@ -38,15 +40,13 @@
     "mkdirp": "^0.5.1",
     "nunjucks": "^3.1.7",
     "sass": "^1.17.0",
-    "underscore": "^1.9.1",
-    "cucumber": "^5.1.0",
-    "cucumber-pretty": "^1.5.0",
-    "gulp-cucumber": "0.0.23"
+    "underscore": "^1.9.1"
   },
   "dependencies": {
     "express-basic-auth": "^1.1.6",
     "govuk-frontend": "^2.7.0",
     "gulp-copy": "^4.0.1",
+    "puppeteer": "^1.13.0",
     "serve-static": "^1.13.2"
   },
   "optionalDependencies": {}
