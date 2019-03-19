@@ -8,20 +8,57 @@ const HOMEPAGE = "http://localhost:5000"
 
 class B4SWorld {
   constructor() {
+    this.browser = null
+    this.page = null
+  }
+  
+  getBrowser() {
+    return puppeteer.launch().then(b => {
+      this.browser = b
+      return this.browser
+    })
+  }
+
+  gotoPage(u) {
+    return puppeteer.launch().then(b => {
+      this.browser = b
+      return this.browser.newPage()
+    }).then(p => {
+      this.page = p
+      return this.page.goto(HOMEPAGE + u)
+    }).then()
+  }
+
+  checkText(selector, string) {
+    return this.page.waitForSelector(selector).then(sel => {
+      return this.page.evaluate((s) => document.querySelector(s).innerText, selector)
+    }).then(txt => {
+      return expect(string).to.eql(txt)      
+    })
+  }
+
+  closeTodoPage() {
+    return this.browser.close().then(() => {
+      return server.close()
+    })
+  }
+}
+
+
+class B4SWorldX {
+  constructor() {
     this.todo = ""
   }
 
   async gotoPage(page) {
     let result = null
 
-
-
-
     try {
       this.browser = await puppeteer.launch()
     } catch (e) {
       console.log(e)
     }
+
     this.page = await this.browser.newPage()
     result = await this.page.goto(HOMEPAGE + page)
     console.log('page', HOMEPAGE + page)

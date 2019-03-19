@@ -4,32 +4,15 @@ const { Given, When, Then, After, Before } = require("cucumber");
 //   return await this.openTodoPage();
 // });
 
-After(async function() {
-  return await this.closeTodoPage();
+After(function() {
+  return this.closeTodoPage();
 });
 
-Given(/^user is on page (.+)$/, async function(string) {
-  return await this.gotoPage(string)
+Given(/^user is on page (.+)$/, function(string) {
+  return this.gotoPage(string)
 })
 
-Given("I have a todo {string}", function(todo) {
-  console.log('I have a todo', todo)
-  this.setTodo(todo);
-});
-
-When("I write the todo in the input field", async function() {
-  return await this.writeTodo();
-});
-
-When("I click enter", async function() {
-  return await this.submit();
-});
-
-Then("I expect to see the todo in the list", async function() {
-  return await this.checkTodoIsInList();
-});
-
-Then("the service displays the following page content", async function(data) {
+Then("the service displays the following page content", function(data) {
   console.log('data', data)
-  return await this.checkText('h1', data.raw()[0][1])
+  return this.checkText('h1', data.raw()[0][1])
 })
