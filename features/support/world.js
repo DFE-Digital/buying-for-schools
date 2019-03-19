@@ -1,4 +1,4 @@
-const { server } = require('../../app/index')
+// const { server } = require('../../app/index')
 
 const { setWorldConstructor } = require("cucumber")
 const { expect } = require("chai")
@@ -25,7 +25,7 @@ class B4SWorld {
       return this.browser.newPage()
     }).then(p => {
       this.page = p
-      return this.page.goto(HOMEPAGE + u)
+      return this.page.goto('https://www.bbc.co.uk/')
     }).then()
   }
 
