@@ -12,14 +12,16 @@ let page = null
 class B4SWorld {
   constructor() {
     console.log('B4SWorld Constructor')
-    this.page = null
   }
   
   async gotoPage(u) {
     console.log('gotoPage', 'https://www.bbc.co.uk')//HOMEPAGE + u)
     browser = await puppeteer.launch()
+    console.log('Browser launched', Object.keys(browser))
     page = await browser.newPage()
-    await page.goto('https://www.bbc.co.uk')
+    console.log('New page', Object.keys(page))
+    const onPage = await page.goto('https://www.bbc.co.uk')
+    console.log('At page', Object.keys(onPage))
   }
 
   async checkText(selector, string) {
