@@ -1,49 +1,40 @@
-// const { server } = require('../../app/index')
+const { server } = require('../../app/index')
 
-const { setWorldConstructor } = require("cucumber")
+const { setWorldConstructor, AfterAll } = require("cucumber")
 const { expect } = require("chai")
 const puppeteer = require("puppeteer")
 
 const HOMEPAGE = "http://localhost:5000"
 
+let browser = null
+let page = null
+
 class B4SWorld {
   constructor() {
-    this.browser = null
+    console.log('B4SWorld Constructor')
     this.page = null
   }
   
-  getBrowser() {
-    return puppeteer.launch().then(b => {
-      this.browser = b
-      return this.browser
-    })
+  async gotoPage(u) {
+    console.log('gotoPage', HOMEPAGE + u)
+    browser = await puppeteer.launch()
+    page = await browser.newPage()
+    await page.goto(HOMEPAGE + u)
   }
 
-  gotoPage(u) {
-    return puppeteer.launch().then(b => {
-      this.browser = b
-      return this.browser.newPage()
-    }).then(p => {
-      this.page = p
-      return this.page.goto('https://www.bbc.co.uk/')
-    }).then()
-  }
-
-  checkText(selector, string) {
-    return this.page.waitForSelector(selector).then(sel => {
-      return this.page.evaluate((s) => document.querySelector(s).innerText, selector)
-    }).then(txt => {
-      return expect(string).to.eql(txt)      
-    })
-  }
-
-  closeTodoPage() {
-    return this.browser.close().then(() => {
-      return server.close()
-    })
+  async checkText(selector, string) {
+    console.log('CheckText', selector, string)
+    const txt = await page.evaluate((s) => document.querySelector(s).innerText, selector)
+    return expect(string).to.eql(txt)
   }
 }
 
+
+AfterAll(async function() {
+  console.log('AfterAll')
+  await browser.close();
+  return await server.close()
+});
 
 class B4SWorldX {
   constructor() {

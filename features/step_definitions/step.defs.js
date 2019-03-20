@@ -1,18 +1,11 @@
-const { Given, When, Then, After, Before } = require("cucumber");
+const { Given, When, Then, AfterAll } = require("cucumber");
 
-// Before(async function(testCase) {
-//   return await this.openTodoPage();
-// });
 
-After(function() {
-  return this.closeTodoPage();
-});
-
-Given(/^user is on page (.+)$/, function(string) {
-  return this.gotoPage(string)
+Given(/^user is on page (.+)$/, async function(string) {
+  return await this.gotoPage(string)
 })
 
-Then("the service displays the following page content", function(data) {
+Then("the service displays the following page content", async function(data) {
   console.log('data', data)
-  return this.checkText('h1', data.raw()[0][1])
+  return await this.checkText('h1', data.raw()[0][1])
 })
