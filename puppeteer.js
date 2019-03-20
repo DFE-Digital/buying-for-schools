@@ -1,5 +1,7 @@
 const puppeteer = require('puppeteer');
 
+const {server} = require('./app/index');
+
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -19,5 +21,11 @@ const puppeteer = require('puppeteer');
   console.log('Dimensions:', dimensions);
   console.log('Title:', title);
 
+  await page.goto('http://localhost:5000');
+
+  const title2 = await page.evaluate((s) => document.querySelector(s).innerText, 'h1')
+  console.log('Title:', title2);
+
   await browser.close();
+  await server.close();
 })();
