@@ -15,7 +15,7 @@ class B4SWorld {
   }
   
   async gotoPage(u) {
-    try {
+    
       console.log('gotoPage', 'https://www.bbc.co.uk')//HOMEPAGE + u)
       browser = await puppeteer.launch()
       console.log('Browser launched', Object.keys(browser))
@@ -23,9 +23,7 @@ class B4SWorld {
       console.log('New page', Object.keys(page))
       const onPage = await page.goto('https://www.bbc.co.uk')
       console.log('At page', Object.keys(onPage))
-    } catch (e) {
-      console.log(e)
-    }
+    
   }
 
   async checkText(selector, string) {
