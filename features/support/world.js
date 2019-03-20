@@ -16,16 +16,16 @@ class B4SWorld {
   }
   
   async gotoPage(u) {
-    console.log('gotoPage', HOMEPAGE + u)
+    console.log('gotoPage', 'https://www.bbc.co.uk')//HOMEPAGE + u)
     browser = await puppeteer.launch()
     page = await browser.newPage()
-    await page.goto(HOMEPAGE + u)
+    await page.goto('https://www.bbc.co.uk')
   }
 
   async checkText(selector, string) {
     console.log('CheckText', selector, string)
     const txt = await page.evaluate((s) => document.querySelector(s).innerText, selector)
-    return expect(string).to.eql(txt)
+    return expect(txt).to.eql(string)
   }
 }
 
