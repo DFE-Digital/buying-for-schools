@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 
 const {server} = require('./app/index');
 
-(async () => {
+const testing = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto('https://www.bbc.co.uk');
@@ -22,10 +22,19 @@ const {server} = require('./app/index');
   console.log('Title:', title);
 
   await page.goto('http://localhost:5000');
-
   const title2 = await page.evaluate((s) => document.querySelector(s).innerText, 'h1')
   console.log('Title:', title2);
 
+  await page.goto('http://localhost:5000/frameworks');
+  const title3 = await page.evaluate((s) => document.querySelector(s).innerText, 'h1')
+  console.log('Title:', title3);
+
+  await page.goto('http://localhost:5000/frameworks/type');
+  const title4 = await page.evaluate((s) => document.querySelector(s).innerText, 'h1')
+  console.log('Title:', title4);
+
   await browser.close();
   await server.close();
-})();
+}
+
+testing()
