@@ -1,4 +1,4 @@
-const { server } = require('../../app/index')
+// const { server } = require('../../app/index')
 
 const { setWorldConstructor, AfterAll } = require("cucumber")
 const { expect } = require("chai")
@@ -31,9 +31,10 @@ class B4SWorld {
 
 
 AfterAll(async function() {
-  console.log('AfterAll')
+  console.log('START: AfterAll')
   await browser.close();
-  return await server.close()
+  // await server.close()
+  console.log('END: AfterAll')
 });
 
 class B4SWorldX {
