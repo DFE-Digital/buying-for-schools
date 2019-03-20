@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('https://example.com');
+  await page.goto('https://www.bbc.co.uk/');
 
   // Get the "viewport" of the page, as reported by the page.
   const dimensions = await page.evaluate(() => {
