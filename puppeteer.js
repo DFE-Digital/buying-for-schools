@@ -20,7 +20,7 @@ const testing = async () => {
 
   console.log('Dimensions:', dimensions);
   console.log('Title:', title);
-
+/*
   await page.goto('http://localhost:5000');
   const title2 = await page.evaluate((s) => document.querySelector(s).innerText, 'h1')
   console.log('Title:', title2);
@@ -32,6 +32,31 @@ const testing = async () => {
   await page.goto('http://localhost:5000/frameworks/type');
   const title4 = await page.evaluate((s) => document.querySelector(s).innerText, 'h1')
   console.log('Title:', title4);
+*/
+  const urls = [
+    '/',
+    '/selection',
+    '/service-output',
+    '/frameworks',
+    '/frameworks/type',
+    '/frameworks/type',
+    '/frameworks/type/buying/what',
+    '/frameworks/type/buying/what/books-media/class-library',
+    '/frameworks/type/buying/what/books-media/class-library/classroom/books'
+  ]
+
+  const getTitle = async(u) => {
+    await page.goto('http://localhost:5000' + u)
+    const uTitle = await page.evaluate((s) => document.querySelector(s).innerText, 'h1')
+    console.log('\n')
+    console.log(u)
+    console.log('Title', uTitle)
+  }
+
+  for (const item of urls) {
+      await getTitle(item);  
+  }
+  console.log('DONE')
 
   await browser.close();
   await server.close();
