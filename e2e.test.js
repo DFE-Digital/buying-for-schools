@@ -16,8 +16,6 @@ const SERVICE_URL = 'http://localhost:5000'
 
 jest.setTimeout(30000);
 
-
-
 describe('e2e', () => {
   it('should show page with h1', (done) => {
     ( async () => {
