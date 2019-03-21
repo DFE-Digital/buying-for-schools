@@ -47,7 +47,6 @@ const getAllBranchPaths = (thetree, ref) => {
   
   if (!ref) {
     ref = thetree.getIn([0, 'ref'])
-    console.log(ref)
   }
   const recursion = (basePath, qref) => {
     const branch = getBranch(thetree, qref)
