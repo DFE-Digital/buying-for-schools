@@ -1,7 +1,7 @@
 const { Given, When, Then, AfterAll } = require("cucumber");
 
 
-Given(/^user is on page (.+)$/, async function(string) {
+Given(/^user is on page (.+)$/, {timeout: 30 * 1000}, async function(string) {
   console.log('START: Given user is on page')
   await this.gotoPage(string)
   console.log('END: Given user is on page')
