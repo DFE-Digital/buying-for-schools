@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer')
 const { server } = require('./app/index')
 const SERVICE_URL = 'http://localhost:5000'
 
-jest.setTimeout(10000);
+jest.setTimeout(30000);
 
 describe('e2e', () => {
   it('should show page with h1', (done) => {
