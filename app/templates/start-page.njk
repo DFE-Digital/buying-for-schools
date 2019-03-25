@@ -1,0 +1,67 @@
+{% extends "buying-for-schools.njk" %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">{{ serviceName }}</h1>
+      <p class="govuk-body">This service replaces the deals for schools guidance.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body-s govuk-!-margin-bottom-7">
+        Published 22 January 2019<br>
+        Last updated 29 January 2019 — <a class="govuk-link" href="#" class="govuk-link">see all updates</a><br>
+        From: <a class="govuk-link" href="#" class="govuk-link">Department for Education</a>
+      </p>
+    </div>
+    
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">If you’re a school buyer, use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>find Department for Education (DfE) recommended ways to buy goods or services</li>
+        <li>get value for money</li>
+        <li>comply with EU procurement law (OJEU)</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Find a framework",
+        href: "/benefits",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items app-related-items--small" role="complementary">
+        <h2 class="govuk-heading-s">Related content</h2>
+
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="https://www.gov.uk/guidance/buying-for-schools">
+              Buying for schools guidance
+            </a>
+          </li>
+          <li>
+            <a href="/collection/">
+              Buying for schools: category guidance
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gov.uk/government/collections/buying-for-schools">
+              Buying for schools: templates and forms
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

@@ -18,6 +18,16 @@
   right: 0;
 }
 
+.govuk-list--dash {
+  li {
+    margin-left: 30px;
+    &:before {
+      position: relative;
+      content: '— ';
+      margin-left: -30px;
+    }
+  }
+}
 
 @media (min-width: 40.0625em) {
   .govuk-summary-list__key {

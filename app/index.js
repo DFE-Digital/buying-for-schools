@@ -62,6 +62,14 @@ const allPaths = dt.getAllBranchPaths(tree)
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
 
 app.get('/', (req, res, next) => {
+  const render = nunjucks.render('start-page.njk', {
+    serviceName,
+    pageTitle: serviceName
+  })
+  res.send(render)
+})
+
+app.get('/benefits', (req, res, next) => {
   const render = nunjucks.render('framework-benefits.njk', {
     serviceName,
     pageTitle: 'Benefits of using a framework'
@@ -97,6 +105,14 @@ app.get('/how-to-use-espo-framework', (req, res) => {
   const render = nunjucks.render('how-to-use/espo.njk', {
     serviceName,
     pageTitle: 'How to use the ESPO framework'
+  })
+  res.send(render)
+})
+
+app.get('/guidance/electricity', (req, res) => {
+  const render = nunjucks.render('guidance/electricity.njk', {
+    serviceName,
+    pageTitle: 'Buying electricity for your school'
   })
   res.send(render)
 })
