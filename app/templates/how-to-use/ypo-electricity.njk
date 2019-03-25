@@ -1,0 +1,38 @@
+{% extends "buying-for-schools.njk" %}
+{% import "macros/results.njk" as results %} 
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+      <p class="govuk-body">nPower and Yorkshire Purchasing Organisation (YPO) offer customers a quick, effective and competitive range of energy purchasing options. The YPO trading team purchases all electricity through a flexible rate agreement.</p>
+
+      <p class="govuk-body">This electricity framework agreement offers:</p>
+
+      {{ results.govBulletList([
+        'half hourly',
+        'non-half hourly',
+        'unmetered supply via nPower.'
+      ]) }}
+
+      <h2 class="govuk-heading-m">Register with YPO</h2>
+      <p class="govuk-body">Once registered, you’ll gain access to relevant information and paperwork you’ll need to use the framework.</p>
+
+      <h2 class="govuk-heading-m">Download the Energy for Schools Electricity user guide</h2>
+      <p class="govuk-body">This guide gives you lots of key information, including tips for saving energy, how to use the framework and what you need to do to progress your application.</p>
+
+      <p class="govuk-body">It will guide you through the following steps:</p>
+
+      {{ results.govBulletList([
+        'provide YPO with a Letter of Authority (LoA) – there’s a template provided in the guide',
+        'copy your recent electricity invoices and email them to YPO along with the signed LoA',
+        'at this stage YPO will contact you to discuss your requirements ',
+        'after this YPO will contact you with a no obligation quote and draft contract (check the details of this contract carefully before you sign)',
+        'if you wish to proceed, sign the contract and return to YPO',
+        'YPO will then set up your account and send you a welcome pack'
+      ]) }}
+    </div>
+  </div>
+{% endblock %}

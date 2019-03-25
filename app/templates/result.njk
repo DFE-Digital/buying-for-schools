@@ -20,10 +20,18 @@
 
     {{ results.button(resultMeta.get('supplier'), resultMeta.get('url')) }}
 
+
     {% include "summary.njk" %}
   </div>
+  
+  <div class="govuk-grid-column-one-third">
+    <aside class="app-related-items app-related-items--small" role="complementary">
+      {% include "includes/framework-aside.njk" %}
+      {% block asideextra %}
+      {% endblock %}
+    </aside>
+  </div>
 
-  {% include "includes/framework-aside.njk" %}
 </div>
 
 {% endblock %}

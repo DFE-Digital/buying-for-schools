@@ -85,6 +85,22 @@ app.get('/service-output', (req, res, next) => {
   res.send(render)
 })
 
+app.get('/how-to-use-ypo-framework', (req, res) => {
+  const render = nunjucks.render('how-to-use/ypo-electricity.njk', {
+    serviceName,
+    pageTitle: 'How to use the YPO framework'
+  })
+  res.send(render)
+})
+
+app.get('/how-to-use-espo-framework', (req, res) => {
+  const render = nunjucks.render('how-to-use/espo.njk', {
+    serviceName,
+    pageTitle: 'How to use the ESPO framework'
+  })
+  res.send(render)
+})
+
 app.get(`${frameworkPath}*`, (req, res, next) => {
   const urlInfo = url.parse(req.url)
   const trimmedSlashes = urlInfo.pathname.replace(/^\/+|\/+$/g, '')
