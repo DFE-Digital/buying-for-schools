@@ -5,6 +5,7 @@
 {% from "inset-text/macro.njk" import govukInsetText %}
 {% from "warning-text/macro.njk" import govukWarningText %}
 {% from "error-summary/macro.njk" import govukErrorSummary %}
+{% from "footer/macro.njk" import govukFooter %}
 
 {% extends "template.njk" %}
 
@@ -24,6 +25,9 @@
 {% block pageTitle %}{{ pageTitle }} - {{ serviceName }} - GOV.UK{% endblock %}
 
 {% block header %}
+  <div id="global-cookie-message" style="display: block;">
+    <p>GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies" data-module="track-click" data-track-category="cookieBanner" data-track-action="Cookie banner clicked" class="govuk-link">Find out more about cookies</a></p>
+  </div>
   {{ govukHeader({
     homepageUrl: "https://www.gov.uk/",
     containerClasses: "govuk-width-container",
@@ -41,7 +45,18 @@
   }) }}
 {% endblock %}
 
-
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "https://www.gov.uk/help/cookies",
+          text: "Cookies"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
 
 {% block bodyEnd %}
   <script src="/assets/all.js"></script>
