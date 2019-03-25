@@ -26,3 +26,9 @@ for (var i=0; i<externalButtons.length; i++) {
   externalButtons[i].onclick = getOutboundLink
 }
 
+var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)seen_cookie_message\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+if (cookieValue === 'yes') {
+  document.getElementById('global-cookie-message').style.display = 'none'
+}
+
+document.cookie = "seen_cookie_message=yes"
