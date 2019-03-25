@@ -154,7 +154,8 @@ app.get(frameworkPath, (req, res) => {
 })
 
 app.get('*', (req, res) => {
-  const render = nunjucks.render('page.njk')
+  const render = nunjucks.render('404.njk')
+  res.status(404)
   res.send(render)
 })
 
