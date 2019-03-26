@@ -1,4 +1,5 @@
-Feature: App is running
+Feature: Buying books
+
   Scenario: Content on the buying/services page
     Given user is on page /frameworks/type
     Then the service displays the following page content
