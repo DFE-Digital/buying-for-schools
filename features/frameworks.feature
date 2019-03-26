@@ -2,12 +2,12 @@ Feature: App is running
   Scenario: Content on the buying/services page
     Given user is on page /frameworks/type
     Then the service displays the following page content
-      | Heading | BBC Homepage  |
-#      | submit  | Continue |
-#    And have radio buttons
-#      | Goods    | /frameworks/type/buying   |
-#      | Services | /frameworks/type/on-going |
-#
+      | Heading | What are you buying?  |
+      | submit  | Continue |
+    And have radio buttons
+      | Goods    | /frameworks/type/buying   |
+      | Services | /frameworks/type/on-going |
+
 #  Scenario: Content on the buying what page
 #    Given user is on page /frameworks/type/buying/what
 #    Then the service displays the following page content
