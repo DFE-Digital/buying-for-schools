@@ -12,7 +12,7 @@ function nodeChanges () {
     env: { 'NODE_ENV': 'development' },
     cwd: __dirname,
     ignore: ['node_modules/**'],
-    watch: ['app/index.js', 'app/templates/**/*.njk', 'app/decisionTree/*.js', 'app/*.json']
+    watch: ['app/*.js', 'app/templates/**/*.njk', 'app/decisionTree/*.js', 'app/*.json']
   })
 }
 
