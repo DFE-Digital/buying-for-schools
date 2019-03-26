@@ -2,14 +2,14 @@ const { Given, When, Then, AfterAll } = require("cucumber");
 
 
 Given(/^user is on page (.+)$/, {timeout: 30 * 1000}, async function(string) {
-  console.log('START: Given user is on page')
+  // console.log('START: Given user is on page')
   await this.gotoPage(string)
   // console.log('END: Given user is on page')
 })
 
 Then("the service displays the following page content", async function(data) {
   // console.log('START: Then the service displays the following page content', data)
-  await this.checkText('h1', data.raw()[0][1])
+  await this.checkPageContent(data.raw())
   // console.log('END: Then the service displays the following page content')
 })
 

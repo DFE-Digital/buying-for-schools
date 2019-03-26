@@ -3,6 +3,7 @@ const { server } = require('../../app/index')
 const { setWorldConstructor, AfterAll } = require("cucumber")
 const { expect } = require("chai")
 const puppeteer = require("puppeteer")
+const selectors = require('./selectors')
 
 const HOMEPAGE = "http://localhost:5000"
 
@@ -11,7 +12,7 @@ let page = null
 
 class B4SWorld {
   constructor() {
-    console.log('B4SWorld Constructor')
+    // console.log('B4SWorld Constructor')
   }
   
   async gotoPage(u) {
@@ -24,6 +25,19 @@ class B4SWorld {
       const onPage = await page.goto(HOMEPAGE + u)
       // console.log('At page', Object.keys(onPage))
     
+  }
+
+  async checkPageContent(data) {
+    const results = []
+    for (const row of data) {
+      const sel = selectors(row[0])
+      const txt = await page.evaluate((s) => document.querySelector(s).innerText, sel)
+      results.push({expected: row[1], actual: txt})
+    }
+
+    results.forEach(e => {
+      expect(e.actual).to.eql(e.expected)
+    })
   }
 
   async checkText(selector, string) {
@@ -53,10 +67,10 @@ class B4SWorld {
 
 
 AfterAll(async function() {
-  console.log('START: AfterAll')
+  // console.log('START: AfterAll')
   await browser.close();
   await server.close()
-  console.log('END: AfterAll')
+  // console.log('END: AfterAll')
 });
 
 

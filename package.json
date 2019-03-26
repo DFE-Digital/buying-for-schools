@@ -11,7 +11,7 @@
     "test:jshint": "jshint app/**/*.js",
     "test:jest": "jest",
     "test:coverage": "jest --coverage",
-    "test:bdd": "./node_modules/.bin/cucumber-js"
+    "test:bdd": "./node_modules/.bin/cucumber-js -f node_modules/cucumber-pretty"
   },
   "jshintConfig": {
     "asi": true,
