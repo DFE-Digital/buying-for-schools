@@ -74,7 +74,7 @@ function jestTest () {
 }
 
 function build (done) {
-  return gulp.series(assets, sass, jestTest)(done)
+  return gulp.series(assets, sass, jestTest, cucumber)(done)
 }
 
 function cucumber(done) {
