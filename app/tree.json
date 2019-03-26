@@ -227,7 +227,7 @@
       },
       {
         "ref": "recruitment",
-        "title": "Recruitment",
+        "title": "Recruitment and HR",
         "next": "recruitment-categories"
       }
     ],
@@ -457,10 +457,10 @@
         ]
       },
       {
-        "ref": "testing",
+        "ref": "pat",
         "title": "Portable Appliance Testing (PAT)",
         "result": [
-          "testing"
+          "pat"
         ]
       },
       {
@@ -483,8 +483,8 @@
         ]
       },
       {
-        "ref": "horticultural",
-        "title": "Horticultural",
+        "ref": "grounds",
+        "title": "Grounds maintenance",
         "result": [
           "fmm"
         ]
