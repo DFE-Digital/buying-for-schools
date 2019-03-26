@@ -49,7 +49,7 @@ class B4SWorld {
   async haveRadioButtons(data) {
     const radioGroups = await page.evaluate(() => document.getElementsByClassName('govuk-radios__item').length)
     const results = []
-    for (var i =1; i <= radioGroups; i++) {
+    for (let i =1; i <= radioGroups; i++) {
       const txt = await page.evaluate((i) => document.querySelector(`.govuk-radios__item:nth-child(${i}) label`).innerText, i)
       const val = await page.evaluate((i) => document.querySelector(`.govuk-radios__item:nth-child(${i}) input`).value, i)
       results.push({ label: txt, value: val })
@@ -62,6 +62,23 @@ class B4SWorld {
 
     // console.log('radioGroups', radioGroups, results)
     return results
+  }
+
+  async haveLinks(data) {
+    const links = await page.evaluate(() => {
+      const links = []
+      const elements = document.getElementsByTagName('a')
+      for (let element of elements) {
+        links.push({ href: element.href, text: element.innerText.replace(/\n/g, ' ') })
+      }
+      return links
+    })
+
+    data.forEach(row => {
+      const href = (row[1].substr(0,4) === 'http') ? row[1]: HOMEPAGE + row[1]
+      const text = row[0]
+      expect(links).to.deep.include({ text, href })
+    })
   }
 }
 

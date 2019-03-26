@@ -17,3 +17,8 @@ Then('have radio buttons', async function (data) {
   // Write code here that turns the phrase above into concrete actions
   await this.haveRadioButtons(data.raw())
 })
+
+Then('have links', async function (data) {
+  // Write code here that turns the phrase above into concrete actions
+  await this.haveLinks(data.raw())
+})

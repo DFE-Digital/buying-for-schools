@@ -30,11 +30,13 @@ Feature: App is running
     Then the service displays the following page content
       | Heading        | Books and related materials                                                                                 |
       | Recommendation | Based on your answers, we think you should use the Eastern Shires Purchasing Organisation (ESPO) framework. |
-#    And have links
-#      | Visit the ESPO website                                                  | https://www.espo.org/Pages/Books-for-schools-framework-376E-guide |
-#      | Start again                                                             | /frameworks                                                       |
-#      | Buying for schools guidance                                             | https://www.gov.uk/guidance/buying-for-schools                    |
-#      | Buying for schools: templates and forms                                 | https://www.gov.uk/government/collections/buying-for-schools      |
-#      | Change What are you buying?                                             | /frameworks/type                                                  |
-#      | Change What goods do you need?                                          | /frameworks/type/buying/what                                      |
-#      | Change What goods are you looking for in books and related materials?   | /frameworks/type/buying/what/books-media/class-library            |
+    And have links
+      | Visit the ESPO website                                                  | https://www.espo.org/Pages/Books-for-schools-framework-376E-guide |
+      | Buying books and related materials for your school                      | /guidance/                                                        |
+      | How to use the ESPO framework                                           | /how-to-use-espo-framework                                        |
+      | Buying for schools guidance                                             | https://www.gov.uk/guidance/buying-for-schools                    |
+      | Buying for schools: templates and forms                                 | https://www.gov.uk/government/collections/buying-for-schools      |
+      | Start again                                                             | /frameworks                                                       |
+      | Change What are you buying?                                             | /frameworks/type                                                  |
+      | Change What goods do you need?                                          | /frameworks/type/buying/what                                      |
+      | Change What goods are you looking for in books and related materials?   | /frameworks/type/buying/what/books-media/class-library            |
