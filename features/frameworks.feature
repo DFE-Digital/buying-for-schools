@@ -6,7 +6,7 @@ Feature: App is running
       | submit  | Continue |
     And have radio buttons
       | Goods    | /frameworks/type/buying   |
-      | Services | /frameworks/type/on-going |
+      | Services | /frameworks/type/on-goingX |
 
 #  Scenario: Content on the buying what page
 #    Given user is on page /frameworks/type/buying/what
