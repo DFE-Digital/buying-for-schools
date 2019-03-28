@@ -5,7 +5,7 @@ const url = require('url')
 const port = process.env.PORT || 5000
 
 const app = express()
-const auth = require('./auth.js')
+const auth = require('./auth.js')(app)
 
 const nunjucks = require('./nunjucksConfig')(app)
 
@@ -55,6 +55,13 @@ app.get('/guidance/electricity', (req, res) => {
   res.send(render)
 })
 
+app.get('/guidance/books', (req, res) => {
+  const render = nunjucks.render('guidance/books.njk', {
+    serviceName,
+    pageTitle: 'Buying books for your school'
+  })
+  res.send(render)
+})
 
 app.get('*', (req, res) => {
   const render = nunjucks.render('404.njk')
