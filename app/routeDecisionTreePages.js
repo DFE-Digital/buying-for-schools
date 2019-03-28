@@ -4,12 +4,9 @@ const dt = require('./decisionTree/decisionTree')
 const dtr = require('./decisionTree/decisionTreeRoute')
 const url = require('url')
 
-
-
 const routeDecisionTreePages = app => {
   
-  const { frameworkPath, tree } = app.locals
-  const allPaths = dt.getAllBranchPaths(tree)
+  const { frameworkPath, tree, allPaths } = app.locals
 
   const resultPage = require('./resultPage')(app)
   const redirects = require('./redirects')

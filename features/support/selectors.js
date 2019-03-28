@@ -8,7 +8,8 @@ module.exports = (label) => {
       return '[type=submit]'
     }
 
-    case 'recommendation': {
+    case 'recommendation':
+    case 'intro': {
       return 'h1 + p.govuk-body-l'
     }
   }

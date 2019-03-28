@@ -16,15 +16,15 @@ class B4SWorld {
   }
   
   async gotoPage(u) {
-    
-      // console.log('gotoPage', 'https://www.bbc.co.uk')//HOMEPAGE + u)
+    if (!browser) {
       browser = await puppeteer.launch()
-      // console.log('Browser launched', Object.keys(browser))
-      page = await browser.newPage()
-      // console.log('New page', Object.keys(page))
-      const onPage = await page.goto(HOMEPAGE + u)
-      // console.log('At page', Object.keys(onPage))
+    }
     
+    if (!page) {
+      page = await browser.newPage()
+    }
+    
+    const onPage = await page.goto(HOMEPAGE + u)
   }
 
   async checkPageContent(data) {
@@ -49,7 +49,7 @@ class B4SWorld {
   async haveRadioButtons(data) {
     const radioGroups = await page.evaluate(() => document.getElementsByClassName('govuk-radios__item').length)
     const results = []
-    for (let i =1; i <= radioGroups; i++) {
+    for (let i = 1; i <= radioGroups; i++) {
       const txt = await page.evaluate((i) => document.querySelector(`.govuk-radios__item:nth-child(${i}) label`).innerText, i)
       const val = await page.evaluate((i) => document.querySelector(`.govuk-radios__item:nth-child(${i}) input`).value, i)
       results.push({ label: txt, value: val })
@@ -79,6 +79,28 @@ class B4SWorld {
       const text = row[0]
       expect(links).to.deep.include({ text, href })
     })
+  }
+
+  async haveResultCard(data) {
+    const cards = await page.evaluate(() => {
+      const cards = []
+      const elements = document.getElementsByClassName('card')
+      for (let element of elements) {
+        const href = element.querySelector('a').href
+        const title = element.querySelector('.card__title').innerText
+        const provider = element.querySelector('.card__content dd').innerText
+        cards.push({ href, title, provider })
+      }
+      return cards
+    })
+
+    
+    const title = data[0][0]
+    const provider = data[1][0]
+    const href = (data[2][0].substr(0,4) === 'http') ? data[2][0]: HOMEPAGE + data[2][0]
+   
+    expect(cards).to.deep.include({ href, title, provider })
+  
   }
 }
 

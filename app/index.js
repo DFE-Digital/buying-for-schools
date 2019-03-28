@@ -15,6 +15,7 @@ const dt = require('./decisionTree/decisionTree')
 
 const tree = dt.makeTree(require('./tree.json'))
 const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
+const allPaths = dt.getAllBranchPaths(tree)
 
 const serviceName = 'Find a DfE approved framework for your school'
 const frameworkPath = '/frameworks'
@@ -22,13 +23,13 @@ app.locals = {
   serviceName,
   frameworkPath,
   tree,
-  frameworks
+  frameworks,
+  allPaths
 }
 
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
 
 const routeIntroPages = require('./routeIntroPages')(app)
-
 const routeDecisionTreePages = require('./routeDecisionTreePages')(app)
 
 app.get('/how-to-use-ypo-framework', (req, res) => {
