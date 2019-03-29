@@ -103,4 +103,36 @@ describe('decisionTreeRoute', () => {
       })
     })
   })
+
+  describe('getQuestionAnswerSummary', () => {
+    const testBranchPath = fromJS([
+      {
+        ref: 'fruit',
+        title: 'What is your favourite?',
+        options: [
+          { ref: 'apple', title: 'Apple pie', next: 'applepie', selected: true }
+        ]
+      },
+      {
+        ref: 'applepie',
+        title: 'How do you like your apple?',
+        options: [
+          { ref: 'applepie', title: 'Apple pie', next: 'hotorcold', selected: true }
+        ]
+      },
+      {
+        ref: 'hotorcold',
+        title: 'Hot or Cold?',
+        options: [
+          { ref: 'hot', title: 'Hot', next: 'cream', selected: true }
+        ]
+      }
+    ])
+    it('should return an array of summary details', () => {
+      const summary = dtr.getQuestionAnswerSummary(testBranchPath, '')
+      expect(summary.size).toBe(3)
+      const keys = Object.keys(summary.get(0))
+      expect(keys).toEqual(['key', 'value', 'actions'])
+    })
+  })
 })

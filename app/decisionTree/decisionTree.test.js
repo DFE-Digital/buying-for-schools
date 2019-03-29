@@ -6,9 +6,6 @@ const dt = require('./decisionTree')
 
 describe('decisionTree', () => {
 
-  // it('FORCE FAIL', () => {
-  //   expect(true).toBeFalsy()
-  // })
   describe('makeTree', () => {
     it('should return an immutable List', () => {
       const testOjb = [{ref: 'hello', title: 'Hello world'}]
@@ -110,6 +107,22 @@ describe('decisionTree', () => {
     })
   })
 
+  describe('getSelectedOption', () => {
+    it('shuld get a previously selected option', () => {
+      const testBranch = fromJS({
+        ref: 'branch',
+        options: [
+          {ref: 'a', title: 'Apple'},
+          {ref: 'b', title: 'Banana', selected: true},
+          {ref: 'c', title: 'Cherry'}
+        ]
+      })
+
+      const option = dt.getSelectedOption(testBranch)
+      expect(option.get('ref')).toEqual('b')
+    })
+  })
+
   describe('setSelectedOption', () => {
     it('should update the option to selected true', () => {
       const testBranch = fromJS({
@@ -137,6 +150,65 @@ describe('decisionTree', () => {
 
       const branchWithSelection = dt.setSelectedOption(testBranch, 'z')
       expect(branchWithSelection === testBranch).toBeTruthy()
+    })
+  })
+
+  describe('getAllBranchPaths', () => {
+    const testTree = fromJS([
+      {
+        ref: 'music',
+        options: [
+          { ref: 'queen', title: 'Queen', next: 'queen-songs' },
+          { ref: 'hard-rock', title: 'Hard Rock', result: ['ac-dc', 'led-zeppelin'] }
+        ]
+      },
+      {
+        ref: 'queen-songs',
+        options: [
+          { ref: 'bohemian-rhapsody', title: 'Bohemian Rhapsody', result: ['1975', '1991'] },
+          { ref: 'kind-magic', title: 'Kind of Magic', result: ['highlander'] }
+        ]
+      }
+    ])
+    const allPaths = dt.getAllBranchPaths(testTree)
+
+    it('should compile a list of all branches in groups', () => {
+      expect(allPaths).toHaveProperty('questions')
+      expect(allPaths).toHaveProperty('redirectToQuestion')
+      expect(allPaths).toHaveProperty('redirectToResult')
+      expect(allPaths).toHaveProperty('results')
+      expect(allPaths).toHaveProperty('multiple')
+    })
+
+    it('should have question paths', () => {
+      expect(allPaths.questions.length).toBe(2)
+      expect(allPaths.questions).toContain('music')
+      expect(allPaths.questions).toContain('music/queen/queen-songs')
+    })
+
+    it('should have redirect to questions', () => {
+      expect(allPaths.redirectToQuestion.length).toBe(1)
+      expect(allPaths.redirectToQuestion).toContain('music/queen')
+    })
+
+    it('should have redirect to results', () => {
+      expect(allPaths.redirectToResult.length).toBe(1)
+      expect(allPaths.redirectToResult).toContain('music/queen/queen-songs/kind-magic')
+    })
+
+    it('should have results', () => {
+      expect(allPaths.results.length).toBe(5)
+      expect(allPaths.results).toContain('music/queen/queen-songs/bohemian-rhapsody/1975')
+      expect(allPaths.results).toContain('music/queen/queen-songs/bohemian-rhapsody/1991')
+      expect(allPaths.results).toContain('music/queen/queen-songs/kind-magic/highlander')
+      expect(allPaths.results).toContain('music/hard-rock/ac-dc')
+      expect(allPaths.results).toContain('music/hard-rock/led-zeppelin')
+    })
+
+    it('should have pages where there are multiple results', () => {
+      expect(allPaths.multiple.length).toBe(2)
+      expect(allPaths.multiple).toContain('music/hard-rock')
+      expect(allPaths.multiple).toContain('music/queen/queen-songs/bohemian-rhapsody')
     })
   })
 })
