@@ -1,10 +1,12 @@
 {% extends "buying-for-schools.njk" %}
 {% import "macros/results.njk" as results %}
 
+{% set captiontitle = 'Guidance' %}
+
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Guidance</span>
+      <span class="govuk-caption-l">{{ captiontitle }}</span>
       <h1 class="govuk-heading-l">{{ title }}</h1>
       <p class="govuk-body-l">{{ intro }}</p>
     </div>
@@ -23,9 +25,9 @@
 
     <div class="govuk-grid-column-two-thirds">
 
+      {% if contents %}
       <aside id="contents" class="part-navigation-container" role="complementary" style="border:0">
         <nav role="navigation" aria-label="Pages in this guide">
-
           <h2 class="govuk-body-s govuk-!-margin-bottom-0">Contents</h2>
 
           <ol class="govuk-list govuk-list--dash">
@@ -36,14 +38,13 @@
             {% endfor %}
           </ol>
         </nav>
-
       </aside>
+      {% endif %}
 
       {% block guidance %}
       {% endblock %}
 
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-9">
       <p class="govuk-body-s">
         Published {{ published }}<br>
         Last updated {{ updated }} <a class="govuk-link" href="#0">+ show all updates</a>
@@ -58,13 +59,9 @@
 
     </div>
 
-    <div class="govuk-grid-column-one-third">
-
-      <aside class="app-related-items app-related-items--small" role="complementary">
-        {% block guidanceaside %}
-        {% endblock %}
-      </aside>
-
+    <div class="govuk-grid-column-one-third">  
+      {% block guidanceaside %}
+      {% endblock %}
     </div>
   </div>
 {% endblock %}

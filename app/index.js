@@ -64,6 +64,14 @@ app.get('/guidance/books', (req, res) => {
   res.send(render)
 })
 
+app.get('/collection', (req, res) => {
+  const render = nunjucks.render('guidance/collection.njk', {
+    serviceName,
+    pageTitle: 'Buying for schools: category guidance'
+  })
+  res.send(render)
+})
+
 app.get('*', (req, res) => {
   const render = nunjucks.render('404.njk')
   res.status(404)

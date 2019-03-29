@@ -17,7 +17,7 @@ function nodeChanges () {
 }
 
 function watch () {
-  gulp.watch('sass/*.scss', gulp.series(['sass']))
+  gulp.watch('sass/**/*.scss', gulp.series(['sass']))
   gulp.watch('app/assets', gulp.series(['assets']))
   return nodeChanges()
 }
