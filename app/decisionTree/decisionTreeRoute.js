@@ -46,7 +46,6 @@ const getQuestionAnswerSummary = (branchPath, baseUrl) => {
             text: 'Change',
             visuallyHiddenText: branch.get('title')
           }]
-
         }
       })
       url = url.push(selectedOption.get('ref'))

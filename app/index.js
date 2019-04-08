@@ -51,7 +51,7 @@ app.get('/how-to-use-espo-framework', (req, res) => {
 app.get('/guidance/electricity', (req, res) => {
   const render = nunjucks.render('guidance/electricity.njk', {
     serviceName,
-    pageTitle: 'Buying electricity for your school'
+    pageTitle: 'Buy electricity for your school'
   })
   res.send(render)
 })
@@ -59,7 +59,7 @@ app.get('/guidance/electricity', (req, res) => {
 app.get('/guidance/books', (req, res) => {
   const render = nunjucks.render('guidance/books.njk', {
     serviceName,
-    pageTitle: 'Buying books for your school'
+    pageTitle: 'Buy books for your school'
   })
   res.send(render)
 })
