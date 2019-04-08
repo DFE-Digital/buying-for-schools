@@ -208,5 +208,11 @@
     "title": "Digital Marketplace (G-Cloud 10)",
     "supplier": "CCS",
     "url": "https://www.digitalmarketplace.service.gov.uk/buyers/direct-award/g-cloud/start"
+  },
+  {
+    "ref": "rpa",
+    "title": "Risk Protection Arrangement",
+    "supplier": "RPA",
+    "url": "https://www.gov.uk/guidance/academies-risk-protection-arrangement-rpa"
   }
 ]

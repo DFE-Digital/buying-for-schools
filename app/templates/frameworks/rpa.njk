@@ -1,0 +1,34 @@
+{% extends "result.njk" %}
+{% import "macros/results.njk" as results %}
+
+{% block recommendation %}
+  {{ results.recommendation(
+    'Risk Protection Arrangement',
+    'Based on your answers, we think you should join the Risk Protection Arrangement (RPA) provided by the Department for Education.'
+  ) }}
+{% endblock %}
+
+{% block resultContent %}
+  {{ results.offers([
+    'material damage',
+    'business interruption',
+    'employers’ liability ',
+    'third party liability',
+    'governors’ liability',
+    'professional indemnity',
+    'employee and third party dishonesty',
+    'money',
+    'personal accident',
+    'United Kingdom travel',
+    'overseas travel including winter sports',
+    'legal expenses',
+    'cultural assets'
+  ], 'Cover for academies including:') }}
+
+  {{ results.benefits([
+    'you’re covered as soon as you complete the form',
+    'membership is renewed automatically every year',
+    '£20 per pupil or less until at least 31 August 2022',
+    'free risk management advice, training and best practice guidance from <a href="http://www.willis.com/">Willis Towers Watson</a>.'
+  ]) }}
+{% endblock %}

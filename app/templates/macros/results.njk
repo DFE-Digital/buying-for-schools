@@ -14,11 +14,11 @@
           {{ item.shift() }}
           <ul class="govuk-list govuk-list--bullet">
             {% for sub in item %}
-              <li>{{ sub }}</li>
+              <li>{{ sub | safe }}</li>
             {% endfor %}  
           </ul>
         {% else %}
-          {{ item }}
+          {{ item | safe }}
         {% endif %}
       </li>
     {% endfor %}

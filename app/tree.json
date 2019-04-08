@@ -631,17 +631,18 @@
         ]
       },
       {
-        "ref": "insurance",
-        "title": "Insurance",
-        "result": [
-          "insurance"
-        ]
-      },
-      {
         "ref": "leasing",
         "title": "Leasing",
         "result": [
           "leasing"
+        ]
+      },
+      {
+        "ref": "insurance",
+        "title": "Insurance",
+        "next": "academy",
+        "result": [
+          ""
         ]
       }
     ],
@@ -672,6 +673,32 @@
   },
   {
     "title": "New branch with ref undefined",
+    "options": []
+  },
+  {
+    "ref": "academy",
+    "title": "Is your school an academy?",
+    "options": [
+      {
+        "ref": "yes",
+        "title": "Yes",
+        "next": "",
+        "result": [
+          "rpa"
+        ]
+      },
+      {
+        "ref": "no",
+        "title": "No",
+        "result": [
+          "insurance"
+        ]
+      }
+    ]
+  },
+  {
+    "ref": "",
+    "title": "New branch with ref ",
     "options": []
   }
 ]
