@@ -1,5 +1,3 @@
-const nunjucks = require('nunjucks')
-
 const routeIntroPages = app => {
   const introPages = [
     { 
@@ -24,15 +22,7 @@ const routeIntroPages = app => {
     }
   ]
 
-  introPages.forEach(page => {
-    app.get(page.path, (req, res) => {
-      const render = nunjucks.render(page.tpl, {
-        serviceName: app.locals.serviceName,
-        pageTitle: page.title
-      })
-      res.send(render)
-    })
-  })
+  return introPages
 }
 
 module.exports = routeIntroPages

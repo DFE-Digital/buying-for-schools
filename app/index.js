@@ -29,7 +29,12 @@ app.locals = {
 
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
 
+const routeBasicPages = require('./routeBasicPages')(app)
 const routeIntroPages = require('./routeIntroPages')(app)
+const routeGuidancePages = require('./routeGuidancePages')(app)
+routeBasicPages(routeIntroPages)
+routeBasicPages(routeGuidancePages)
+
 const routeDecisionTreePages = require('./routeDecisionTreePages')(app)
 
 app.get('/how-to-use-ypo-framework', (req, res) => {
@@ -48,29 +53,7 @@ app.get('/how-to-use-espo-framework', (req, res) => {
   res.send(render)
 })
 
-app.get('/guidance/electricity', (req, res) => {
-  const render = nunjucks.render('guidance/electricity.njk', {
-    serviceName,
-    pageTitle: 'Buy electricity for your school'
-  })
-  res.send(render)
-})
 
-app.get('/guidance/books', (req, res) => {
-  const render = nunjucks.render('guidance/books.njk', {
-    serviceName,
-    pageTitle: 'Buy books for your school'
-  })
-  res.send(render)
-})
-
-app.get('/collection', (req, res) => {
-  const render = nunjucks.render('guidance/collection.njk', {
-    serviceName,
-    pageTitle: 'Buying for schools: category guidance'
-  })
-  res.send(render)
-})
 
 app.get('*', (req, res) => {
   const render = nunjucks.render('404.njk')
