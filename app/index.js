@@ -17,6 +17,13 @@ const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
 const categories = require('./categories.json')
 const allPaths = dt.getAllBranchPaths(tree)
 
+const testtree = require('./decisionTree/tree')
+const tt = testtree(require('./tree.json'))
+const b = tt.getBranch('type')
+console.log(b.toObject())
+console.log(b.getOption('buying').toObject())
+// const o = b.getOption('buy')
+
 const serviceName = 'Find a DfE approved framework for your school'
 const frameworkPath = '/frameworks'
 app.locals = {
