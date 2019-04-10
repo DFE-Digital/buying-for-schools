@@ -6,7 +6,8 @@ const url = require('url')
 
 const routeDecisionTreePages = app => {
   
-  const { frameworkPath, tree, allPaths } = app.locals
+  const { frameworkPath, tree } = app.locals
+  const allPaths = tree.getAllPaths()
 
   const resultPage = require('./resultPage')(app)
   const redirects = require('./redirects')
@@ -55,7 +56,7 @@ const routeDecisionTreePages = app => {
   })
 
   app.get(frameworkPath, (req, res) => {
-    res.redirect(302, path.join(frameworkPath, tree.getIn([0, 'ref'])))
+    res.redirect(302, path.join(frameworkPath, tree.getFirst().getRef()))
   })
 }
 
