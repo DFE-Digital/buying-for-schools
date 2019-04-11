@@ -5,3 +5,4 @@ public
 test-report.xml
 reports
 test-cucumber*.*
+loadtest-report*
