@@ -1,3 +1,4 @@
+const querystring = require("querystring")
 const nunjucks = require('nunjucks')
 const url = require('url')
 
@@ -9,7 +10,17 @@ const resultPage = app => (req, res) => {
   const resultRef = urlBits[urlBits.length -1]
 
   const frameworks = app.locals.frameworks
-  const resultMeta = frameworks.find(framework => framework.get('ref') === resultRef)
+  const resultMeta = frameworks.find(framework => framework.get('ref') === resultRef).toJS()
+
+  const uid = req.cookies.uid
+  if (uid && process.env.SURVEY === 'YES') {
+    const psbo_url = resultMeta.url
+    const psbo = resultMeta.supplier
+    const qs = querystring.stringify({ psbo, psbo_url, uid })
+    const surveyUrl = `https://paperstudio.typeform.com/to/z6cuin?${qs}`
+    resultMeta.url = surveyUrl
+  }
+
   const resultTemplate = `frameworks/${resultRef}.njk`
   const renderedResult = nunjucks.render(resultTemplate, {
     result : resultRef,
@@ -17,7 +28,7 @@ const resultPage = app => (req, res) => {
     resultTemplate,
     summary,
     serviceName,
-    pageTitle: resultMeta.get('title'),
+    pageTitle: resultMeta.title,
     frameworkPath
   })
   return res.send(renderedResult)

@@ -5,6 +5,9 @@ const url = require('url')
 const port = process.env.PORT || 5000
 
 const app = express()
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
 const auth = require('./auth.js')(app)
 
 const nunjucks = require('./nunjucksConfig')(app)
@@ -28,7 +31,7 @@ app.locals = {
 }
 
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
-
+const survey = require('./routeSurvey')(app)
 const routeBasicPages = require('./routeBasicPages')(app)
 const routeIntroPages = require('./routeIntroPages')(app)
 const routeGuidancePages = require('./routeGuidancePages')(app)
