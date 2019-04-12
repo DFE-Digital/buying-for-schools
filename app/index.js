@@ -30,7 +30,6 @@ app.locals = {
 const nunjucks = require('./nunjucksConfig')(app)
 
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
-const survey = require('./routeSurvey')(app)
 const routeBasicPages = require('./routeBasicPages')(app)
 const routeIntroPages = require('./routeIntroPages')(app)
 const routeGuidancePages = require('./routeGuidancePages')(app)
