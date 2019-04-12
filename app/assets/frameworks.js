@@ -8,7 +8,7 @@
 */
 var getOutboundLink = function(e) {
   e.preventDefault()
-  document.cookie = "uid="
+  document.cookie = "uid=;Path=/;Expires=Thu, 01 Jan 1970 00:00:00 GMT"
   var url = e.target.href
   gtag('event', 'click', {
     'event_category': 'outbound',
