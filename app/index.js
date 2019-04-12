@@ -5,12 +5,8 @@ const url = require('url')
 const port = process.env.PORT || 5000
 
 const app = express()
-const cookieParser = require('cookie-parser')
-app.use(cookieParser())
 
 const auth = require('./auth.js')(app)
-
-const nunjucks = require('./nunjucksConfig')(app)
 
 const dtr = require('./decisionTree/decisionTreeRoute')
 const dtres = require('./decisionTree/decisionTreeResults')
@@ -27,8 +23,11 @@ app.locals = {
   frameworkPath,
   tree,
   frameworks,
-  allPaths
+  allPaths,
+  survey: process.env.SURVEY === 'YES'
 }
+
+const nunjucks = require('./nunjucksConfig')(app)
 
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
 const survey = require('./routeSurvey')(app)

@@ -22,7 +22,7 @@ const multiplePage = app => (req, res) => {
 
   const renderedResult = nunjucks.render('results.njk', {
     resultList,
-    serviceName,
+    locals: app.locals,
     summary,
     frameworkPath,
     pageTitle: 'Matching frameworks'

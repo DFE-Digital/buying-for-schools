@@ -64,14 +64,13 @@ const questionPage = app => (req, res) => {
   const pageTitle = err ? 'Error: ' + branch.get('title') : branch.get('title')
 
   const render = nunjucks.render('question.njk', {
-    frameworkPath,
+    locals: app.locals,
     branch, 
     radioOptions, 
     err,
     summary, 
     suffix,
     prefix,
-    serviceName,
     pageTitle
   })
   res.send(render)

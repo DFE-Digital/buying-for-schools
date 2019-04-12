@@ -38,7 +38,7 @@
 
 {% macro button(text, href) %}
   {{ govukButton({
-    text: 'Visit the ' + text + ' website',
+    html: 'Visit the <span id="supplier">' + text + '</span> website',
     href: href,
     classes: 'govuk-!-margin-top-5 frameworkbutton--external'
   }) }}

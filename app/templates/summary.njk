@@ -1,7 +1,7 @@
 {% if summary.size %}
   <div class="summary">
     <h2 class="govuk-heading-m govuk-!-margin-top-9">Previous answers</h2>
-    <a href="{{ frameworkPath }}" class="start-again govuk-link govuk-body-m">Start again</a>
+    <a href="{{ locals.frameworkPath }}" class="start-again govuk-link govuk-body-m">Start again</a>
     {{ govukSummaryList({
       classes: 'govuk-!-margin-bottom-9',
       rows: summary

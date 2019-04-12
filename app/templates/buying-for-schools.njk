@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="/assets/styles/main.css">
 {% endblock %}
 
-{% block pageTitle %}{{ pageTitle }} - {{ serviceName }} - GOV.UK{% endblock %}
+{% block pageTitle %}{{ pageTitle }} - {{ locals.serviceName }} - GOV.UK{% endblock %}
 
 {% block header %}
   <div id="global-cookie-message" style="display: block;">
@@ -61,5 +61,5 @@
 
 {% block bodyEnd %}
   <script src="/assets/all.js"></script>
-  <script src="/assets/frameworks.js"></script>
+  <script src="/assets/frameworks.js" id="mainscript" data-survey="{{ locals.survey }}"></script>
 {% endblock %}
