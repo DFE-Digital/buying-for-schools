@@ -1,11 +1,12 @@
-const nodemon = require('nodemon')
+
 const sassjs = require('sass')
 const mkdirp = require('mkdirp')
 const fs = require('fs')
 const gulp = require('gulp')
-const jest = require('gulp-jest').default
+// const jest = require('gulp-jest').default
 
 function nodeChanges () {
+  const nodemon = require('nodemon')
   return nodemon({
     script: 'app/index.js',
     ext: 'js,html,njk,json',
@@ -62,6 +63,7 @@ function assets () {
 
  
 function jestTest () {
+  const jest = require('gulp-jest').default
   return gulp
     .src('app/**/*.test.js')
     .pipe(jest({
