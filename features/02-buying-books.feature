@@ -33,7 +33,7 @@ Feature: Buying books
       | Recommendation | Based on your answers, we think you should use the Eastern Shires Purchasing Organisation (ESPO) framework. |
     And have links
       | Visit the ESPO website                                                  | https://www.espo.org/Pages/Books-for-schools-framework-376E-guide |
-      | Buy books and related materials for your school                         | /guidance/                                                        |
+      | Buy books and related materials for your school                         | /guidance/books                                                   |
       | How to use the ESPO framework                                           | /how-to-use-espo-framework                                        |
       | Buying for schools guidance                                             | https://www.gov.uk/guidance/buying-for-schools                    |
       | Buying for schools: templates and forms                                 | https://www.gov.uk/government/collections/buying-for-schools      |
