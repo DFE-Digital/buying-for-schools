@@ -18,24 +18,6 @@
     "err": "Select if you are buying goods or services"
   },
   {
-    "ref": "what-buying",
-    "title": "What are you buying?",
-    "options": [
-      {
-        "ref": "a",
-        "title": "AAAA",
-        "next": null,
-        "result": null
-      },
-      {
-        "ref": "B",
-        "title": "BBBB",
-        "next": "E"
-      }
-    ],
-    "used": true
-  },
-  {
     "ref": "what",
     "title": "What goods do you need?",
     "options": [
@@ -672,10 +654,6 @@
     "err": "Select which services you are looking for"
   },
   {
-    "title": "New branch with ref undefined",
-    "options": []
-  },
-  {
     "ref": "academy",
     "title": "Is your school an academy?",
     "options": [
@@ -695,10 +673,5 @@
         ]
       }
     ]
-  },
-  {
-    "ref": "",
-    "title": "New branch with ref ",
-    "options": []
   }
 ]

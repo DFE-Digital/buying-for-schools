@@ -22,10 +22,12 @@
 .govuk-list--dash {
   li {
     margin-left: 30px;
+    position: relative;
     &:before {
-      position: relative;
-      content: '— ';
-      margin-left: -30px;
+      position: absolute;
+      content: '—';
+      left: -30px;
+
     }
   }
 }
@@ -110,3 +112,11 @@
     }
   }
 }
+
+.govuk-table__cell--supplier {
+  width: 60px;
+  @media (min-width: 40.0625em) {
+    width: 100px;
+  }
+}
+

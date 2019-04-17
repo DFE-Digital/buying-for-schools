@@ -1,0 +1,34 @@
+[
+  {
+    "ref": "books",
+    "title": "Books and related materials"
+  },
+  {
+    "ref": "energy",
+    "title": "Energy and utilities"
+  },
+  {
+    "ref": "fm",
+    "title": "Facilities management and estates"
+  },
+  {
+    "ref": "financial",
+    "title": "Financial"
+  },
+  {
+    "ref": "ict",
+    "title": "ICT"
+  },
+  {
+    "ref": "hr",
+    "title": "Recruitment and HR"
+  },
+  {
+    "ref": "legal",
+    "title": "Legal"
+  },
+  {
+    "ref": "professional",
+    "title": "Professional"
+  }
+]

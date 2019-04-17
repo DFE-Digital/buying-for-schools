@@ -12,15 +12,6 @@ const resultPage = app => (req, res) => {
   const frameworks = app.locals.frameworks
   const resultMeta = frameworks.find(framework => framework.get('ref') === resultRef).toJS()
 
-  // const uid = req.cookies.uid
-  // if (uid && process.env.SURVEY === 'YES') {
-  //   const psbo_url = resultMeta.url
-  //   const psbo = resultMeta.supplier
-  //   const qs = querystring.stringify({ psbo, psbo_url, uid })
-  //   const surveyUrl = `https://paperstudio.typeform.com/to/z6cuin?${qs}`
-  //   resultMeta.url = surveyUrl
-  // }
-
   const resultTemplate = `frameworks/${resultRef}.njk`
   const renderedResult = nunjucks.render(resultTemplate, {
     result : resultRef,

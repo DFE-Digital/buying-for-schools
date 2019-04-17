@@ -3,216 +3,252 @@
     "ref": "books",
     "title": "Books and related materials",
     "supplier": "ESPO",
-    "url": "https://www.espo.org/Pages/Books-for-schools-framework-376E-guide"
+    "url": "https://www.espo.org/Pages/Books-for-schools-framework-376E-guide",
+    "cat": "books"
   },
   {
     "ref": "library",
     "title": "Library resources",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=6&frameworkID=177"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=6&frameworkID=177",
+    "cat": "books"
   },
   {
     "ref": "furniture",
     "title": "Furniture",
     "supplier": "NEPO",
-    "url": "https://www.nepo.org/solutions/furniture"
+    "url": "https://www.nepo.org/solutions/furniture",
+    "cat": "fm"
   },
   {
     "ref": "network",
     "title": "ICT solutions and supply network infrastructure",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=188"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=188",
+    "cat": "ict"
   },
   {
     "ref": "ict-catalog",
     "title": "The purchasing platform",
     "supplier": "CCS",
-    "url": "https://purchasingplatform.crowncommercial.gov.uk/mp-welcome"
+    "url": "https://purchasingplatform.crowncommercial.gov.uk/mp-welcome",
+    "cat": "ict"
   },
   {
     "ref": "photocopier-printer-scanner",
     "title": "Multifunctional Devices, Managed Print and Content Services and Records and Information Management",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3781"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3781",
+    "cat": "ict"
   },
   {
     "ref": "legal",
     "title": "Legal services",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=207"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=207",
+    "cat": "legal"
   },
   {
     "ref": "professional",
     "title": "Specialist professional services from NEPRO",
     "supplier": "NEPO",
-    "url": "https://nepro.org.uk/"
+    "url": "https://nepro.org.uk/",
+    "cat": "professional"
   },
   {
     "ref": "school-switch",
     "title": "School Switch",
     "supplier": "CCS",
-    "url": "https://schoolswitch.crowncommercial.gov.uk/#!/home"
+    "url": "https://schoolswitch.crowncommercial.gov.uk/#!/home",
+    "cat": "energy"
   },
   {
     "ref": "elec-half-hourly-ancillary",
     "title": "Electricity supply and ancillary services (half hourly)",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1075"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1075",
+    "cat": "energy"
   },
   {
     "ref": "elec-unmetered",
     "title": "Electricity (half hourly, non-half hourly and unmetered)",
     "supplier": "YPO",
-    "url": "https://www.ypo.co.uk/framework/detail/900271#framework_details"
+    "url": "https://www.ypo.co.uk/framework/detail/900271#framework_details",
+    "cat": "energy"
   },
   {
     "ref": "elec-non-half-hourly-ancillary",
     "title": "Electricity supply and ancillary services (non-half hourly)",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3791"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3791",
+    "cat": "energy"
   },
   {
     "ref": "gas",
     "title": "Supply of natural gas (daily/non-daily metered) and ancillary services",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1076"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1076",
+    "cat": "energy"
   },
   {
     "ref": "gas-firm",
     "title": "Firms mains gas",
     "supplier": "YPO",
-    "url": "https://www.ypo.co.uk/framework/detail/900045#framework_details"
+    "url": "https://www.ypo.co.uk/framework/detail/900045#framework_details",
+    "cat": "energy"
   },
   {
     "ref": "national-energy-performance-contracting",
     "title": "National energy performance contracting",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3768"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3768",
+    "cat": "energy"
   },
   {
     "ref": "retrofit",
     "title": "Energy efficiency improvements from Retrofit",
     "supplier": "Fusion 21",
-    "url": "https://www.fusion21.co.uk/"
+    "url": "https://www.fusion21.co.uk/",
+    "cat": "energy"
   },
   {
     "ref": "water",
     "title": "Water, wastewater and ancillary services",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3790"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3790",
+    "cat": "energy"
   },
   {
     "ref": "fmm",
     "title": "Facilities management (FM) marketplace",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3830"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3830",
+    "cat": "fm"
   },
   {
     "ref": "removal-relocation",
     "title": "Removal, relocation and additional services",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=196"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=196",
+    "cat": "fm"
   },
   {
     "ref": "construction",
     "title": "Construction consultancy services",
     "supplier": "SBS",
-    "url": "https://www.sbs.nhs.uk/ica-construction-consultancy-services"
+    "url": "https://www.sbs.nhs.uk/ica-construction-consultancy-services",
+    "cat": "fm"
   },
   {
     "ref": "pat",
     "title": "Portable appliance and fixed wire testing (PAT)",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=162"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=162",
+    "cat": "fm"
   },
   {
     "ref": "cleaning",
     "title": "Building cleaning services",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=160"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=160",
+    "cat": "fm"
   },
   {
     "ref": "ict-services-education",
     "title": "ICT services for education",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1050"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1050",
+    "cat": "ict"
   },
   {
     "ref": "audit",
     "title": "Audit services",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=184"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=184",
+    "cat": "financial"
   },
   {
     "ref": "cost-recovery",
     "title": "Spend analysis and recovery services",
     "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3820"
+    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3820",
+    "cat": "financial"
   },
   {
     "ref": "insurance",
     "title": "Insurance for academies, free schools and similar institutions",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=176"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=176",
+    "cat": "financial"
   },
   {
     "ref": "leasing",
     "title": "Leasing services",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=195"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=195",
+    "cat": "financial"
   },
   {
     "ref": "pre-emp-checks",
     "title": "Employee screening services",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=197"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=197",
+    "cat": "hr"
   },
   {
     "ref": "supply-teachers",
     "title": "Hiring supply teachers and agency workers",
     "supplier": "CCS",
-    "url": "https://marketplace.service.crowncommercial.gov.uk/supply-teachers"
+    "url": "https://marketplace.service.crowncommercial.gov.uk/supply-teachers",
+    "cat": "hr"
   },
   {
     "ref": "software-licenses",
     "title": "Software licenses and associated services for academies and schools",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=210"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=210",
+    "cat": "ict"
   },
   {
     "ref": "ict-cloud",
     "title": "ICT, cloud, support and related services (Think IT)",
     "supplier": "E2BN",
-    "url": "http://think-it.org.uk/"
+    "url": "http://think-it.org.uk/",
+    "cat": "ict"
   },
   {
     "ref": "ict-hardware",
     "title": "Desktop hardware",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=168"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=168",
+    "cat": "ict"
   },
   {
     "ref": "photocopier-printer-scanner-services",
     "title": "Multi-functional devices (MFD) and associated print services and supplies",
     "supplier": "CPC",
-    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=7&frameworkID=185"
+    "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=7&frameworkID=185",
+    "cat": "ict"
   },
   {
     "ref": "photocopier-printer-scanner-toner",
     "title": "Photocopiers, printers and scanners with toners included",
     "supplier": "KCS",
-    "url": "http://www.kcs4ps.co.uk/"
+    "url": "http://www.kcs4ps.co.uk/",
+    "cat": "ict"
   },
   {
     "ref": "digital-marketplace",
     "title": "Digital Marketplace (G-Cloud 10)",
     "supplier": "CCS",
-    "url": "https://www.digitalmarketplace.service.gov.uk/buyers/direct-award/g-cloud/start"
+    "url": "https://www.digitalmarketplace.service.gov.uk/buyers/direct-award/g-cloud/start",
+    "cat": "ict"
   },
   {
     "ref": "rpa",
     "title": "Risk Protection Arrangement",
     "supplier": "RPA",
-    "url": "https://www.gov.uk/guidance/academies-risk-protection-arrangement-rpa"
+    "url": "https://www.gov.uk/guidance/academies-risk-protection-arrangement-rpa",
+    "cat": "financial"
   }
 ]

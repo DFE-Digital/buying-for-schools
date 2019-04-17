@@ -3,13 +3,19 @@ config:
   phases:
     - duration: 60
       arrivalRate: 20
-  defaults:
-    headers:
-      Authorization: "Basic YnV5aW5nOnNjaG9vbHM="
+#  defaults:
+#    headers:
+#      Authorization: "Basic YnV5aW5nOnNjaG9vbHM="
 scenarios:
   - flow:
     - get:
         url: "/"
+    - get:
+        url: "/assets/styles/main.css"
+    - get:
+        url: "/assets/all.js"
+    - get:
+        url: "/assets/frameworks.js"
     - think: 5
     - get:
         url: "/benefits"

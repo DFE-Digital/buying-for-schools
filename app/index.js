@@ -14,6 +14,7 @@ const dt = require('./decisionTree/decisionTree')
 
 const tree = dt.makeTree(require('./tree.json'))
 const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
+const categories = require('./categories.json')
 const allPaths = dt.getAllBranchPaths(tree)
 
 const serviceName = 'Find a DfE approved framework for your school'
@@ -23,6 +24,7 @@ app.locals = {
   frameworkPath,
   tree,
   frameworks,
+  categories,
   allPaths,
   survey: process.env.SURVEY === 'YES'
 }
@@ -37,6 +39,7 @@ routeBasicPages(routeIntroPages)
 routeBasicPages(routeGuidancePages)
 
 const routeDecisionTreePages = require('./routeDecisionTreePages')(app)
+const routeDealsPages = require('./dealsPage')(app)
 
 app.get('/how-to-use-ypo-framework', (req, res) => {
   const render = nunjucks.render('how-to-use/ypo-electricity.njk', {
