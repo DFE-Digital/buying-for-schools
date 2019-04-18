@@ -47,27 +47,19 @@ const getAllBranchPaths = (tree) => {
   }
 }
 
-const getBranchPath = (tree, pairs) => {
-  let branches = List()
-  pairs.forEach((answerRef, questionRef) => {
-    let branch = tree.getBranch(questionRef)
-    if (branch) {
-      branch = dt.setSelectedOption(branch, answerRef)
-      branches = branches.push(branch)
-    }
-  })
-  return branches
-}
-
 const getQuestionAnswerSummary = (tree, pairs, baseUrl) => {
-  let summary = List()
-  let url = List()
-  pairs.forEach((answerRef, questionRef) => {
+  const summary = []
+  const url = []
+  Object.keys(pairs).forEach(questionRef => {
+    const answerRef = pairs[questionRef]
     const branch = tree.getBranch(questionRef)
+    if (!branch) {
+      return summary
+    }
     const selectedOption = branch.getOption(answerRef)
-    url = url.push(questionRef)
+    url.push(questionRef)
     if (selectedOption) {
-      summary = summary.push({
+      summary.push({
         key: { text: branch.getTitle() },
         value: { text: selectedOption.getTitle() },
         actions: {
@@ -78,7 +70,7 @@ const getQuestionAnswerSummary = (tree, pairs, baseUrl) => {
           }]
         }
       })
-      url = url.push(selectedOption.getRef())
+      url.push(selectedOption.getRef())
     }
   })
 
@@ -86,5 +78,6 @@ const getQuestionAnswerSummary = (tree, pairs, baseUrl) => {
 }
 
 module.exports = {
-  getAllBranchPaths
+  getAllBranchPaths,
+  getQuestionAnswerSummary
 }

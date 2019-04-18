@@ -1,7 +1,6 @@
 const url = require('url')
 const path = require('path')
 const nunjucks = require('nunjucks')
-const dt = require('./decisionTree/decisionTree')
 
 const questionPage = app => (req, res) => {
 
@@ -9,43 +8,55 @@ const questionPage = app => (req, res) => {
   const { urlBits, urlInfo, summary } = res.locals
 
   const questionRef = urlBits[urlBits.length -1]
-  const branch = dt.getBranch(tree, questionRef)
+  const branch = tree.getBranch(questionRef)
   const id = 'decision-tree-' + questionRef
   const radioOptions = {
     idPrefix: id,
     name: 'decision-tree',
     fieldset: {
       legend: {
-        text: branch.get('title'),
+        text: branch.getTitle(),
         isPageHeading: true,
         classes: 'govuk-fieldset__legend--l'
       }
     }
   }
 
-  const hint = branch.get('hint')
+  const hint = branch.getHint()
   if (hint) {
     radioOptions.hint = { text: hint }
   }
 
-  radioOptions.items = branch.get('options').map(option => {
-    const optionUrl = path.join(urlInfo.pathname, option.get('ref'))
-    const optionHint = option.get('hint')
+  radioOptions.items = branch.getOptions().map(option => {
+    const optionUrl = path.join(urlInfo.pathname, option.getRef())
+    const optionHint = option.getHint()
     return {
       value: optionUrl,
-      text: option.get('title'),
+      text: option.getTitle(),
       hint: optionHint ? { text: optionHint } : null
     }
   })
 
   
-  if (radioOptions.items.getIn([0, 'text']) !== 'Yes'){
-    radioOptions.items = radioOptions.items.sortBy(item => item.text)
-  }  
+  if (radioOptions.items[0].text !== 'Yes'){
+    radioOptions.items.sort((a, b) => {
+      const aTitle = a.text.toUpperCase()
+      const bTitle = b.text.toUpperCase()
+      if (aTitle < bTitle) {
+        return -1
+      }
+      if (aTitle > bTitle) {
+        return 1
+      }
+      return 0
+    })
+
+    console.log(radioOptions.items)
+  }
 
   let err = null
   if (urlInfo.search) {
-    const errMsg = branch.get('err') || 'Please choose an option'
+    const errMsg = branch.getErr() || 'Please choose an option'
     radioOptions.errorMessage = { text: errMsg }
     err = {
       titleText: "There is a problem",
@@ -58,10 +69,10 @@ const questionPage = app => (req, res) => {
     }
   }
 
-  const prefix = branch.get('prefix')
-  const suffix = branch.get('suffix') ? nunjucks.render(branch.get('suffix')) : ''
+  // const prefix = branch.getPrefix()
+  const suffix = branch.getSuffix() ? nunjucks.render(branch.getSuffix()) : ''
 
-  const pageTitle = err ? 'Error: ' + branch.get('title') : branch.get('title')
+  const pageTitle = err ? 'Error: ' + branch.getTitle() : branch.getTitle()
 
   const render = nunjucks.render('question.njk', {
     locals: app.locals,
@@ -70,7 +81,6 @@ const questionPage = app => (req, res) => {
     err,
     summary, 
     suffix,
-    prefix,
     pageTitle
   })
   res.send(render)

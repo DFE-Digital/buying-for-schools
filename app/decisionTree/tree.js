@@ -13,12 +13,15 @@ const tree = (data) => {
 }
 
 const makeBranch = (data) => {
-  const { ref, title, err } = data
+  console.log(data)
+  const { ref, title, err, hint, suffix } = data
   const options = data.options.map(optiondata => makeOption(optiondata))
   return {
     getRef: () => ref,
     getTitle: () => title,
     getErr: () => err,
+    getHint: () => hint,
+    getSuffix: () => suffix,
     getOptions: () => options,
     getOption: (optionRef) => options.find(option => option.getRef() === optionRef),
     toObject: () => {
@@ -34,12 +37,13 @@ const makeBranch = (data) => {
 }
 
 const makeOption = (data) => {
-  const { ref, title, next, result } = data
+  const { ref, title, next, result, hint } = data
   return {
     getRef: () => ref,
     getTitle: () => title,
     getNext: () => next,
     getResult: () => result,
+    getHint: () => hint,
     toObject: () => {
       return {
         ref,

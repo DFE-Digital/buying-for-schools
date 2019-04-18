@@ -10,7 +10,7 @@ const resultPage = app => (req, res) => {
   const resultRef = urlBits[urlBits.length -1]
 
   const frameworks = app.locals.frameworks
-  const resultMeta = frameworks.find(framework => framework.get('ref') === resultRef).toJS()
+  const resultMeta = frameworks.get(resultRef).toObject()
 
   const resultTemplate = `frameworks/${resultRef}.njk`
   const renderedResult = nunjucks.render(resultTemplate, {

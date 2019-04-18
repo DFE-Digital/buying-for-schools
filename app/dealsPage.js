@@ -2,20 +2,20 @@ const url = require('url')
 const path = require('path')
 const nunjucks = require('nunjucks')
 
-const dt = require('./decisionTree/decisionTree')
 
 const allDealsPage = app => (req, res) => {
-  const frameworks = app.locals.frameworks.toJS()
+  const frameworks = app.locals.frameworks.getAll()
   const grouped = {}
   frameworks.forEach(framework => {
-    let group = grouped[framework.cat]
-    let category = app.locals.categories.find(cat => cat.ref === framework.cat)
+    const cat = framework.getCategory()
+    const group = grouped[cat]
+    const category = app.locals.categories.find(category => category.ref === cat)
     if (!group) {
-      grouped[framework.cat] = {
+      grouped[cat] = {
         ...category, items: []
       }
     }
-    grouped[framework.cat].items.push(framework)
+    grouped[cat].items.push(framework.toObject())
   })
 
   const renderedResult = nunjucks.render('deals.njk', {
@@ -43,9 +43,9 @@ const dealPage = (app, framework) => (req, res) => {
 const routeDealsPage = app => {
   app.get('/framework', allDealsPage(app))
 
-  const frameworks = app.locals.frameworks.toJS()
+  const frameworks = app.locals.frameworks.getAll()
   frameworks.forEach(f => {
-    app.get(path.join('/framework', f.ref), dealPage(app, f))
+    app.get(path.join('/framework', f.getRef()), dealPage(app, f))
   })
 
 }

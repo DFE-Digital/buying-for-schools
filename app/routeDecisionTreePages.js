@@ -1,8 +1,8 @@
 const path = require('path')
 const nunjucks = require('nunjucks')
-const dt = require('./decisionTree/decisionTree')
 const dtr = require('./decisionTree/decisionTreeRoute')
 const url = require('url')
+const treeUtils = require('./decisionTree/treeUtils')
 
 const routeDecisionTreePages = app => {
   
@@ -19,8 +19,7 @@ const routeDecisionTreePages = app => {
 
   const getSummary = (req) => {
     const pairs = dtr.getQuestionAnswerPairSlugs(req.url.substr(frameworkPath.length))
-    const branchPath = dtr.getBranchPath(tree, pairs)
-    return dtr.getQuestionAnswerSummary(branchPath, frameworkPath)
+    return treeUtils.getQuestionAnswerSummary(tree, pairs, frameworkPath)
   }
 
   app.get(`${frameworkPath}*`, (req, res, next) => {

@@ -8,22 +8,9 @@ const app = express()
 
 const auth = require('./auth.js')(app)
 
-const dtr = require('./decisionTree/decisionTreeRoute')
-const dtres = require('./decisionTree/decisionTreeResults')
-const dt = require('./decisionTree/decisionTree')
-
-// const tree = dt.makeTree(require('./tree.json'))
-const frameworks = dtres.makeFrameworks(require('./frameworks.json'))
-const categories = require('./categories.json')
-// const allPaths = dt.getAllBranchPaths(tree)
-
+const frameworks = require('./decisionTree/frameworks')(require('./frameworks.json'))
 const tree = require('./decisionTree/tree')(require('./tree.json'))
-// const b = tt.getBranch('type')
-// console.log(tt.getAllPaths())
-// console.log(b.toObject())
-// console.log(b.getOption('buying').toObject())
-// const o = b.getOption('buy')
-
+const categories = require('./categories.json')
 
 const serviceName = 'Find a DfE approved framework for your school'
 const frameworkPath = '/frameworks'
