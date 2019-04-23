@@ -13,7 +13,6 @@ const tree = (data) => {
 }
 
 const makeBranch = (data) => {
-  console.log(data)
   const { ref, title, err, hint, suffix } = data
   const options = data.options.map(optiondata => makeOption(optiondata))
   return {

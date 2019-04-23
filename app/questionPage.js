@@ -50,8 +50,6 @@ const questionPage = app => (req, res) => {
       }
       return 0
     })
-
-    console.log(radioOptions.items)
   }
 
   let err = null
