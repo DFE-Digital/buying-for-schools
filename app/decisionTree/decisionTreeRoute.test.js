@@ -3,7 +3,6 @@
 
 
 const dtr = require('./decisionTreeRoute')
-const dtres = require('./decisionTreeResults')
 
 describe('decisionTreeRoute', () => {
   describe('getQuestionAnswerPairSlugs', () => {
