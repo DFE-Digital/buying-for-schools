@@ -12,5 +12,9 @@ module.exports = (label) => {
     case 'intro': {
       return 'h1 + p.govuk-body-l'
     }
+
+    case 'page title': {
+      return 'head title'
+    }
   }
 }

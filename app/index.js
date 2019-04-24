@@ -3,14 +3,13 @@ const serveStatic = require('serve-static')
 const path = require('path')
 const url = require('url')
 const port = process.env.PORT || 5000
-
 const app = express()
 
 const auth = require('./auth.js')(app)
 
-const frameworks = require('./decisionTree/frameworks')(require('./frameworks.json'))
-const tree = require('./decisionTree/tree')(require('./tree.json'))
-const categories = require('./categories.json')
+const frameworks = require('./decisionTree/frameworks')(require('./data/frameworks.json'))
+const tree = require('./decisionTree/tree')(require('./data/tree.json'))
+const categories = require('./data/categories.json')
 
 const serviceName = 'Find a DfE approved framework for your school'
 const frameworkPath = '/frameworks'
@@ -26,6 +25,18 @@ app.locals = {
 const nunjucks = require('./nunjucksConfig')(app)
 
 app.use(serveStatic('public/', { 'index': ['index.html'] }))
+
+
+app.use((req, res, next) => {
+  if (process.env.AVAILABLE === 'FALSE') {
+    const render = nunjucks.render('unavailable.njk', { locals: app.locals })
+    res.status(503)
+    res.send(render)
+    return
+  }
+  next()
+})
+
 const routeBasicPages = require('./routeBasicPages')(app)
 const routeIntroPages = require('./routeIntroPages')(app)
 const routeGuidancePages = require('./routeGuidancePages')(app)
@@ -43,6 +54,7 @@ app.get('*', (req, res) => {
   res.status(404)
   res.send(render)
 })
+
 
 const server = app.listen(port, () => {
   console.log('Magic happens on port ' + port)

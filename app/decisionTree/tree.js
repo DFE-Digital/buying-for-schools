@@ -2,6 +2,7 @@ const treeUtils = require('./treeUtils')
 
 const tree = (data) => {
   const branches = data.map(branchdata => makeBranch(branchdata))
+  Object.freeze(branches)
   const tree = {
     getFirst: () => branches[0],
     getBranches: () => branches,

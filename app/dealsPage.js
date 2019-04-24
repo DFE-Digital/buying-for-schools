@@ -28,6 +28,7 @@ const allDealsPage = app => (req, res) => {
 }
 
 const dealPage = (app, framework) => (req, res) => {
+  framework = framework.toObject()
   const { ref, title } = framework
   const tpl = `frameworks/${ref}.njk`
   const renderedResult = nunjucks.render(tpl, {

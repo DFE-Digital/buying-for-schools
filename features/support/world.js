@@ -6,6 +6,7 @@ const puppeteer = require("puppeteer")
 const selectors = require('./selectors')
 
 const HOMEPAGE = "http://localhost:5000"
+const serviceName = 'Find a DfE approved framework for your school'
 
 let browser = null
 let page = null
@@ -101,6 +102,10 @@ class B4SWorld {
    
     expect(cards).to.deep.include({ href, title, provider })
   
+  }
+
+  async hasPageTitle(pageTitle) {
+    return await this.checkText(selectors('page title'), `${pageTitle} - ${serviceName} - GOV.UK`)
   }
 }
 
