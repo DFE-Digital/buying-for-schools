@@ -1,0 +1,103 @@
+[
+  {
+    "ref": "type",
+    "title": "Type of animal?",
+    "options": [
+      { 
+        "ref": "invertebrate",
+        "title": "Invertebrate",
+        "next": "invtype"
+      },
+      { 
+        "ref": "vertebrate",
+        "title": "Vertebrate",
+        "next": "verttype"
+      }
+    ]
+  },
+
+  {
+    "ref": "invtype",
+    "title": "Invertebrate type?",
+    "options": [
+      {
+        "ref": "arthropods",
+        "title": "Arthropods",
+        "next": "arthtype"
+      },
+      {
+        "ref": "cold",
+        "title": "Cold blooded",
+        "next": "cold"
+      }
+    ]
+  },
+
+  {
+    "ref": "verttype",
+    "title": "Vertebrate blood type?",
+    "options": [
+      {
+        "ref": "cold",
+        "title": "Cold blooded",
+        "next": "cold"
+      },
+      {
+        "ref": "warm",
+        "title": "Warm blooded",
+        "next": "warm"
+      }
+    ]
+  },
+
+  {
+    "ref": "arthtype",
+    "title": "Arthropod type?",
+    "options": [
+      {
+        "ref": "terra",
+        "title": "Terrestrial",
+        "result": ["beetles", "flies"]
+      },
+      {
+        "ref": "marine",
+        "title": "Marine",
+        "result": ["crabs", "lobsters"]
+      }
+    ]
+  },
+
+  {
+    "ref": "warm",
+    "title": "Warm blooded insultated with?",
+    "options": [
+      {
+        "ref": "feathers",
+        "title": "Feathers",
+        "result": ["birds"]
+      },
+      {
+        "ref": "fur",
+        "title": "Fur",
+        "result": ["sheep", "cats"]
+      }
+    ]
+  },
+
+  {
+    "ref": "cold",
+    "title": "Cold blooded animals?",
+    "options": [
+      {
+        "ref": "rep",
+        "title": "Reptiles",
+        "result": ["Turtle", "Crocodile", "Snake"]
+      },
+      {
+        "ref": "amp",
+        "title": "Amphibians",
+        "result": ["Frog", "Lizard"]
+      }
+    ]
+  }
+]

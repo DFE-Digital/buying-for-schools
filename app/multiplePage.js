@@ -11,7 +11,8 @@ const multiplePage = app => (req, res, next) => {
     const answerRef = urlBits[urlBits.length -1]
     const branch = tree.getBranch(questionRef)
     const answer = branch.getOption(answerRef)
-    const results = answer.getResult().sort((a, b) => Math.random())
+    const results = [...answer.getResult()]
+    results.sort((a, b) => Math.random())
     const resultList = results.map(r => {
       const result = frameworks.get(r)
       const resultJS = result.toObject()

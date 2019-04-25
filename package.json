@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app/index.js",
     "start:dev": "gulp watch",
-    "start:testing": "jest --watch",
+    "start:testing": "jest --watch --coverage",
     "test": "npm run test:jshint && npm run test:jest && npm run test:coverage && npm run test:bdd",
     "test:jshint": "jshint app/**/*.js",
     "test:jest": "jest",

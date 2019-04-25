@@ -8,7 +8,7 @@ const app = express()
 const auth = require('./auth.js')(app)
 
 const frameworks = require('./decisionTree/frameworks')(require('./data/frameworks.json'))
-const tree = require('./decisionTree/tree')(require('./data/tree.json'))
+const tree = require('./decisionTree/tree').makeTree(require('./data/tree.json'))
 const categories = require('./data/categories.json')
 
 const serviceName = 'Find a DfE approved framework for your school'

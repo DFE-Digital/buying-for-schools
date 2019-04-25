@@ -1,6 +1,6 @@
 const treeUtils = require('./treeUtils')
 
-const tree = (data) => {
+const makeTree = (data) => {
   const branches = data.map(branchdata => makeBranch(branchdata))
   Object.freeze(branches)
   const tree = {
@@ -16,6 +16,7 @@ const tree = (data) => {
 const makeBranch = (data) => {
   const { ref, title, err, hint, suffix } = data
   const options = data.options.map(optiondata => makeOption(optiondata))
+  Object.freeze(options)
   return {
     getRef: () => ref,
     getTitle: () => title,
@@ -25,12 +26,13 @@ const makeBranch = (data) => {
     getOptions: () => options,
     getOption: (optionRef) => options.find(option => option.getRef() === optionRef),
     toObject: () => {
-      const jsOptions = options.map(opt => opt.toObject())
       return {
         ref,
         title,
         err,
-        jsOptions
+        hint,
+        suffix,
+        options: options.map(opt => opt.toObject())
       }
     }
   }
@@ -38,6 +40,7 @@ const makeBranch = (data) => {
 
 const makeOption = (data) => {
   const { ref, title, next, result, hint } = data
+  Object.freeze(result)
   return {
     getRef: () => ref,
     getTitle: () => title,
@@ -49,22 +52,15 @@ const makeOption = (data) => {
         ref,
         title,
         next,
-        result
+        result,
+        hint
       }
     }
   }
 }
 
-module.exports = tree
-
-
-
-
-// const deepFreeze = (obj) => {
-//   const propNames = Object.getOwnPropertyNames(obj)
-//   for (let name of propNames) {
-//     const value = obj[name]
-//     obj[name] = (value && typeof value === "object") ? deepFreeze(value) : value
-//   }
-//   return Object.freeze(obj)
-// }
+module.exports = {
+  makeTree,
+  makeBranch,
+  makeOption
+}

@@ -1,4 +1,5 @@
 /* global describe it expect jest */
+
 const nunjucks = require('nunjucks')
 const multiplePage = require('./multiplePage')
 const testTreeData = [
@@ -24,7 +25,7 @@ const testTreeData = [
     ]
   }
 ]
-const testTree = require('./decisionTree/tree')(testTreeData)
+const testTree = require('./decisionTree/tree').makeTree(testTreeData)
 
 const testResultData = [
   {
