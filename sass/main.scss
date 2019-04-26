@@ -120,3 +120,7 @@
   }
 }
 
+abbr[title], acronym[title] {
+  text-decoration: none;
+  cursor: help;
+}

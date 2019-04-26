@@ -20,6 +20,11 @@ const routeGuidancePages = app => {
       title: 'Buy ICT hardware for your school',
       tpl: 'guidance/ict-hardware.njk'
     },
+    { 
+      path: '/guidance/catering',
+      title: 'Buy catering services for your school',
+      tpl: 'guidance/catering.njk'
+    }
     
   ]
 

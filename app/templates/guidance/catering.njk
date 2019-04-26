@@ -1,0 +1,219 @@
+{% extends "guidance.njk" %}
+
+{% set title = "Buy catering services for your school" %}
+{% set intro = "Use this guide to find the best solution for the catering requirements of your school or academy." %}
+{% set published = "2019-01-22" %}
+{% set updated = "2019-01-22" %}
+
+{% set contents = [
+  { id:"before", title: "Before you start" },
+  { id:"timescales", title: "Planning time" },
+  { id:"research", title: "Research" },
+  { id:"rightway", title: "Find the right way to buy" }
+] %}
+
+{% block guidance %}
+
+<div id="before">
+  <h2 class="govuk-heading-m govuk-!-margin-top-9">Before you start</h2>
+
+  {{ govukWarningText({
+    text: 'Make sure you’re familiar with the School Food Standards requirements.',
+    iconFallbackText: 'Warning'
+  }) }}
+
+  <h3 class="govuk-heading-s">Current contract</h3>
+  <p class="govuk-body">Start to think about:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>the service you’re paying for currently</li>
+    <li>what you want to change or improve</li>
+    <li>whether you’ll need to make a business case</li>
+  </ul>
+
+  <h3 class="govuk-heading-s">Moving to a new contract</h3>
+  <p class="govuk-body">Gather the information you’ll need before you move contracts, such as:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>expiry date of current agreement and notice period</li>
+    <li>the likely value of your contract</li>
+    <li>current uptake of free school meals</li>
+    <li>total school meal uptake</li>
+  </ul>
+</div>
+
+<div id="timescales">
+  <h2 class="govuk-heading-m">Planning timescales</h2>
+  <p class="govuk-body">Rushing procurement may cost you more time and money.</p>
+  <p class="govuk-body">Moving your contract make take longer than you think so it’s important to consider the points below:</p>
+
+  <h3 class="govuk-heading-s">When to start a new contract</h3>
+  <p class="govuk-body">Try to start a new contract:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>at the beginning of a new academic year</li>
+    <li>at the beginning of new financial year</li>
+    <li>after a significant holiday period such as Christmas or Easter</li>
+  </ul>
+
+  <h3 class="govuk-heading-s">Approval time</h3>
+  <p class="govuk-body">Allow decision-making time with governors and trustees.</p>
+  <p class="govuk-body">You may find it easier to work backwards from your switch date to plan each stage of the process.</p>
+  
+  <h3 class="govuk-heading-s">Keep people informed</h3>
+  <p class="govuk-body">Talk regularly to your staff. These are the people most likely to be affected by any change.</p>
+  <p class="govuk-body">Try to reduce any concerns and be aware that staff may want to contact their union.</p>
+
+  <h3 class="govuk-heading-s"><abbr title="Transfer of Undertakings (Protection of Employment)">TUPE</abbr> considerations</h3>
+  <p class="govuk-body">Consider whether <a class="govuk-link" href="https://www.gov.uk/transfers-takeovers"><abbr title="Transfer of Undertakings (Protection of Employment)">TUPE</abbr></a> or Local Government Pension Scheme (LGPS) will apply to your school, especially if you’re looking to:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>outsource provisions</li>
+    <li>move away from your local authority for the first time</li>
+  </ul>
+  <p class="govuk-body">When you give notice of termination to your current provider, you should request details of any staff that will be subject to <abbr title="Transfer of Undertakings (Protection of Employment)">TUPE</abbr> transfer.</p>
+  <p class="govuk-body">This information should include:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>salary</li>
+    <li>terms and conditions</li>
+    <li>pension details</li>
+  </ul>
+  <p class="govuk-body">These details will form part of your business case and potential tender requirements.</p>
+</div>
+
+<div id="research">
+  <h2 class="govuk-heading-m">Research</h2>
+
+  <h3 class="govuk-heading-s">Talk to stakeholders</h3>
+  <p class="govuk-body">Consider what your pupils, parents, staff, governors and trustees want. This will help you deliver successful catering provision.</p>
+
+  <h3 class="govuk-heading-s">Talk to other schools</h3>
+  <p class="govuk-body">You may want to contact local schools to see if they’re looking to renew or change contracts. </p>
+  <p class="govuk-body">You may be able to combine provisions to:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>get better value for money</li>
+    <li>save time by splitting the workload</li>
+  </ul>
+</div>
+
+<div id="rightway">
+  <h2 class="govuk-heading-m" id="before">Find the right way to buy</h2>
+
+  {{ govukWarningText({
+    text: 'Follow your school’s procurement rules. These may be your school’s own rules, or set by the local authority.',
+    iconFallbackText: 'Warning'
+  }) }}
+
+  <p class="govuk-body">You have 3 options:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a class="govuk-link" href="#rightway-frameworks">use a framework</a></li>
+    <li><a class="govuk-link" href="#rightway-ownprocurement">run your own procurement</a></li>
+    <li><a class="govuk-link" href="#rightway-inhouse">in-house catering</a></li>
+  </ul>
+  <p class="govuk-body">The option you choose will depend on your school requirements and circumstances.</p>
+  <p class="govuk-body">If the lifetime value of your contract is over the ​EU Procurement threshold, you’ll need to use a framework agreement or carry out your own procurement, issuing an OJEU tender.</p>
+
+  <div id="rightway-frameworks">
+    <h3 class="govuk-heading-s">Use a framework</h3>
+    <div class="cta-box">
+      <p class="govuk-body">DfE reviews a range of frameworks. These are assessed for compliance with procurement regulations, ease of use, suitability and value for money.</p>
+      <p class="govuk-body"><a class="govuk-link" href="/">Find a DfE recommended framework for your school</a>.</p>
+    </div>
+    <p class="govuk-body">Buying from a framework is usually quicker and easier than getting bids or quotes because the agreements:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>have already been through a full competitive tender process</li>
+      <li>have been quality checked</li>
+      <li>are checked to make sure they comply with the law</li>
+      <li>may have draft specifications and expert help available</li>
+    </ul>
+
+    <h4 class="govuk-heading-s govuk-!-font-size-16">Framework considerations</h4>
+
+    <h5 class="govuk-heading-s govuk-!-font-size-14">Equipment</h5>
+    <p class="govuk-body">You should consider:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>what equipment you own</li>
+      <li>what the bidding suppliers will provide</li>
+      <li>if you’ll have to buy new equipment and costs involved</li>
+    </ul>
+
+    <h5 class="govuk-heading-s govuk-!-font-size-14">Potential suppliers</h5>
+    <p class="govuk-body">When choosing suppliers, consider:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>confirming that DBS checks have been completed</li>
+      <li>inviting suppliers to your school to produce sample meals</li>
+      <li>getting feedback on suppliers by talking to other schools they provide for</li>
+    </ul>
+  </div>
+
+  <div id="rightway-ownprocurement">
+    <h3 class="govuk-heading-s">Run your own procurement</h3>
+    <p class="govuk-body">If you cannot get what you need through a framework, you can run your own buying process.</p>
+    <p class="govuk-body">You should consider if:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>maintenance contracts are covered by existing contractors</li>
+      <li>contractor tests and checks are up to date</li>
+      <li>you need to replace equipment because it belongs to the current provider</li>
+      <li>DBS checks have been completed by suppliers</li>
+      <li>staff training is required such as food hygiene and food preparation skills</li>
+    </ul>
+
+    <h4 class="govuk-heading-s govuk-!-font-size-16">Moving away from local authority provision</h4>
+    <p class="govuk-body">There may be timeframes around when the local authority is obliged to release <abbr title="Transfer of Undertakings (Protection of Employment)">TUPE</abbr> and LGPS information.</p>
+    <p class="govuk-body">These timeframes can cause delays and further expense if you award the contract without having these details.</p>
+    <p class="govuk-body">You may want to invite your local authority to tender and involve them in the process. This way the information you need is provided during the bidding process.</p>
+  </div>
+
+  <div id="rightway-inhouse">
+
+    <h3 class="govuk-heading-s">In-house catering</h3>
+    <p class="govuk-body">You may decide to take your catering provision in-house and hire your own staff to carry out your requirements.</p>
+
+    <h4 class="govuk-heading-s govuk-!-font-size-16">Equipment</h4>
+    <p class="govuk-body">You may want to consider:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>what equipment you’ll need</li>
+      <li>potential maintenance costs</li>
+    </ul>
+
+    <h4 class="govuk-heading-s govuk-!-font-size-16">Staff training</h4>
+    <p class="govuk-body">You may want to consider initial training for your staff such as:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>food specification</li>
+      <li>menu building</li>
+      <li>health and safety</li>
+      <li>food preparation</li>
+      <li>food hygiene standards</li>
+    </ul>
+
+    <h4 class="govuk-heading-s govuk-!-font-size-16">Costs</h4>
+    <p class="govuk-body">Double check your figures and requirements – a miscalculated business plan can be costly.</p>
+    <p class="govuk-body">You may want to consider whether costs will increase for:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>staff</li>
+      <li>food</li>
+      <li>utility bills</li>
+      <li>ongoing staff training for changes in qualifications and regulations</li>
+    </ul>
+
+    <h4 class="govuk-heading-s govuk-!-font-size-16">Capacity</h4>
+    <p class="govuk-body">You may want to consider whether you can accommodate increased uptake for school meals. This may include additional:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>staff hours</li>
+      <li>equipment</li>
+      <li>dining space</li>
+      <li>produce</li>
+      <li>storage</li>
+    </ul>
+
+    <h4 class="govuk-heading-s govuk-!-font-size-16">Opportunities</h4>
+    <p class="govuk-body">You may find you can:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>offer catering services to other local schools and generate additional income</li>
+      <li>negotiate better prices from suppliers</li>
+      <li>increase food quality</li>
+      <li>respond quicker if your equipment is broken or faulty</li>
+      <li>develop staff skills through bespoke training</li>
+      <li>be in control of your expenditure </li>
+    </ul>
+  </div>
+</div>
+
+
+{% endblock %}
