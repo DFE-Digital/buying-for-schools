@@ -41,9 +41,25 @@ describe('treeUtils', () => {
   })
 
   describe('getQuestionAnswerSummary', () => {
-    let summ = treeUtils.getQuestionAnswerSummary(animalTree, {type: 'vertebrate', verttype: 'warm'})
+    
+    // console.log(summ)
     it('should produce a summary', () => {
+      const summ = treeUtils.getQuestionAnswerSummary(animalTree, {type: 'vertebrate', verttype: 'warm'})
       expect(summ.length).toBe(2)
+    })
+
+    it('should have certain properties in each summary item', () => {
+      const summ = treeUtils.getQuestionAnswerSummary(animalTree, {type: 'vertebrate', verttype: 'warm'})
+      summ.forEach(s => {
+        expect(s).toHaveProperty('key')
+        expect(s).toHaveProperty('value')
+        expect(s).toHaveProperty('actions')
+      })
+    })
+
+    it('should stop when a branch is not available', () => {
+      const summ = treeUtils.getQuestionAnswerSummary(animalTree, {type: 'vertebrate', foo: 'bar'})
+      expect(summ.length).toBe(1)
     })
   })
 })

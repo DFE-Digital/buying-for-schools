@@ -1,4 +1,4 @@
-const frameworks = data => {
+const makeFrameworks = data => {
   const frameworks = data.map(frameworkdata => makeFramework(frameworkdata))
   return {
     get: (ref) => frameworks.find(f => f.getRef() === ref),
@@ -26,4 +26,7 @@ const makeFramework = frameworkdata => {
   }
 }
 
-module.exports = frameworks
+module.exports = {
+  makeFrameworks,
+  makeFramework
+}

@@ -91,12 +91,12 @@
       {
         "ref": "rep",
         "title": "Reptiles",
-        "result": ["Turtle", "Crocodile", "Snake"]
+        "result": ["turtle", "crocodile", "snake"]
       },
       {
         "ref": "amp",
         "title": "Amphibians",
-        "result": ["Frog", "Lizard"]
+        "result": ["frog", "lizard"]
       }
     ]
   }

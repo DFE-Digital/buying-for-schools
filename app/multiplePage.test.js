@@ -43,7 +43,7 @@ const testResultData = [
     "cat": "cat-D"
   }
 ]
-const testFrameworks = require('./decisionTree/frameworks')(testResultData)
+const testFrameworks = require('./decisionTree/frameworks').makeFrameworks(testResultData)
 
 const lastNunjucksRender = { tpl: '', params: null }
 nunjucks.render = jest.fn((tpl, params) => {

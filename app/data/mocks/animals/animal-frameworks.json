@@ -1,2 +1,93 @@
 [
+  {
+    "ref": "snake",
+    "title": "All about snakes",
+    "supplier": "SnakesAreUs",
+    "url": "https://snakes-are-us.example.com",
+    "cat": "reptiles"
+  },
+  {
+    "ref": "beetles",
+    "title": "Beetles",
+    "supplier": "BeetleMania",
+    "url": "https://beetle.example.com",
+    "cat": "terrestrial-arthropods"
+  },
+  {
+    "ref": "flies",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "crabs",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "lobsters",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "birds",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "sheep",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "cats",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "turtle",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "crocodile",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "snake",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "frog",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  },
+  {
+    "ref": "lizard",
+    "title": "",
+    "supplier": "",
+    "url": "",
+    "cat": ""
+  }
 ]
