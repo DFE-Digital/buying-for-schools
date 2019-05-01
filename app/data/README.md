@@ -112,7 +112,9 @@ Frameworks is a list of simple key/value pairs which provide data about specific
     "title": "All about snakes",
     "supplier": "SnakesAreUs",
     "url": "https://snakes-are-us.example.com",
-    "cat": "reptiles"
+    "cat": "reptiles",
+    "descr": "A description of the thing",
+    "expiry": "2020-12-25"
   },
 ```
 

@@ -4,28 +4,36 @@
     "title": "Books and related materials",
     "supplier": "ESPO",
     "url": "https://www.espo.org/Pages/Books-for-schools-framework-376E-guide",
-    "cat": "books"
+    "cat": "books",
+    "descr": "Deals for curriculum materials including fiction and non-fiction books, ebooks, DVDs, CDs and education software.",
+    "expiry": "2019-08-08"
   },
   {
     "ref": "library",
     "title": "Library resources",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=6&frameworkID=177",
-    "cat": "books"
+    "cat": "books",
+    "descr": "Includes the provision of books, e-books, journals/ periodicals, e-journals, audio books, audio summary, library discovery and associated services split into 4 lots with 12 suppliers. Curriculum books are also available via this deal.",
+    "expiry": "2019-08-08"
   },
   {
     "ref": "furniture",
     "title": "Furniture",
     "supplier": "NEPO",
     "url": "https://www.nepo.org/solutions/furniture",
-    "cat": "fm"
+    "cat": "fm",
+    "descr": "This is a multi-supplier, multi-lot solution which provides a compliant solution for the furniture across a variety of school settings.The deal is split into 3 lots: office, educational and residential/domestic furniture.",
+    "expiry": "2021-02-28"
   },
   {
     "ref": "network",
     "title": "ICT solutions and supply network infrastructure",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=188",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Deals for a range of networking equipment and support services.",
+    "expiry": "2020-01-31"
   },
   {
     "ref": "ict-catalog",
@@ -39,42 +47,53 @@
     "title": "Multifunctional Devices, Managed Print and Content Services and Records and Information Management",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3781",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Deal for all schools and publicly funded institutions to purchase photocopiers, printers and scanners (multi-functional devices, MFDs) at a nationally negotiated rate.",
+    "expiry": "2020-10-25"
   },
   {
     "ref": "legal",
     "title": "Legal services",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=207",
-    "cat": "legal"
+    "cat": "legal",
+    "descr": "Legal services includes: estates professional services, facilities management services, building materials, modular, academy conversion and post conversion.",
+    "expiry": "2021-01-01"
   },
   {
     "ref": "professional",
     "title": "Specialist professional services from NEPRO",
     "supplier": "NEPO",
     "url": "https://nepro.org.uk/",
-    "cat": "professional"
+    "cat": "professional",
+    "descr": "Specifically designed for the procurement of professional services by the public sector covering a range of spend areas, including training, construction, ICT and education consultancy. Extensive experience within the local authority and school sector.",
+    "expiry": "2019-11-30"
   },
   {
     "ref": "school-switch",
     "title": "School Switch",
     "supplier": "CCS",
     "url": "https://schoolswitch.crowncommercial.gov.uk/#!/home",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "A simple way to switch energy suppliers online. Get instant quotes based on your school’s energy needs."
   },
   {
     "ref": "elec-half-hourly-ancillary",
     "title": "Electricity supply and ancillary services (half hourly)",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1075",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "Single supplier for electricity supply and additional services, such as meter reading (AMR) services to reduce consumption. Energy supply from renewable sources.",
+    "expiry": "2020-07-31"
   },
   {
     "ref": "elec-unmetered",
     "title": "Electricity (half hourly, non-half hourly and unmetered)",
     "supplier": "YPO",
     "url": "https://www.ypo.co.uk/framework/detail/900271#framework_details",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "Provision of electricity, including half hourly, non-half hourly and unmetered supply. Provides additional support and associated services including demand side response, energy storage, electric vehicle charging, energy efficiency surveys and power purchase agreements.",
+    "expiry": "2023-03-31"
   },
   {
     "ref": "elec-non-half-hourly-ancillary",
@@ -95,56 +114,72 @@
     "title": "Firms mains gas",
     "supplier": "YPO",
     "url": "https://www.ypo.co.uk/framework/detail/900045#framework_details",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "A framework agreement for firm mains gas supplied through the National Grid. Online account information and additional support and associated services also available.",
+    "expiry": "2021-04-01"
   },
   {
     "ref": "national-energy-performance-contracting",
     "title": "National energy performance contracting",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3768",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "The RE:FIT framework streamlines the procurement process for energy services and helps retrofit energy efficiency and local energy generation measures to your buildings or estate, reducing annual energy expenditure and carbon emissions.",
+    "expiry": "2020-04-19"
   },
   {
     "ref": "retrofit",
     "title": "Energy efficiency improvements from Retrofit",
     "supplier": "Fusion 21",
     "url": "https://www.fusion21.co.uk/",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "Suppliers to complete improvement projects including insulation, heating and energy systems, energy efficient lighting, windows and doors.",
+    "expiry": "2019-09-07"
   },
   {
     "ref": "water",
     "title": "Water, wastewater and ancillary services",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3790",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "A single national deal covering water supply, waste water removal (sewerage) and ancillary services that reduce water consumption and make usage more efficient and supply more resilient.",
+    "expiry": "2020-03-15"
   },
   {
     "ref": "fmm",
     "title": "Facilities management (FM) marketplace",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3830",
-    "cat": "fm"
+    "cat": "fm",
+    "descr": "UK-wide facilities management (FM) services; includes building and grounds maintenance, cleaning, catering, security, helpdesk, horticultural, reception, and waste services.",
+    "expiry": "2020-07-09"
   },
   {
     "ref": "removal-relocation",
     "title": "Removal, relocation and additional services",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=196",
-    "cat": "fm"
+    "cat": "fm",
+    "descr": "Regional suppliers covering all aspects of removal and relocation services including: office and classroom equipment and specialised relocations (laboratories, art and IT equipment) , overseas removals, crate hire and archiving.",
+    "expiry": "2020-10-31"
   },
   {
     "ref": "construction",
     "title": "Construction consultancy services",
     "supplier": "SBS",
     "url": "https://www.sbs.nhs.uk/ica-construction-consultancy-services",
-    "cat": "fm"
+    "cat": "fm",
+    "descr": "Suppliers providing estates, facilities and capital consultancy services across a wide range of property specialisms.",
+    "expiry": "2022-03-31"
   },
   {
     "ref": "pat",
     "title": "Portable appliance and fixed wire testing (PAT)",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=162",
-    "cat": "fm"
+    "cat": "fm",
+    "descr": "Suppliers for portable appliance and fixed wire testing.",
+    "expiry": "2019-07-31"
   },
   {
     "ref": "cleaning",
@@ -165,90 +200,115 @@
     "title": "Audit services",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=184",
-    "cat": "financial"
+    "cat": "financial",
+    "descr": "Audit service deal tailored for academies and schools.",
+    "expiry": "2019-12-04"
   },
   {
     "ref": "cost-recovery",
     "title": "Spend analysis and recovery services",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3820",
-    "cat": "financial"
+    "cat": "financial",
+    "descr": "Services to help schools identify and recover supplier overpayments, overcharges or missed discounts and rebates.",
+    "expiry": "2020-01-15"
   },
   {
     "ref": "insurance",
     "title": "Insurance for academies, free schools and similar institutions",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=176",
-    "cat": "financial"
+    "cat": "financial",
+    "descr": "Provision of commercial insurance for schools.",
+    "expiry": "2019-06-30"
   },
   {
     "ref": "leasing",
     "title": "Leasing services",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=195",
-    "cat": "financial"
+    "cat": "financial",
+    "descr": "This framework agreement for leasing services offers a range of leases to members across the education sector, particularly schools, colleges and academies. Members can access 9 leasing suppliers across 3 separate lots, offering a range of leasing products for equipment, technology and vehicles.",
+    "expiry": "2019-09-17"
   },
   {
     "ref": "pre-emp-checks",
     "title": "Employee screening services",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=197",
-    "cat": "hr"
+    "cat": "hr",
+    "descr": "Comprehensive service covering all employee screening service requirements.",
+    "expiry": "2020-11-05"
   },
   {
     "ref": "supply-teachers",
     "title": "Hiring supply teachers and agency workers",
     "supplier": "CCS",
     "url": "https://marketplace.service.crowncommercial.gov.uk/supply-teachers",
-    "cat": "hr"
+    "cat": "hr",
+    "descr": "Suppliers available for hiring of all temporary and fixed term teaching and non-teaching staff for schools, colleges or other educational establishments within the public sector such as an academy, trust, nursery, pupil referral unit, children centre or further education institution, across the UK. Independent schools (for-profit) are not able to access the deal.",
+    "expiry": "2020-08-28"
   },
   {
     "ref": "software-licenses",
     "title": "Software licenses and associated services for academies and schools",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=210",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Software licenses and associated supporting services.",
+    "expiry": "2020-08-08"
   },
   {
     "ref": "ict-cloud",
     "title": "ICT, cloud, support and related services (Think IT)",
     "supplier": "E2BN",
     "url": "http://think-it.org.uk/",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Educational cloud services specifically designed for the needs of schools, academies and other learning centres, runs until March 2021",
+    "expiry": "2021-03-31"
   },
   {
     "ref": "ict-hardware",
     "title": "Desktop hardware",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=5&frameworkID=168",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Agreement for the supply of a wide range of ICT equipment and supporting services.",
+    "expiry": "2020-01-17"
   },
   {
     "ref": "photocopier-printer-scanner-services",
     "title": "Multi-functional devices (MFD) and associated print services and supplies",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=7&frameworkID=185",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Photocopiers, printers and scanners (multi-functional devices, MFDs) that includes all types of managed print services.",
+    "expiry": "2019-12-18"
   },
   {
     "ref": "photocopier-printer-scanner-toner",
     "title": "Photocopiers, printers and scanners with toners included",
     "supplier": "KCS",
     "url": "http://www.kcs4ps.co.uk/",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Photocopiers, printers and scanners (multi-functional devices, MFDs) from a range of suppliers including Sharp, Konica, Annodata (Kyocera) and Ricoh.",
+    "expiry": "2021-03-31"
   },
   {
     "ref": "digital-marketplace",
     "title": "Digital Marketplace (G-Cloud 10)",
     "supplier": "CCS",
     "url": "https://www.digitalmarketplace.service.gov.uk/buyers/direct-award/g-cloud/start",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Cloud computing services covering hosting, software and cloud support.Choose and purchase cloud computing services from 3,500 suppliers covering infrastructure, platform, software and specialist cloud services.Direct Award available.",
+    "expiry": "2019-07-01"
   },
   {
     "ref": "rpa",
     "title": "Risk Protection Arrangement",
     "supplier": "RPA",
     "url": "https://www.gov.uk/guidance/academies-risk-protection-arrangement-rpa",
-    "cat": "financial"
+    "cat": "financial",
+    "descr": "An alternative to commercial insurance for academies, underwritten by the government, opt in immediately or up to 12 months in advance."
   }
 ]

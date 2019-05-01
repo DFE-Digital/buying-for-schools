@@ -37,7 +37,10 @@
         <table class="govuk-table">
           {% for item in group.items %}
             <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="/framework/{{ item.ref }}" class="govuk-link">{{ item.title }}</a></td>
+              <td class="govuk-table__cell">
+                <a href="/framework/{{ item.ref }}" class="govuk-link">{{ item.title }}</a>
+                <p class="govuk-body-s">{{ item.descr }}</p>
+              </td>
               <td class="govuk-table__cell govuk-table__cell--supplier">{{ item.supplier }}</td>
             </tr>
           {% endfor %}
