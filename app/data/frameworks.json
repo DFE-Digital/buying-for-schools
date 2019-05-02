@@ -160,7 +160,7 @@
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=196",
     "cat": "fm",
-    "descr": "Regional suppliers covering all aspects of removal and relocation services including: office and classroom equipment and specialised relocations (laboratories, art and IT equipment) , overseas removals, crate hire and archiving.",
+    "descr": "Regional suppliers covering all aspects of removal and relocation services including: office and classroom equipment and specialised relocations (laboratories, art and IT equipment), overseas removals, crate hire and archiving.",
     "expiry": "2020-10-31"
   },
   {
@@ -186,7 +186,8 @@
     "title": "Building cleaning services",
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=160",
-    "cat": "fm"
+    "cat": "fm",
+    "descr": "Providers of building cleaning services including: janitorial services, periodic cleaning, high-level cleaning and window cleaning."
   },
   {
     "ref": "ict-services-education",
