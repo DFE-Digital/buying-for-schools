@@ -101,14 +101,16 @@
     "title": "Electricity supply and ancillary services (non-half hourly)",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3791",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "Electricity supply and additional services, such as automated meter reading (AMR), services to reduce consumption and energy supply from renewable sources."
   },
   {
     "ref": "gas",
     "title": "Supply of natural gas (daily/non-daily metered) and ancillary services",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1076",
-    "cat": "energy"
+    "cat": "energy",
+    "descr": "Supply of natural gas with metering options and associated services. Includes risk management advice."
   },
   {
     "ref": "gas-firm",
