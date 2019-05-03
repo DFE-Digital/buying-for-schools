@@ -40,7 +40,8 @@
     "title": "The purchasing platform",
     "supplier": "CCS",
     "url": "https://purchasingplatform.crowncommercial.gov.uk/mp-welcome",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Suppliers of hardware, software and related services."
   },
   {
     "ref": "photocopier-printer-scanner",
@@ -194,7 +195,8 @@
     "title": "ICT services for education",
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1050",
-    "cat": "ict"
+    "cat": "ict",
+    "descr": "Specialist technology services, hardware and infrastructure for public sector educational organisations."
   },
   {
     "ref": "audit",
