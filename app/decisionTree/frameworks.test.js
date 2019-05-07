@@ -65,5 +65,13 @@ describe('framework', () => {
     it('should be able to return its own category', () => {
       expect(testFramework.getCategory()).toBe('terrestrial-arthropods')
     })
+
+    it('should be able to return its own description', () => {
+      expect(testFramework.getDescr()).toBe('All beetles have biting mouthparts.')
+    })
+
+    it('should be able to return its own expiry date', () => {
+      expect(testFramework.getExpiry()).toBe('2019-12-25')
+    })
   })
 })

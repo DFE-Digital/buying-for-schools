@@ -11,7 +11,9 @@
     "title": "Beetles",
     "supplier": "BeetleMania",
     "url": "https://beetle.example.com",
-    "cat": "terrestrial-arthropods"
+    "cat": "terrestrial-arthropods",
+    "descr": "All beetles have biting mouthparts.",
+    "expiry": "2019-12-25"
   },
   {
     "ref": "flies",

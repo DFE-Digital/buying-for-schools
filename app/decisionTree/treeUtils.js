@@ -58,20 +58,24 @@ const getQuestionAnswerSummary = (tree, pairs, baseUrl) => {
     }
     const selectedOption = branch.getOption(answerRef)
     url.push(questionRef)
-    if (selectedOption) {
-      summary.push({
-        key: { text: branch.getTitle() },
-        value: { text: selectedOption.getTitle() },
-        actions: {
-          items: [{
-            href: baseUrl + '/' + url.join('/'),
-            text: 'Change',
-            visuallyHiddenText: branch.getTitle()
-          }]
-        }
-      })
-      url.push(selectedOption.getRef())
+
+    if (!selectedOption) {
+      return
     }
+    
+    summary.push({
+      key: { text: branch.getTitle() },
+      value: { text: selectedOption.getTitle() },
+      actions: {
+        items: [{
+          href: baseUrl + '/' + url.join('/'),
+          text: 'Change',
+          visuallyHiddenText: branch.getTitle()
+        }]
+      }
+    })
+    url.push(selectedOption.getRef())
+    
   })
 
   return summary

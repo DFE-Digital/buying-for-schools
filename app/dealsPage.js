@@ -49,4 +49,8 @@ const routeDealsPage = app => {
 
 }
 
-module.exports = routeDealsPage
+module.exports = { 
+  routeDealsPage,
+  allDealsPage,
+  dealPage
+}

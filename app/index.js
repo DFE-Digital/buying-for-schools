@@ -46,7 +46,7 @@ routeBasicPages(routeGuidancePages)
 routeBasicPages(routeHowToUsePages)
 
 const routeDecisionTreePages = require('./routeDecisionTreePages')(app)
-const routeDealsPages = require('./dealsPage')(app)
+const routeDealsPages = require('./dealsPage').routeDealsPage(app)
 
 
 app.get('*', (req, res) => {

@@ -41,8 +41,6 @@ describe('treeUtils', () => {
   })
 
   describe('getQuestionAnswerSummary', () => {
-    
-    // console.log(summ)
     it('should produce a summary', () => {
       const summ = treeUtils.getQuestionAnswerSummary(animalTree, {type: 'vertebrate', verttype: 'warm'})
       expect(summ.length).toBe(2)
@@ -59,6 +57,11 @@ describe('treeUtils', () => {
 
     it('should stop when a branch is not available', () => {
       const summ = treeUtils.getQuestionAnswerSummary(animalTree, {type: 'vertebrate', foo: 'bar'})
+      expect(summ.length).toBe(1)
+    })
+
+    it('should behave when a selected option is not available', () => {
+      const summ = treeUtils.getQuestionAnswerSummary(animalTree, {type: 'vertebrate', verttype: 'bar'})
       expect(summ.length).toBe(1)
     })
   })
