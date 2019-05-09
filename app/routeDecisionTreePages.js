@@ -33,11 +33,11 @@ const routeDecisionTreePages = app => {
     next()
   })
 
-  console.log(allPaths.questions.length, 'questions')
-  console.log(allPaths.redirectToQuestion.length, 'redirect to questions')
-  console.log(allPaths.redirectToResult.length, 'redirect to result')
-  console.log(allPaths.multiple.length, 'multiple results pages')
-  console.log(allPaths.results.length, 'result pages')
+  // console.log(allPaths.questions.length, 'questions')
+  // console.log(allPaths.redirectToQuestion.length, 'redirect to questions')
+  // console.log(allPaths.redirectToResult.length, 'redirect to result')
+  // console.log(allPaths.multiple.length, 'multiple results pages')
+  // console.log(allPaths.results.length, 'result pages')
 
   allPaths.questions.forEach(q => {
     app.get(path.join(frameworkPath, q), redirectIfAnswered)

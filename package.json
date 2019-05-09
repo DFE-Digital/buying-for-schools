@@ -7,7 +7,7 @@
     "start": "node app/index.js",
     "start:dev": "gulp watch",
     "start:testing": "jest --watchAll --coverage",
-    "test": "npm run test:jshint && npm run test:jest && npm run test:bdd",
+    "test": "npm run test:jest && npm run test:bdd && npm run test:jshint",
     "test:jshint": "jshint app/**/*.js",
     "test:jest": "jest --coverage",
     "test:bdd": "./node_modules/.bin/cucumber-js -f node_modules/cucumber-pretty",

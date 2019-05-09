@@ -10,7 +10,7 @@ function nodeChanges () {
   return nodemon({
     script: 'app/index.js',
     ext: 'js,html,njk,json',
-    env: { 'NODE_ENV': 'development', 'SURVEY': 'NO' },
+    env: { 'NODE_ENV': 'development', 'SURVEY': 'NO', 'AVAILABLE': 'TRUE' },
     cwd: __dirname,
     ignore: ['node_modules/**'],
     watch: ['app/*.js', 'app/templates/**/*.njk', 'app/decisionTree/*.js', 'app/*.json']
