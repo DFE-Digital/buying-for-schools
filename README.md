@@ -60,7 +60,7 @@ The following load tests require [artillery](https://artillery.io/docs/getting-s
 Run load tests using Artillery against the Azure URL of the prod env
 
 ### ` $ npm run test:loadreport ` ###
-Launches a local website to explore the load report data. 
+Launches a local website to explore the load report data, you must run the load test first!
 
 
 ## Code ##
