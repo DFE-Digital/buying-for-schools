@@ -28,7 +28,7 @@ const routeGuidancePages = app => {
     { 
       path: '/guidance/catering',
       title: 'Buy catering services for your school',
-      tpl: 'guidance/catering.njk'
+      tpl: 'manual/catering.njk'
     }
     
   ]

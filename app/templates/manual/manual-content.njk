@@ -1,0 +1,22 @@
+{% extends "manual/manual.njk" %}
+
+{% block guidance %}
+  <div class="manual-body" id="content">
+    <article aria-labelledby="section-title">
+      <h1 id="section-title" class="section-title">{{ sectiontitle }}</h1>
+
+      {% block preguidance %}
+      {% endblock %}
+
+      <div class="js-collapsible-collection subsection-collection" data-collapse-depth="1">  
+
+        <div class="collapsible-subsections">
+          <div class="gem-c-govspeak govuk-govspeak " data-module="govspeak">
+            {% block collapsiblecontent %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+{% endblock %}
