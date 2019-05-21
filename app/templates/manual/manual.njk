@@ -1,0 +1,53 @@
+{% extends "buying-for-schools.njk" %}
+
+{% block content %}
+<div class="manuals-frontend-body inner-block">
+  <header aria-labelledby="manual-title" class="">
+
+    <div class="primary">
+
+      <h1 id="manual-title">Buying for schools (test)</h1>
+      <div class="gem-c-metadata gem-c-metadata--inverse" data-module="gem-toggle">
+        <dl data-module="track-click">
+          <dt class="gem-c-metadata__term">From:</dt>
+          <dd class="gem-c-metadata__definition">
+            <a href="https://www.gov.uk/government/organisations/department-for-education">Department for Education</a>
+          </dd>
+          <dt class="gem-c-metadata__term">Updated:</dt>
+          <dd class="gem-c-metadata__definition">
+            <a href="/guidance/buying-for-schools-test/updates">see all updates</a>
+          </dd>
+        </dl>
+      </div>
+
+      <div class="in-manual-search">
+        <form action="/search/all">
+          <label for="search-box">Search this manual</label>
+          <input type="hidden" name="manual[]" value="/guidance/buying-for-schools-test">
+          <input id="search-box" class="in-manual-search-box" type="text" name="q">
+        <button type="submit">search</button>
+      </form>
+      </div>
+    </div>
+    
+    <div class="secondary">
+      <div class="secondary-inner">
+        <p><a class="feedback" href="https://www.gov.uk/contact/govuk">Give feedback about this page</a></p>
+      </div>
+    </div>
+  </header>
+
+  <ol class="breadcrumb-trail">
+    
+    {% if breadcrumbtitle %}
+      <li><a href="/guidance">Contents</a></li>
+      <li class="last-child">{{ breadcrumbtitle }}</li>
+    {% else %}
+      <li class="no-separator">Contents</li>
+    {% endif %}
+  </ol>
+
+  {% block guidance %}
+  {% endblock %}
+</div>
+{% endblock %}

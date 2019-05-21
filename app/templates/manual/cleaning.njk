@@ -1,0 +1,400 @@
+{% extends "manual/manual.njk" %}
+
+{% set breadcrumbtitle = "Cleaning" %}
+
+{% block guidance %}
+  <div class="manual-body" id="content">
+    <article aria-labelledby="section-title">
+      <h1 id="section-title" class="section-title">Buy cleaning services for your school</h1>
+
+      <p class="summary">Use this guide to find the best solution for the cleaning requirements of your school or academy.</p>
+
+      {{ govukWarningText({
+        text: 'You must comply with all current legislation and regulation which applies at the time.',
+        iconFallbackText: 'Warning'
+      }) }}
+
+      {{ govukWarningText({
+        text: 'Remember that cleaning products and chemicals need to be labelled and stored in accordance with the Control of Substances Hazardous to Health (COSHH) regulations.',
+        iconFallbackText: 'Warning'
+      }) }}
+
+
+      <div class="js-collapsible-collection subsection-collection" data-collapse-depth="1">
+        {% include 'includes/collapsible-controls.njk' %}
+
+        <div class="collapsible-subsections">
+          <div class="gem-c-govspeak govuk-govspeak " data-module="govspeak">
+            <div class="js-openable closed">
+              <h2 id="before-you-start" class="js-subsection-title"><a role="button" href="#before-you-start">Before you start</a><span class="js-toggle"></span></h2>
+
+              <div class="js-subsection-body body-content-wrapper">
+                <p>Consider all your options carefully. Be realistic about the level of time and effort you can commit and choose the option that best fits your circumstances.</p>
+
+                <h3>Current contract</h3>
+                <p>You should consider:</p>
+                <ul>
+                  <li>the service you’re paying for currently</li>
+                  <li>what you want to change or improve</li>
+                  <li>whether you’ll need to make a business case</li>
+                </ul>
+
+                <h3>Moving to a new contract</h3>
+                <p>Gather the information you’ll need before you move contracts, such as:</p>
+                  <ul>
+                  <li>expiry date of current agreement </li>
+                  <li>notice period</li>
+                  <li>the likely value of your contract</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="js-openable closed">
+              <h2 id="planning" class="js-subsection-title"><a role="button" href="#planning">Planning</a><span class="js-toggle"></span></h2>
+              
+              <div class="js-subsection-body body-content-wrapper">
+                <p>Moving to a new contract may take longer than you think. The points below will help you plan your changes.</p>
+
+                <h3>When to start a new contract</h3>
+                <p>To avoid disruption, try to start a new contract:</p>
+                <ul>
+                  <li>at the beginning of a new academic year</li>
+                  <li>at the beginning of new financial year</li>
+                  <li>after a big holiday such as Christmas or Easter</li>
+                </ul>
+
+                <h3>Approval time</h3>
+                <p>Allow for decision-making time with governors and trustees.</p>
+
+                <p>You may find it easier to work backwards from your switch date to plan each stage of the process.</p>
+
+                <h3>Keep staff informed</h3>
+                <p>Talk regularly to your staff. These are the people most likely to be affected by any change.</p>
+
+                <p>Try to reduce any concerns and be aware that staff may want to contact their union.</p>
+
+                <h3>Talk to stakeholders</h3>
+                <p>Get feedback from parents, staff, governors and trustees to find out what they want.</p>
+
+                <p>This will help you deliver successful cleaning provision.</p>
+
+                <h3>Talk to other schools</h3>
+                <p>You may want to contact local schools to see if they’re looking to renew or change contracts.</p>
+
+                <p>You may be able to combine provisions to:</p>
+                <ul>
+                  <li>get better value for money</li>
+                  <li>save time by splitting the workload</li>
+                </ul>
+
+                <h3>TUPE considerations</h3>
+                <p>Consider whether TUPE or Local Government Pension Scheme (LGPS) will apply to your school, especially if you’re looking to:</p>
+                <ul>
+                  <li>outsource provisions</li>
+                  <li>move away from your local authority for the first time</li>
+                </ul>
+
+                <p>When you give notice of termination to your current provider, you should request details of any staff that will be subject to TUPE transfer.</p>
+
+                <p>This information should include:</p>
+                <ul>
+                  <li>salary</li>
+                  <li>terms and conditions</li>
+                  <li>pension details</li>
+                </ul>
+
+                <p>These details will form part of your business case and potential tender requirements.</p>
+              </div>
+            </div>
+          
+            <div class="js-openable closed">
+              <h2 id="specification" class="js-subsection-title"><a role="button" href="#specification">Specification</a><span class="js-toggle"></span></h2>
+              <div class="js-subsection-body body-content-wrapper">
+                <p>You’re likely to get better value if you can tell suppliers exactly what you need.</p>
+
+                <p>The points below may help you think about your school’s requirements. Guidance on writing a specification is available.</p>
+
+
+
+                <h3>Frequency of cleaning</h3>
+                <p>Specify the number of weeks you need to carry out cleaning services each year. Remember to include any cleaning needed during the longer holiday periods or inset days.</p>
+
+                <h3>Annual cleaning schedule</h3>
+                <p>If you decide to outsource your cleaning services, consider the length of the contract required.</p>
+
+                <p>For example, you may want to consider a 2-year period with the option of extending for a further year.</p>
+
+                <h3>Day-to-day cleaning</h3>
+                <p>This covers cleaning during term time, with set access hours for these tasks.</p>
+
+                <p>It includes morning and evening cleaning duties which can differ from each other and from day-to-day.</p>
+
+                <h3>Periodic or non-routine cleaning</h3>
+                <p>You may need some tasks carrying out during holidays or inset daysto maintain the standards of the routine cleaning. This can include a whole school deep clean during the summer holidays.</p>
+
+                <h3>Emergency cleaning</h3>
+                <p>There may be times when personnel are needed on site to carry out emergency work, for example, after vandalism or break-in. You may need access to someone 24 hours a day.</p>
+              </div>
+            </div>
+
+            <div class="js-openable closed">
+              <h2 id="categories" class="js-subsection-title"><a role="button" href="#categories">Categories: internal and external cleaning</a><span class="js-toggle"></span></h2>
+              <div class="js-subsection-body body-content-wrapper">
+                <p>You’ll need different cleaning schedules for different types of cleaning.</p>
+
+                <p>Some of these tasks include internal cleaning such as:</p>
+                <ul>
+                  <li>toilets</li>
+                  <li>furniture</li>
+                  <li>floors</li>
+                  <li>book shelves</li>
+                  <li>corridors</li>
+                  <li>staff room</li>
+                  <li>store rooms</li>
+                  <li>internal doors and windows</li>
+                </ul>
+
+                <p>Some of these tasks include external cleaning such as:</p>
+                <ul>
+                  <li>windows</li>
+                  <li>doors</li>
+                  <li>litter picking</li>
+                </ul>
+
+                <h3>Specialist surfaces cleaning</h3>
+                <p>Some surfaces may require specific treatments so try to consider:</p>
+                <ul>
+                  <li>any additional costs</li>
+                  <li>frequency of cleaning</li>
+                  <li>timescales</li>
+                </ul>
+
+                <h3>Get better value</h3>
+
+                <h3>Exclusions</h3>
+                <p>Try to identify cleaning tasks that are not included in the cleaning requirement as they are covered by other parties, these can include:</p>
+                <ul>
+                  <li>recycling bins</li>
+                  <li>sanitary disposal units</li>
+                  <li>catering kitchen used for lunchtime meals</li>
+                  <li>specialist cleaning such as IT equipment</li>
+                  <li>Monitoring performance and quality </li>
+                </ul>
+
+                <p>Consider how you will measure, manage and maintain quality standards for:</p>
+                <ul>
+                  <li>the daily cleaning service</li>
+                  <li>daily inspections of quality assurance</li>
+                  <li>timekeeping of cleaning staff</li>
+                  <li>absence management (planned and unplanned)</li>
+                  <li>maintenance of stock levels</li>
+                  <li>the reporting of faulty cleaning equipment</li>
+                  <li>machinery maintenance, including portable appliance testing (PAT) by qualified personnel</li>
+                </ul>
+
+                <p>You may want to plan to outline who’s responsible for:</p>
+                <ul>
+                  <li>reporting issues</li>
+                  <li>logging issues</li>
+                  <li>managing issues or under performance</li>
+                </ul>
+
+                <h3>Services</h3>
+
+                <h3>Resources</h3>
+                <p>Consider who will supply the resources and services needed to carry out the cleaning provision:</p>
+                <ul>
+                  <li>labour</li>
+                  <li>cleaning equipment</li>
+                  <li>materials</li>
+                  <li>chemicals</li>
+                  <li>storage areas</li>
+                  <li>heating</li>
+                  <li>electricity</li>
+                  <li>lighting</li>
+                  <li>hot and cold water</li>
+                </ul>
+
+                <h3>Refuse disposal</h3>
+                <p>Consider who’ll be responsible for the safe and hygienic disposal of wet and dry waste.</p>
+
+                <p>Assess the facilities you have on site such as collection areas and mechanical compaction. Consider how these will be managed and by whom.</p>
+
+                <h3>Manage risk</h3>
+                <p>It’s important you know how to manage risk. You should get legal advice if you’re unsure about any of the relevant legislation.</p>
+                <h3>Insurance</h3>
+                <p>You should ask contractors to take out indemnity insurance to protect you against any loss or damage caused by non-compliance.</p>
+
+                <h3>Security</h3>
+  
+                <p>For example, the site manager may want to nominate or be notified of a person responsible for holding the master key to lock all internal doors and windows.</p>
+                <p>Consider who will be responsible for final lock up and setting of any alarms.</p>
+
+                <h3>Disclosure and barring service</h3>
+                <p>You must complete DBS checks to the appropriate level for any staff involved in the cleaning service.</p>
+
+                <h3>Legislation</h3>
+                <p>You or your contractor must:</p>
+                <ul>
+                  <li>understand the existing legislation relating to your cleaning requirements</li>
+                  <li>follow regulations closely</li>
+                </ul>
+
+                <p>This legislation includes, but is not limited to:</p>
+                <ul>
+                  <li>UK legislation</li>
+                  <li>European community legislation</li>
+                </ul>
+
+                <p>Legislation can also take different forms, such as:</p>
+                <ul>
+                  <li>regulations</li>
+                  <li>orders</li>
+                  <li>statutes</li>
+                  <li>statutory instruments</li>
+                  <li>codes of practice</li>
+                  <li>bylaws</li>
+                  <li>directives</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="js-openable closed">
+              <h2 id="right-way" class="js-subsection-title"><a role="button" href="#right-way">Find the right way to buy</a><span class="js-toggle"></span></h2>
+              <div class="js-subsection-body body-content-wrapper">
+                
+                {{ govukWarningText({
+                  text: 'Follow your school’s procurement rules. These may be your school’s own rules, or those set by the local authority.',
+                  iconFallbackText: 'Warning'
+                }) }}
+
+                <p>You have 3 options:</p>
+                <ul>
+                  <li>use a framework</li>
+                  <li>run your own procurement</li>
+                  <li>in-house cleaning</li>
+                </ul>
+
+                <p>The option you choose will depend on your school requirements and circumstances.</p>
+
+                <p>If the lifetime value of your contract is over the ​EU Procurement threshold, you’ll need to use a framework agreement or carry out your own procurement, issuing an OJEU tender.</p>
+
+                <h3>Use a framework</h3>
+
+                <div class="call-to-action">
+                  <p>DfE reviews a range of frameworks. These are assessed for compliance with procurement regulations, ease of use, suitability and value for money.</p>
+
+                  <p><a rel="external" href="/">Find a DfE recommended framework for your school</a></p>
+                </div>
+
+                <p>Buying from a framework is usually quicker and easier than getting bids or quotes because the agreements:</p>
+                <ul>
+                  <li>have already been through a full competitive tender process</li>
+                  <li>have been quality checked</li>
+                  <li>are checked to make sure they comply with the law</li>
+                  <li>may have draft specifications and expert help available</li>
+                </ul>
+
+                <h3>Framework considerations</h3>
+
+                <h3>Equipment</h3>
+                <p>You should consider:</p>
+                <ul>
+                  <li>what equipment you own</li>
+                  <li>what the bidding suppliers will provide</li>
+                  <li>if you’ll have to buy new equipment and costs involved</li>
+                </ul>
+
+                <h3>Potential suppliers</h3>
+                <p>When choosing suppliers, consider:</p>
+                <ul>
+                  <li>confirming that DBS checks have been completed</li>
+                  <li>inviting suppliers to your school to produce sample meals</li>
+                  <li>getting feedback on suppliers by talking to other schools they provide for</li>
+                </ul>
+
+
+                <h3>Run your own procurement</h3>
+                <p>If you cannot get what you need through a framework, you can run your own buying process.</p>
+
+                <p>You should consider if:</p>
+                <ul>
+                  <li>maintenance contracts are covered by existing contractors</li>
+                  <li>contractor tests and checks are up to date</li>
+                  <li>you need to replace equipment because it belongs to the current provider</li>
+                  <li>DBS checks have been completed by suppliers</li>
+                  <li>staff training is required such as COSHH and health and safety regulations</li>
+                </ul>
+
+                <h3>Moving away from local authority provision</h3>
+                <p>There may be timeframes around when the local authority is obliged to release TUPE and LGPS information.</p>
+
+                <p>These timeframes can cause delays and further expense if you award the contract without having these details.</p>
+
+                <p>You may want to invite your local authority to tender and involve them in the process. This way the information you need is provided during the bidding process.</p>
+
+                <h3>In-house cleaning</h3>
+
+                <p>You may decide to take your cleaning provision in-house and hire your own staff to carry out your provision. You will still need a specification to outline your needs.</p>
+
+                <p>Please refer to the information provided above.</p>
+
+                <h3>Equipment</h3>
+                <p>You may want to consider:</p>
+                <ul>
+                  <li>what materials and equipment you’ll need</li>
+                  <li>potential equipment maintenance costs</li>
+                  <li>equipment storage</li>
+                  <li>hazardous material or equipment storage</li>
+                  <li>health and safety</li>
+                </ul>
+
+                <h3>Staff training</h3>
+                <p>You may want to consider initial training for your staff such as:</p>
+                <ul>
+                  <li>health and safety</li>
+                  <li>hazardous material or equipment storage</li>
+                  <li>emergency cleaning procedures</li>
+                  <li>cleaning agents</li>
+                  <li>cleaning methods</li>
+                  <li>equipments and machines</li>
+                  <li>waste management</li>
+                  <li>health, safety and the environment</li>
+                </ul>
+
+                <p>Consider who will cover the daily responsibilities of staff who are away from the school undertaking training.</p>
+
+                <h3>Costs</h3>
+                <p>Double check your figures and requirements – a miscalculated business plan can be costly.</p>
+
+                <p>Consider whether costs will increase for:</p>
+                <ul>
+                  <li>staff (hours and number of staff needed)</li>
+                  <li>planned staff holidays</li>
+                  <li>absence management</li>
+                  <li>cleaning products</li>
+                  <li>equipment requirements</li>
+                  <li>storage</li>
+                  <li>utility bills</li>
+                  <li>initial staff training (including time needed)</li>
+                  <li>ongoing staff training for changes in qualifications and regulations</li>
+                </ul>
+
+                <h3>Opportunities</h3>
+                <p>You may find you can:</p>
+                <ul>
+                  <li>offer cleaning services to other local schools and generate additional income</li>
+                  <li>negotiate better prices from suppliers of cleaning products and equipment</li>
+                  <li>increase quality</li>
+                  <li>respond quicker if your equipment is broken or faulty</li>
+                  <li>develop staff skills through bespoke training</li>
+                  <li>be in control of your expenditure </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+{% endblock %}

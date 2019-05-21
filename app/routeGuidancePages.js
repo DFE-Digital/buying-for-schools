@@ -1,14 +1,19 @@
 const routeGuidancePages = app => {
   const introPages = [
     { 
-      path: '/collection',
+      path: '/guidance',
       title: 'Buying for schools: category guidance',
-      tpl: 'guidance/collection.njk'
+      tpl: 'manual/collection.njk'
     },
     { 
       path: '/guidance/electricity',
       title: 'Buy electricity for your school',
-      tpl: 'guidance/electricity.njk'
+      tpl: 'manual/electricity.njk'
+    },
+    { 
+      path: '/guidance/cleaning',
+      title: 'Buy cleaning services for your school',
+      tpl: 'manual/cleaning.njk'
     },
     { 
       path: '/guidance/books',
