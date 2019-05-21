@@ -18,12 +18,12 @@ const routeGuidancePages = app => {
     { 
       path: '/guidance/books',
       title: 'Buy books for your school',
-      tpl: 'guidance/books.njk'
+      tpl: 'manual/books.njk'
     },
     { 
       path: '/guidance/ict-hardware',
       title: 'Buy ICT hardware for your school',
-      tpl: 'guidance/ict-hardware.njk'
+      tpl: 'manual/ict-hardware.njk'
     },
     { 
       path: '/guidance/catering',
