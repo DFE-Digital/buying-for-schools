@@ -63,14 +63,8 @@ var getOutboundLink = function(e) {
   var psbo_url = e.target.href
   var url = (uid && doSurvey) ? getPostServiceSurveyUrl(psbo_url) : psbo_url
   clearCookie('uid')
-  gtag('event', 'click', {
-    'event_category': 'outbound',
-    'event_label': psbo_url,
-    'transport_type': 'beacon',
-    'event_callback': function(){
-      document.location = url
-    }
-  });
+
+  document.location = url
   return false;
 }
 
