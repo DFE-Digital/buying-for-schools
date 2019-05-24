@@ -1,110 +1,206 @@
 {% extends "manual/manual-content.njk" %}
 
 {% set breadcrumbtitle = "Books" %}
-{% set sectiontitle = "Buy books and related materials for your school" %}
+{% set sectiontitle = "Buy books and educational resources for your school" %}
 
 {% block preguidance %}
-  <p class="summary">Use this guide to get the best value (academically and financially) from the books and learning materials purchased for your school or multi-academy trust (MAT).</p>
+  <p class="summary">Save money by negotiating with suppliers to make the most of their services.</p>
 {% endblock %}
   
 {% block collapsiblecontent %}
-  <h2 id="spec">Write a specification</h2>
+  
+<h2 id="assess">Assess what you currently have</h2>
+<p>You do not have to switch suppliers to get better value. You can negotiate savings with your current supplier if you know:</p>
+<ul>
+  <li>what services you use</li>
+  <li>how much pay</li>
+</ul>
 
-  <p>You should write a <a href="https://www.gov.uk/guidance/buying-for-schools/writing-a-specification">specification</a> of what you need before you buy.</p>
+<h3>Complete an audit</h3>
+<p>Auditing what services you currently have can help you assess:</p>
+<ul>
+  <li>what resources and services you currently have</li>
+  <li>what resources you actually use</li>
+  <li>how much you’re currently paying</li>
+  <li>any gaps in your current provision</li>
+</ul>
+<p>You can also invite publishers to your school to help you with audits.</p>
 
-  <p>A specification tells suppliers exactly what you need. Writing a specification may help you save time, money and ensure you get the right products for your pupils.
+<h3>Talk to publishers</h3>
+<p>Publishers can visit your school, free of charge, to:</p>
+<ul>
+  <li>provide resource demonstrations</li>
+  <li>conduct an audit of your existing books collection</li>
+</ul>
 
-  <p>When writing a specification, you may want to consider if you need:</p>
-  <ul>
-    <li>teaching support, revision, assessment or intervention materials</li>
-    <li>reading schemes, subscriptions, printed resources (fiction and non-fiction), digital (e-books) or a combination of both</li>
-    <li>to target a specific group of pupils with 1 resource</li>
-    <li>a complete, coherent programme or a resource that will support an existing programme</li>
-  </ul>
+<p>Publishers can help you save money by suggesting:</p>
+<ul>
+  <li>if you have resources which could be used differently</li>
+  <li>cost-effective  top-up materials</li>
+</ul>
+
+<h3>Ask for a loyalty discount</h3>
+<p>You should ask for a discount if you:</p>
+<ul>
+  <li>have used the same supplier for several years</li>
+  <li>are a regular customer</li>
+</ul>
+  
+<h3>Use all the services offered by your supplier</h3>
+<p>Maximise the free resources and support that publishers offer especially if you cannot negotiate a price reduction. This may include:</p>
+<ul>
+  <li>free advice on what resources may work best for your school</li>
+  <li>asking suppliers for a free demonstration of resources you want to buyusing a try before you buy scheme like <a href="https://www.besa.org.uk/initiatives/lended/">LendEd</a></li>
+</ul>
+
+<h3>Combine budgets and requirements</h3>
+<p>You can get discounts on large purchases by combining budgets across:</p>
+<ul>
+  <li>departments in your school</li>
+  <li>schools in your multi-academy trust (MAT)</li>
+  <li>schools in your local authority</li>
+</ul>
+
+<p>To do this you can talk to: </p>
+<ul>
+  <li>your supplier</li>
+  <li>similar schools in your area</li>
+</ul>
+
+<h2>Review other suppliers</h2>
+<p>You may get better value if you can switch suppliers or buy new resources. </p>
+
+<h3>Compare costs with other schools and suppliers</h3>
+<p>You may want to:</p>
+<ul>
+  <li>ask suppliers, subject associations and teaching hubs about getting better value</li>
+  <li>join or find a <a href="https://www.gov.uk/government/publications/join-or-create-a-network-for-school-business-professionals/school-business-professional-networks-directory">school business professional network</a> and contact similar schools</li>
+  <li>ask similar schools for feedback on suppliers and resources</li>
+</ul>
+  
+<h3>Get additional services </h3>
+<p>Invite publishers to your school if you want to buy new resources. You may be able to get:</p>
+
+<ul>
+  <li>a free demonstration showing how the resource works</li>
+  <li>advice on how resources can support learning</li>
+  <li>free training on the new resources for teachers </li>
+  <li>advice on easier ways to buy for school professionals, such as aligning with your school payment system</li>
+</ul>
+
+<p><a href="https://www.gov.uk/government/email-signup/new?email_signup%5Bfeed%5D=https://www.gov.uk/government/organisations/department-for-education.atom">Email alerts</a> from the Department for Education about additional funding and programmes to help you school are available.</p>
+
+<h2>Savings</h2>
+{{ govukWarningText({
+  text: 'If you’re buying books and materials over a longer term, make sure they are high quality and will meet your future curriculum requirements.',
+  iconFallbackText: 'Warning'
+}) }}
 
 
-  <h2 id="discounts">Discounts</h2>
+<p>If you’re buying in bulk or purchasing a class set of books, check whether publishers can offer:</p>
+<ul>
+  <li>free books</li>
+  <li>additional services that add value</li>
+</ul>
 
-  <p>To get discounts from suppliers, you can combine budgets across several departments, schools or an entire MAT. If you&rsquo;re not already linked with your local schools and would like to be, sign up to the <a href="https://www.gov.uk/government/publications/join-or-create-a-network-for-school-business-professionals/school-business-professional-networks-directory">School Business Professional Networks</a>.</p>
-
-  <p>For more support, get advice from colleagues, peers, subject associations and teaching hubs by following subject groups and influential teachers on Twitter, such as <a href="https://twitter.com/ukedchat">@ukedchat</a>.</p>
-
-
-
-  <h2 id="find">Find the right way to buy</h2>
-
-  <p>It&rsquo;s important to find the right way to buy depending on your circumstances. Here are three suggestions:</p>
-
-  <h3>Use a framework</h3>
-
-  <div class="cta-box">
-    <p>The Department of Education (DfE) reviews a range of frameworks. These are assessed for compliance with procurement regulations, ease of use, suitability and value for money.</p>
-    <p><a href="/service/">{{ locals.serviceName }}</a>.</p>
-  </div>
-
-  <p>Buying from a framework is usually quicker and easier than getting bids or quotes because the agreements:</p>
-  <ul>
-    <li>have already been through a full competitive tender process</li>
-    <li>have been quality checked</li>
-    <li>are checked to make sure they comply with the law</li>
-    <li>may have draft specifications and help available</li>
-  </ul>
-
-  <p>The Department of Education (DfE) reviews a range of frameworks. These are assessed for compliance with procurement regulations, ease of use, suitability and value for money.</p>
+<p>You can also get discounts on:</p>
+<ul>
+  <li>bulk orders for your MAT or other local schools</li>
+  <li>top up orders for lost or damaged books</li>
+  <li>digital subscriptions</li>
+  <li>longer-term subscriptions </li>
+</ul>
 
 
-  <h3>Use a catalogue or third party supplier</h3>
+<h3>Fees</h3>
+<p>Before you buy, you should be aware of fees for:</p>
+<ul>
+  <li>book-jacketing</li>
+  <li>delivery </li>
+  <li>delayed or missed payments</li>
+</ul>
 
-  {{ govukWarningText({
-    html: 'Selecting this route means you&rsquo;ll need to lead your own procurement. You can find step-by-step guidance to <a href="https://www.gov.uk/government/collections/buying-for-schools">support you through the procurement process</a>.',
+<h2>Availability</h2>
+
+<p>Getting your books may take longer if you need to order from different suppliers.</p>
+
+<p>Before you buy, consider whether you:</p>
+<ul>
+  <li>want your orders in the same order and at the same time</li>
+  <li>need different suppliers</li>
+  <li>can access materials in different formats, such as e-books</li>
+</ul>
+
+<h2>Find the right way to buy</h2>
+{{ govukWarningText({
+    text: 'Follow your school’s procurement rules. These may be your school’s own rules, or set by the local authority.',
     iconFallbackText: 'Warning'
-  }) }}
+}) }}
+<p>The option you choose will depend on your school requirements and circumstances. The DfE has also put together <a href="https://www.gov.uk/government/collections/buying-for-schools">guidance and templates</a> to support you.</p>
+<p>There are many different ways to buy books and educational resources. Here are 3 suggestions of how to achieve best value:</p>
+<ul>
+  <li>use a framework</li>
+  <li>compare prices across catalogues or third party suppliers</li>
+  <li>negotiate with publishers</li>
+</ul>
 
-  <p>If your preferred resources are not available via a framework or if you&rsquo;re looking to purchase a small or urgent order of books, you may want to compare third party suppliers or wholesalers. You can research these online or find an educational trade supplier recommended by the <a href="https://www.besa.org.uk/">British Educational Suppliers Association</a>.</p>
+<h3>Use a framework</h3>
 
-  <p>Before you use this route, make sure you&rsquo;ve got at least 3 quotes from a range of suppliers and evaluated their offers against price and quality to get the best value for money. Do not be afraid to negotiate lower prices or enhanced support from suppliers.</p>
+<div class="call-to-action">
+  <p>DfE reviews a range of frameworks. These are assessed for compliance with procurement regulations, ease of use, suitability and value for money.</p>
+
+  <p><a rel="external" href="/">Find a DfE recommended framework for your school</a></p>
+</div>
+ 
+<p>You may want to use framework agreements because they:</p>
+<ul>
+  <li>help you run competitions across multiple suppliers</li>
+  <li>have already been through a full competitive tender process</li>
+  <li>have been quality checked</li>
+  <li>are checked to make sure they comply with the law</li>
+  <li>may have draft specifications and help available</li>
+  <li>offer significant discounts</li>
+  <li>are free to use</li>
+  <li>give you access to discounted specialist school services</li>
+  <li>offer free support with the buying process </li>
+</ul>
+<p>You can find out more details about the books and materials frameworks on our <a href="/framework">recommended framework list</a>.</p>
+
+<h3>Compare prices across catalogues or third party suppliers</h3>
+<p>You may want to compare prices if your order is urgent or complex.</p>
+
+<p>You can compare prices using:</p>
+<ul>
+  <li>catalogues online or in print</li>
+  <li>an educational trade supplier recommended by the <a href="https://www.besa.org.uk/">British Education Suppliers Association (BESA)</a>.</li>
+</ul>
+
+<p>Some catalogues can save you time through the use of:</p>
+<ul>
+  <li>shared baskets across the school</li>
+  <li>advising you of special offers</li>
+  <li>free book jacketing service</li>
+  <li>payment methods linked with your school finance system </li>
+  <li>sharing recommendations for suitable resources, reading schemes or class book sets</li>
+</ul>
+
+<h3>Negotiate with publishers</h3>
+
+<p>Publishers can offer you help with buying books while still giving you discounts. It’s a good idea to compare what they’re offering to help you make the most suitable purchase.</p>
+
+<h3>Discounts</h3>
+<p>Many publishers regularly run offers on popular products such as:</p>
+<ul>
+  <li>discounts on various titles </li>
+  <li>special offers on quantities, such as 3 for 2 offers</li>
+</ul>
+
+<p>Most publishers will help you save by aggregating purchases and costs on your behalf across different MATs and schools in the local authority.</p>
+
+<p>Schools are also able to get reductions in costs and subscription fees if a school is making multiple purchases. It’s useful to keep track of what each department in the school is buying and whether multiple subscriptions already exist.</p>
+
+<p>When investing in a coherent curriculum programme, you can secure discounts for future top ups of books.</p>
 
 
-  <h3>Buy direct from publishers</h3>
 
-  {{ govukWarningText({
-    html: 'Selecting this route means you&rsquo;ll need to lead your own procurement. You can find step-by-step guidance to <a href="https://www.gov.uk/government/collections/buying-for-schools">support you through the procurement process</a>.',
-    iconFallbackText: 'Warning'
-  }) }}
-
-  <p>If you need help selecting the right resource for your school, you can invite publishers to give advice on which products would suit your specifications.</p>
-
-  <p>To get the most out of your funds, sales leads can offer a range of services to support you when choosing and embedding the resource in your school. You can contact sales leads via each publisher&rsquo;s website or <a href="https://publishers.org.uk/about-us/members-and-affiliates/">The Publishers Association</a>.</p>
-
-  <p>Many publishers can help aggregate funds with other schools and academies to save you money. Even if it&rsquo;s a single purchase, it&rsquo;s worth negotiating discounts and comparing quotes and support services between publishers to get the best value for money. </p>
-
-  <p>For example, if you&rsquo;re investing in an ongoing contract, consider securing an agreed discount for top-ups in the future.</p>
-
-
-
-  <h2 id="choose">Choosing the right supplier</h2>
-
-  <p>Once you&rsquo;ve found the right way to buy, use a <a href="https://www.gov.uk/government/publications/school-procurement-bid-evaluation-scoring-summary">supplier scorecard</a> to compare suppliers' bids during a procurement process.</p>
-
-  <p>You should consider if suppliers:</p>
-  <ul>
-    <li>offer the level of curriculum coverage and support you need</li>
-    <li>match the needs of your school and students</li>
-    <li>offer the same cost compared to similar products</li>
-    <li>offer an after-sales service and the cost involved</li>
-  </ul>
-
-
-
-  <h2 id="next">Next steps</h2>
-
-  <h3>Use a business case template</h3>
-  <p>You should use the <a href="0">business case template</a> if you need to get approval from your school leadership team before you buy.</p>
-
-  <h3>Documentation for frameworks</h3>
-  <p>You should always use the documentation provided with the framework so you&rsquo;re covered by the terms and conditions and get the best price available.</p>
-
-  <div class="cta-box">
-    <p><a href="https://www.gov.uk/government/collections/buying-for-schools"> Procurement templates and guidance</a> are also available.</p>
-  </div>
 {% endblock %}
