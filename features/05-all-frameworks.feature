@@ -4,14 +4,14 @@ Feature: All frameworks page
     Then the service displays the following page content
       | Heading | All frameworks |
     And have links
-      | Books and related materials         | /framework#books        |
-      | Facilities management and estates   | /framework#fm           |
-      | ICT                                 | /framework#ict          |
-      | Legal                               | /framework#legal        |
-      | Professional                        | /framework#professional |
-      | Energy and utilities                | /framework#energy       |
-      | Financial                           | /framework#financial    |
-      | Recruitment and HR                  | /framework#hr           |
+      | Books and related materials         | /framework#category-books        |
+      | Facilities management and estates   | /framework#category-fm           |
+      | ICT                                 | /framework#category-ict          |
+      | Legal                               | /framework#category-legal        |
+      | Professional                        | /framework#category-professional |
+      | Energy and utilities                | /framework#category-energy       |
+      | Financial                           | /framework#category-financial    |
+      | Recruitment and HR                  | /framework#category-hr           |
       | Find a framework                    | /benefits               |
 
   Scenario: Framework page linked from list page
