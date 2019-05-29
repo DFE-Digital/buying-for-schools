@@ -23,7 +23,7 @@
         <ol class="govuk-list govuk-list--dash">
           {% for ref, group in grouped %}
             <li>
-              <a class="govuk-body-s govuk-link" href="#{{ ref }}">{{ group.title }}</a>
+              <a class="govuk-body-s govuk-link" href="#category-{{ ref }}">{{ group.title }}</a>
             </li>
           {% endfor %}
         </ol>
@@ -33,12 +33,12 @@
   <div class="govuk-grid-column-three-quarters">
     <div class="related-main-content">
       {% for ref, group in grouped %}
-        <h2 class="govuk-heading-m" id="{{ ref }}">{{ group.title }}</h2>
+        <h2 class="govuk-heading-m" id="category-{{ ref }}">{{ group.title }}</h2>
         <table class="govuk-table">
           {% for item in group.items %}
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
-                <a href="/framework/{{ item.ref }}" class="govuk-link">{{ item.title }}</a>
+                <a href="/framework/{{ item.ref }}" class="govuk-link" id="{{ item.ref }}">{{ item.title }}</a>
                 <p class="govuk-body-s">{{ item.descr }}</p>
               </td>
               <td class="govuk-table__cell govuk-table__cell--supplier">{{ item.supplier }}</td>
