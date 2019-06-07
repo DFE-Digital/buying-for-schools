@@ -50,6 +50,7 @@
     "jest": "^24.1.0",
     "jest-cli": "^24.1.0",
     "jest-junit-reporter": "^1.1.0",
-    "jshint": "^2.10.1"
+    "jshint": "^2.10.1",
+    "mongoose": "^5.5.13"
   }
 }
