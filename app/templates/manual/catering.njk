@@ -8,17 +8,23 @@
 {% block preguidance %}
   <p class="summary">Use this guide to find the best solution for the catering requirements of your school or academy.</p>
 
-  {{ govukWarningText({
-    text: 'Make sure you’re familiar with the School Food Standards requirements.',
-    iconFallbackText: 'Warning'
-  }) }}
+  
 
-  <p class="govuk-body"><a class="govuk-link" href="/framework#fmm">All frameworks</a></p>
+  <div class="cta-box">
+    <p class="govuk-body"><a href="/framework#fmm" class="ukgov-link">Find a DfE approved catering framework</a>.</p>
+  </div>
+
 {% endblock %}
   
 {% block collapsiblecontent %}
   
   <h2 id="before-you-start">Before you start</h2>
+
+  {{ govukWarningText({
+    text: 'Make sure you’re familiar with the School Food Standards requirements.',
+    iconFallbackText: 'Warning'
+  }) }}
+
   <h3 id="current-contract">Current contract</h3>
 
   <p>Start to think about:</p>

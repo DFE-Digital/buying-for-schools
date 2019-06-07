@@ -6,6 +6,19 @@
 {% block preguidance %}
   <p class="summary">Use this guide to find the best solution for the cleaning requirements of your school or academy.</p>
 
+  
+
+  <div class="cta-box">
+    <p class="govuk-body"><a href="/framework#category-fm" class="ukgov-link">Find a DfE approved cleaning framework</a>.</p>
+  </div>
+
+{% endblock %}
+
+
+{% block collapsiblecontent %}
+
+  <h2 id="before-you-start">Before you start</h2>
+
   {{ govukWarningText({
     text: 'You must comply with all current legislation and regulation which applies at the time.',
     iconFallbackText: 'Warning'
@@ -15,14 +28,6 @@
     text: 'Remember that cleaning products and chemicals need to be labelled and stored in accordance with the Control of Substances Hazardous to Health (COSHH) regulations.',
     iconFallbackText: 'Warning'
   }) }}
-
-  <p class="govuk-body"><a class="govuk-link" href="/framework#category-fm">All frameworks</a></p>
-{% endblock %}
-
-
-{% block collapsiblecontent %}
-
-  <h2 id="before-you-start">Before you start</h2>
 
   <p>Changing your cleaning arrangements may be time consuming and complex so try to plan any changes carefully.</p>
 
