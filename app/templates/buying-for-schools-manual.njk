@@ -19,7 +19,7 @@
   <!-- End Google Tag Manager -->
 
   <meta name="robots" content="noindex, nofollow">
-
+  <link rel="stylesheet" media="screen" href="https://assets.publishing.service.gov.uk/manuals-frontend/application-22ccffde3863bbb6f5ad2362828cb87960137736bd8cd525c6ad13c1840adfd6.css">
   <link rel="stylesheet" href="/assets/styles/main.css">
 {% endblock %}
 
@@ -38,20 +38,11 @@
   </div>
   {{ govukHeader({
     homepageUrl: "https://www.gov.uk/",
-    containerClasses: "govuk-width-container",
-    serviceName: "Find a DfE approved framework for your school",
-    serviceUrl: "/"  
+    containerClasses: "govuk-width-container"
   }) }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "beta"
-    },
-    html: 'This is a new service – your <a class="govuk-link" href="mailto:schools.digital@education.gov.uk?subject=Feedback:%20Find%20a DfE%20approved%20framework%20for%20your%20school">feedback</a> will help us to improve it.'
-  }) }}
-{% endblock %}
+
 
 {% block footer %}
   {{ govukFooter({
@@ -69,4 +60,8 @@
 {% block bodyEnd %}
   <script src="/assets/all.js"></script>
   <script src="/assets/frameworks.js" id="mainscript" data-survey="{{ locals.survey }}"></script>
+  
+  <script src="https://assets.publishing.service.gov.uk/static/libs/jquery/jquery-1.12.4-c731c20e2995c576b0509d3bd776f7ab64a66b95363a3b5fae9864299ee594ed.js"></script>
+  <script src="https://assets.publishing.service.gov.uk/manuals-frontend/application-c43d9e79937f6feae9a27fe48b80a0e978042e7d6d0fa0dd2c350190658c534c.js"></script>
+  
 {% endblock %}
