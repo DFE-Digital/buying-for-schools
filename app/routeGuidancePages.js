@@ -42,3 +42,13 @@ const routeGuidancePages = app => {
 }
 
 module.exports = routeGuidancePages
+
+/*
+Start page: https://www.gov.uk/guidance/find-a-dfe-approved-framework-for-your-school
+manual homepage for category led content: https://www.gov.uk/guidance/buying-for-schools
+Cleaning: https://www.gov.uk/guidance/buying-for-schools/cleaning-services
+Catering: https://www.gov.uk/guidance/buying-for-schools/catering-services
+electricity: https://www.gov.uk/guidance/buying-for-schools/electricity
+Books and educational resources: https://www.gov.uk/guidance/buying-for-schools/books-and-educational-resources
+ICT and computer hardware: https://www.gov.uk/guidance/buying-for-schools/ict-and-computer-hardware
+*/
