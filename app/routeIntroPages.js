@@ -2,11 +2,6 @@ const routeIntroPages = app => {
   const introPages = [
     { 
       path: '/',
-      title: app.locals.serviceName,
-      tpl: 'start-page.njk'
-    },
-    { 
-      path: '/benefits',
       title: 'Benefits of using a framework',
       tpl: 'framework-benefits.njk'
     },

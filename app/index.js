@@ -39,10 +39,10 @@ app.use((req, res, next) => {
 
 const routeBasicPages = require('./routeBasicPages')(app)
 const routeIntroPages = require('./routeIntroPages')(app)
-const routeGuidancePages = require('./routeGuidancePages')(app)
+// const routeGuidancePages = require('./routeGuidancePages')(app)
 const routeHowToUsePages = require('./routeHowToUsePages')(app)
 routeBasicPages(routeIntroPages)
-routeBasicPages(routeGuidancePages)
+// routeBasicPages(routeGuidancePages)
 routeBasicPages(routeHowToUsePages)
 
 const routeDecisionTreePages = require('./routeDecisionTreePages')(app)

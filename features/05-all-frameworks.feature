@@ -12,7 +12,7 @@ Feature: All frameworks page
       | Energy and utilities                | /framework#category-energy       |
       | Financial                           | /framework#category-financial    |
       | Recruitment and HR                  | /framework#category-hr           |
-      | Find a framework                    | /benefits               |
+      | Find a framework                    | /                                |
 
   Scenario: Framework page linked from list page
     Given user is on page /framework/books
@@ -20,6 +20,6 @@ Feature: All frameworks page
       | Heading | Books and related materials |
     And have links
       | Visit the ESPO website                          | https://www.espo.org/Pages/Books-for-schools-framework-376E-guide |
-      | Buy books and related materials for your school | /guidance/books                                                   |
+      | Buy books and related materials for your school | https://www.gov.uk/guidance/buying-for-schools/books-and-educational-resources |
       | How to use the ESPO framework                   | /how-to-use-espo-framework                                        |
     

@@ -1,13 +1,8 @@
 Feature: Start pages
-  Scenario: Content on the start page
-    Given user is on page /
-    Then the service displays the following page content
-      | Heading | Find a DfE approved framework for your school |
-    And have links
-      | Find a framework | /benefits |
 
-  Scenario: Content on the benefits page
-    Given user is on page /benefits
+
+  Scenario: Content on the benefits/start page
+    Given user is on page /
     Then the service displays the following page content
       | Heading | Benefits of using a framework |
     And have links
