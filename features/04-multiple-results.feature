@@ -5,7 +5,7 @@ Feature: Multiple outcome page
       | Heading | Matching frameworks                                                           |
       | Intro   | Based on your answers, there are multiple approved frameworks to choose from. |
     And have result card
-      | Digital Marketplace (G-Cloud 10)                                                          |
+      | Digital Marketplace (G-Cloud 11)                                                          |
       | CCS                                                                                       |
       | /frameworks/type/on-going/services-categories/ict/ict-services/cloud/digital-marketplace  |
     And have result card
