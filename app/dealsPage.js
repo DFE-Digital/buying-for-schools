@@ -1,6 +1,7 @@
 const url = require('url')
 const path = require('path')
 const nunjucks = require('nunjucks')
+const moment = require('moment')
 
 
 const allDealsPage = app => (req, res) => {
@@ -15,7 +16,9 @@ const allDealsPage = app => (req, res) => {
         ...category, items: []
       }
     }
-    grouped[cat].items.push(framework.toObject())
+    const f = framework.toObject()
+    f.expiry = f.expiry ? moment(f.expiry).format('DD/MM/YYYY') : ''
+    grouped[cat].items.push(f)
   })
 
   const renderedResult = nunjucks.render('deals.njk', {

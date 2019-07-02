@@ -6,7 +6,7 @@
     "url": "https://www.espo.org/Pages/Books-for-schools-framework-376E-guide",
     "cat": "books",
     "descr": "Deals for curriculum materials including fiction and non-fiction books, ebooks, DVDs, CDs and education software.",
-    "expiry": "2019-08-08"
+    "expiry": "2020-08-31"
   },
   {
     "ref": "library",
@@ -15,7 +15,7 @@
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=6&frameworkID=177",
     "cat": "books",
     "descr": "Includes the provision of books, e-books, journals/ periodicals, e-journals, audio books, audio summary, library discovery and associated services split into 4 lots with 12 suppliers. Curriculum books are also available via this deal.",
-    "expiry": "2019-08-08"
+    "expiry": "2020-08-08"
   },
   {
     "ref": "furniture",
@@ -59,7 +59,7 @@
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=207",
     "cat": "legal",
     "descr": "Legal services includes: estates professional services, facilities management services, building materials, modular, academy conversion and post conversion.",
-    "expiry": "2021-01-01"
+    "expiry": "2021-04-01"
   },
   {
     "ref": "professional",
@@ -93,7 +93,8 @@
     "supplier": "CCS",
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3791",
     "cat": "energy",
-    "descr": "Electricity supply and additional services, such as automated meter reading (AMR), services to reduce consumption and energy supply from renewable sources."
+    "descr": "Electricity supply and additional services, such as automated meter reading (AMR), services to reduce consumption and energy supply from renewable sources.",
+    "expiry": "2020-07-30"
   },
   {
     "ref": "gas-firm",
@@ -119,8 +120,7 @@
     "supplier": "Fusion 21",
     "url": "https://www.fusion21.co.uk/",
     "cat": "energy",
-    "descr": "Suppliers to complete improvement projects including insulation, heating and energy systems, energy efficient lighting, windows and doors.",
-    "expiry": "2019-09-07"
+    "descr": "Suppliers to complete improvement projects including insulation, heating and energy systems, energy efficient lighting, windows and doors."
   },
   {
     "ref": "water",
@@ -129,7 +129,7 @@
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3790",
     "cat": "energy",
     "descr": "A single national deal covering water supply, waste water removal (sewerage) and ancillary services that reduce water consumption and make usage more efficient and supply more resilient.",
-    "expiry": "2020-03-15"
+    "expiry": "2021-03-15"
   },
   {
     "ref": "fmm",
@@ -173,7 +173,8 @@
     "supplier": "CPC",
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=3&frameworkID=160",
     "cat": "fm",
-    "descr": "Providers of building cleaning services including: janitorial services, periodic cleaning, high-level cleaning and window cleaning."
+    "descr": "Providers of building cleaning services including: janitorial services, periodic cleaning, high-level cleaning and window cleaning.",
+    "expiry": "2021-05-20"
   },
   {
     "ref": "audit",
@@ -182,7 +183,7 @@
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=184",
     "cat": "financial",
     "descr": "Audit service deal tailored for academies and schools.",
-    "expiry": "2019-12-04"
+    "expiry": "2019-04-12"
   },
   {
     "ref": "cost-recovery",
@@ -191,7 +192,7 @@
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3820",
     "cat": "financial",
     "descr": "Services to help schools identify and recover supplier overpayments, overcharges or missed discounts and rebates.",
-    "expiry": "2020-01-15"
+    "expiry": "2021-01-15"
   },
   {
     "ref": "insurance",
@@ -200,7 +201,7 @@
     "url": "https://www.academies.thecpc.ac.uk/suppliers/categories/framework.php?categoryID=9&frameworkID=176",
     "cat": "financial",
     "descr": "Provision of commercial insurance for schools.",
-    "expiry": "2019-06-30"
+    "expiry": "2020-06-30"
   },
   {
     "ref": "leasing",
@@ -227,7 +228,7 @@
     "url": "https://marketplace.service.crowncommercial.gov.uk/supply-teachers",
     "cat": "hr",
     "descr": "Suppliers available for hiring of all temporary and fixed term teaching and non-teaching staff for schools, colleges or other educational establishments within the public sector such as an academy, trust, nursery, pupil referral unit, children centre or further education institution, across the UK. Independent schools (for-profit) are not able to access the deal.",
-    "expiry": "2020-08-28"
+    "expiry": "2020-08-29"
   },
   {
     "ref": "software-licenses",
@@ -244,8 +245,8 @@
     "supplier": "E2BN",
     "url": "http://think-it.org.uk/",
     "cat": "ict",
-    "descr": "Educational cloud services specifically designed for the needs of schools, academies and other learning centres, runs until March 2021",
-    "expiry": "2021-03-31"
+    "descr": "Educational cloud services specifically designed for the needs of schools, academies and other learning centres.",
+    "expiry": "2022-01-08"
   },
   {
     "ref": "ict-hardware",
@@ -271,8 +272,7 @@
     "supplier": "KCS",
     "url": "http://www.kcs4ps.co.uk/",
     "cat": "ict",
-    "descr": "Photocopiers, printers and scanners (multi-functional devices, MFDs) from a range of suppliers including Sharp, Konica, Annodata (Kyocera) and Ricoh.",
-    "expiry": "2021-03-31"
+    "descr": "Photocopiers, printers and scanners (multi-functional devices, MFDs) from a range of suppliers including Sharp, Konica, Annodata (Kyocera) and Ricoh."
   },
   {
     "ref": "digital-marketplace",
@@ -280,8 +280,7 @@
     "supplier": "CCS",
     "url": "https://www.digitalmarketplace.service.gov.uk/buyers/direct-award/g-cloud/start",
     "cat": "ict",
-    "descr": "Cloud computing services covering hosting, software and cloud support.Choose and purchase cloud computing services from 3,500 suppliers covering infrastructure, platform, software and specialist cloud services.Direct Award available.",
-    "expiry": "2019-07-01"
+    "descr": "Cloud computing services covering hosting, software and cloud support.Choose and purchase cloud computing services from 3,500 suppliers covering infrastructure, platform, software and specialist cloud services.Direct Award available."
   },
   {
     "ref": "rpa",

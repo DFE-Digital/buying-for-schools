@@ -39,7 +39,8 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
                 <a href="/framework/{{ item.ref }}" class="govuk-link" id="{{ item.ref }}">{{ item.title }}</a>
-                <p class="govuk-body-s">{{ item.descr }}</p>
+                <p class="govuk-body-s govuk-!-margin-bottom-1">{{ item.descr }}</p>
+                {% if item.expiry %}<p class="govuk-body-xs govuk-!-margin-bottom-0 govuk-!-padding-bottom-0">Expires: {{ item.expiry }}</p>{% endif %}
               </td>
               <td class="govuk-table__cell govuk-table__cell--supplier">{{ item.supplier }}</td>
             </tr>
