@@ -79,15 +79,6 @@
     "descr": "A simple way to switch energy suppliers online. Get instant quotes based on your school’s energy needs."
   },
   {
-    "ref": "elec-half-hourly-ancillary",
-    "title": "Electricity supply and ancillary services (half hourly)",
-    "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1075",
-    "cat": "energy",
-    "descr": "Single supplier for electricity supply and additional services, such as meter reading (AMR) services to reduce consumption. Energy supply from renewable sources.",
-    "expiry": "2020-07-31"
-  },
-  {
     "ref": "elec-unmetered",
     "title": "Electricity (half hourly, non-half hourly and unmetered)",
     "supplier": "YPO",
@@ -103,14 +94,6 @@
     "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm3791",
     "cat": "energy",
     "descr": "Electricity supply and additional services, such as automated meter reading (AMR), services to reduce consumption and energy supply from renewable sources."
-  },
-  {
-    "ref": "gas",
-    "title": "Supply of natural gas (daily/non-daily metered) and ancillary services",
-    "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1076",
-    "cat": "energy",
-    "descr": "Supply of natural gas with metering options and associated services. Includes risk management advice."
   },
   {
     "ref": "gas-firm",

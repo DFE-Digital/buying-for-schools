@@ -273,7 +273,10 @@
       {
         "ref": "half-hourly",
         "title": "Half hourly metered",
-        "next": "support"
+        "next": "",
+        "result": [
+          "elec-unmetered"
+        ]
       },
       {
         "ref": "non-half-hourly",
@@ -347,7 +350,10 @@
       {
         "ref": "no",
         "title": "No",
-        "next": "gas-support"
+        "next": "",
+        "result": [
+          "gas-firm"
+        ]
       }
     ],
     "used": true,
