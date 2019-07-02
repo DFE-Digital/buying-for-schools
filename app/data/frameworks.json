@@ -176,14 +176,6 @@
     "descr": "Providers of building cleaning services including: janitorial services, periodic cleaning, high-level cleaning and window cleaning."
   },
   {
-    "ref": "ict-services-education",
-    "title": "ICT services for education",
-    "supplier": "CCS",
-    "url": "https://ccs-agreements.cabinetoffice.gov.uk/contracts/rm1050",
-    "cat": "ict",
-    "descr": "Specialist technology services, hardware and infrastructure for public sector educational organisations."
-  },
-  {
     "ref": "audit",
     "title": "Audit services",
     "supplier": "CPC",

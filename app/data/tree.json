@@ -137,7 +137,6 @@
         "ref": "no",
         "title": "No, I want a supplier to give me a quote",
         "result": [
-          "ict-services-education",
           "ict-cloud",
           "ict-hardware"
         ]
@@ -533,7 +532,11 @@
       {
         "ref": "managed-ict",
         "title": "Managed ICT",
-        "next": "managed-ict-support"
+        "next": "",
+        "result": [
+          "ict-cloud",
+          "ict-hardware"
+        ]
       },
       {
         "ref": "cloud",
