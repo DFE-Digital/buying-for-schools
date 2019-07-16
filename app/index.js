@@ -2,7 +2,7 @@ const express = require('express')
 const serveStatic = require('serve-static')
 const path = require('path')
 const url = require('url')
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 4000
 const app = express()
 
 const auth = require('./auth.js')(app)
@@ -47,6 +47,9 @@ routeBasicPages(routeHowToUsePages)
 
 const routeDecisionTreePages = require('./routeDecisionTreePages')(app)
 const routeDealsPages = require('./dealsPage').routeDealsPage(app)
+
+const dbTree = require('./dbTree/dbTree')(app)
+app.use('/find', dbTree)
 
 
 app.get('*', (req, res) => {
