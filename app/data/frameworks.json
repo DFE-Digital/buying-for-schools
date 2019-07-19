@@ -289,5 +289,13 @@
     "url": "https://www.gov.uk/guidance/academies-risk-protection-arrangement-rpa",
     "cat": "financial",
     "descr": "An alternative to commercial insurance for academies, underwritten by the government, opt in immediately or up to 12 months in advance."
+  },
+  {
+    "ref": "salix",
+    "title": "Interest-free loans to fund energy saving schemes",
+    "supplier": "Salix",
+    "url": "https://www.salixfinance.co.uk/loans/schools-loans",
+    "cat": "energy",
+    "descr": "Interest-free loans to fund energy saving schemes."
   }
 ]

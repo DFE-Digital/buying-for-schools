@@ -235,6 +235,13 @@
         "next": "efficiency"
       },
       {
+        "ref": "efficiencyloans",
+        "title": "Energy efficiency loans",
+        "result": [
+          "salix"
+        ]
+      },
+      {
         "ref": "water-drains-sewarage",
         "title": "Water, drains and sewerage",
         "result": [
@@ -634,6 +641,13 @@
         "next": "academy",
         "result": [
           ""
+        ]
+      },
+      {
+        "ref": "efficiencyloans",
+        "title": "Energy efficiency loans",
+        "result": [
+          "salix"
         ]
       }
     ],

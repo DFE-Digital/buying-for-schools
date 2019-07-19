@@ -1,0 +1,25 @@
+{% extends "result.njk" %}
+{% import "macros/results.njk" as results %}
+
+{% block recommendation %}
+{{ results.recommendation(
+  'Interest-free loans to fund energy saving schemes',
+  'Based on your answers, we think you should use one of the Salix energy efficiency loan schemes.'
+) }}
+{% endblock %}
+
+{% block resultContent %}
+{{ results.offers([
+  'An interest-free loan.',
+  'Use your loan to fund over 100 different technologies such as LED lighting, boiler replacements and insulation',
+  'Available to all local-authority-maintained schools, academies.',
+  'Available to all maintained schools, academies, free schools and sixth form colleges.'
+]) }}
+
+{{ results.benefits([
+  'Reduce your energy bills.',
+  'No upfront cost – the interest-free loan is repaid with the predicted energy savings.',
+  'Reduce your carbon footprint.',
+  'Repayments are recycled to fund other public sector projects.'
+]) }}
+{% endblock %}
