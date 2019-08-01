@@ -9,7 +9,7 @@ const dbTreeMultiple = app => (req, res) => {
     return {
       title: f.title,
       url: path.join(req.originalUrl, f.ref),
-      supplier: f.supplier
+      supplier: f.provider.initials
     }
   })
 

@@ -13,20 +13,18 @@ const getProviderShort = provider => {
   return provider.initials.trim() ? provider.initials : provider.title
 }
 
-
-
-
 const dbTreeFramework = app => (req, res) => {
   const { serviceName } = app.locals
   const { urlInfo, summary, frameworkDetails } = res.locals
   const framework = frameworkDetails[0]
+  const body = framework.body || ''
 
   const renderedResult = nunjucks.render('dbTreeFramework.njk', {
     summary,
     locals: app.locals,
     providerFull: getProviderFull(framework.provider),
     providerShort: getProviderShort(framework.provider),
-    body: marked(framework.body),
+    body: marked(body),
     title: framework.title,
     url: framework.url,
     pageTitle: framework.title
