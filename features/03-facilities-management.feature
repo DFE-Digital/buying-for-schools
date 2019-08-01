@@ -25,7 +25,6 @@ Feature: Facilities management
       | Construction consultancy          | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/construction       |
       | Grounds maintenance               | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/grounds            |
       | Maintenance                       | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/maintenance        |
-      | Portable Appliance Testing (PAT)  | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/pat                |
       | Removal and relocation            | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/removal-relocation |
       | Security                          | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/security           |
       | Waste                             | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/waste              |
