@@ -451,13 +451,6 @@
         ]
       },
       {
-        "ref": "pat",
-        "title": "Portable Appliance Testing (PAT)",
-        "result": [
-          "pat"
-        ]
-      },
-      {
         "ref": "support",
         "title": "Cleaning",
         "next": "fm-support"
