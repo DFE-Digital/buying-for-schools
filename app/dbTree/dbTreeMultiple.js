@@ -3,7 +3,7 @@ const path = require('path')
 
 const dbTreeMultiple = app => (req, res) => {
   const { serviceName } = app.locals
-  const { urlInfo, summary, frameworkDetails } = res.locals
+  const { summary, frameworkDetails } = res.locals
 
   const resultList = frameworkDetails.map(f => {
     return {

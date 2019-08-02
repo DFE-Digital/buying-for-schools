@@ -12,7 +12,8 @@
     "test:jest": "jest --coverage",
     "test:bdd": "./node_modules/.bin/cucumber-js -f node_modules/cucumber-pretty",
     "test:load": "artillery run loadtest.yml -o loadtest-report.json",
-    "test:loadreport": "artillery report loadtest-report.json"
+    "test:loadreport": "artillery report loadtest-report.json",
+    "test:db": "nyc mocha app/dbTree/tests/*.test.js --exit"
   },
   "jshintConfig": {
     "asi": true,
@@ -53,6 +54,10 @@
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
     "jest-junit-reporter": "^1.1.0",
-    "jshint": "^2.10.1"
+    "jshint": "^2.10.1",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "sinon": "^7.3.2",
+    "standard": "^13.1.0"
   }
 }

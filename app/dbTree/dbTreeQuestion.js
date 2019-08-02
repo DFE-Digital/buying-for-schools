@@ -1,6 +1,7 @@
 const url = require('url')
 const path = require('path')
 const nunjucks = require('nunjucks')
+const utils = require('../utils')
 
 const dbTreeQuestionPage = app => (req, res) => {
   const { urlInfo, lastPairDetail, summary } = res.locals
@@ -33,18 +34,8 @@ const dbTreeQuestionPage = app => (req, res) => {
     }
   })
 
-  if (radioOptions.items[0].text !== 'Yes'){
-    radioOptions.items.sort((a, b) => {
-      const aTitle = a.text.toUpperCase()
-      const bTitle = b.text.toUpperCase()
-      if (aTitle < bTitle) {
-        return -1
-      }
-      if (aTitle > bTitle) {
-        return 1
-      }
-      return 0
-    })
+  if (radioOptions.items[0].text !== 'Yes') {
+    radioOptions.items = utils.sortBy(radioOptions.items, i => i.text.toUpperCase())
   }
 
   let err = null
@@ -52,7 +43,7 @@ const dbTreeQuestionPage = app => (req, res) => {
     const errMsg = question.err || 'Please choose an option'
     radioOptions.errorMessage = { text: errMsg }
     err = {
-      titleText: "There is a problem",
+      titleText: 'There is a problem',
       errorList: [
         {
           text: errMsg,

@@ -24,8 +24,7 @@ app.locals = {
 
 const nunjucks = require('./nunjucksConfig')(app)
 
-app.use(serveStatic('public/', { 'index': ['index.html'] }))
-
+app.use(serveStatic('public/', { index: ['index.html'] }))
 
 app.use((req, res, next) => {
   if (process.env.AVAILABLE === 'FALSE') {
@@ -50,16 +49,15 @@ const routeDealsPages = require('./dealsPage').routeDealsPage(app)
 
 app.locals.db = require('./dbTree/db')
 const dbTree = require('./dbTree/dbTree')(app)
+const dbList = require('./dbTree/dbList')(app)
 app.use('/find', dbTree)
-app.use('/list', dbTree)
-
+app.use('/list', dbList.handleRequest)
 
 app.get('*', (req, res) => {
   const render = nunjucks.render('404.njk')
   res.status(404)
   res.send(render)
 })
-
 
 const server = app.listen(port, () => {
   console.log('Magic happens on port ' + port)
