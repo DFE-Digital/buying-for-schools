@@ -48,8 +48,10 @@ routeBasicPages(routeHowToUsePages)
 const routeDecisionTreePages = require('./routeDecisionTreePages')(app)
 const routeDealsPages = require('./dealsPage').routeDealsPage(app)
 
+app.locals.db = require('./dbTree/db')
 const dbTree = require('./dbTree/dbTree')(app)
 app.use('/find', dbTree)
+app.use('/list', dbTree)
 
 
 app.get('*', (req, res) => {

@@ -1,12 +1,5 @@
 const url = require('url')
 const path = require('path')
-const MongoClient = require('mongodb').MongoClient
-const client = new MongoClient(process.env.S107D01_MONGO_01_READONLY, { useNewUrlParser: true })
-let db
-let structures
-client.connect()
-  .then(() => db = client.db('s107d01-mongo-01'))
-  .then(() => structures = db.collection('structures'))
 
 
 const handleRequest = app => {
@@ -14,7 +7,10 @@ const handleRequest = app => {
   const dbTreeFramework = require('./dbTreeFramework')(app)
   const dbTreeMultiple = require('./dbTreeMultiple')(app)
 
+
   return (req, res) => {
+
+    const structures = app.locals.db.structures
     const getQuestionAnswerPairSlugs = (url) => {
       const trimmed = url.replace(/^\/+|\/+$/g, '')
       if (!trimmed) {
@@ -103,7 +99,9 @@ const handleRequest = app => {
     }
 
     res.locals.urlInfo = url.parse(req.url)
+    
     const pairs = getQuestionAnswerPairSlugs(res.locals.urlInfo.pathname)
+    console.log(req.originalUrl)
     if (!pairs.length) {
       return res.redirect(302, path.join(req.baseUrl, 'what'))
     }
