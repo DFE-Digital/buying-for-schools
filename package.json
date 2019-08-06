@@ -17,8 +17,8 @@
   },
   "jshintConfig": {
     "asi": true,
-    "esversion": 6,
-    "maxcomplexity": 6
+    "esversion": 9,
+    "maxcomplexity": 7
   },
   "jest": {
     "testResultsProcessor": "./node_modules/jest-junit-reporter",

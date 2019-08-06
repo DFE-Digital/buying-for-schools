@@ -47,7 +47,7 @@ routeBasicPages(routeHowToUsePages)
 const routeDecisionTreePages = require('./routeDecisionTreePages')(app)
 const routeDealsPages = require('./dealsPage').routeDealsPage(app)
 
-app.locals.db = require('./dbTree/db')(process.env.S107D01_MONGO_01_READONLY, 's107d01-mongo-01')
+app.locals.db = require('./dbTree/db')(process.env.S107D01_MONGO_01_READONLY || process.env.MONGO_READONLY, 's107d01-mongo-01')
 const dbTree = require('./dbTree/dbTree')(app)
 const dbList = require('./dbTree/dbList')(app)
 app.use('/find', dbTree.handleRequest)
