@@ -1,7 +1,7 @@
 const url = require('url')
 const path = require('path')
 const nunjucks = require('nunjucks')
-const utils = require('../utils')
+const utils = require('./utils')
 
 const dbTreeQuestionPage = app => (req, res) => {
   const { urlInfo, lastPairDetail, summary } = res.locals

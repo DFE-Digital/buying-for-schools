@@ -1,11 +1,10 @@
 const url = require('url')
 const moment = require('moment')
 const nunjucks = require('nunjucks')
-const utils = require('../utils')
+const utils = require('./utils')
 
 const dbList = app => {
   const db = app.locals.db
-
   const me = {}
   me.dbTreeFramework = require('./dbTreeFramework')(app)
 

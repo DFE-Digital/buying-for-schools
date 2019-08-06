@@ -1,20 +1,26 @@
-const MongoClient = require('mongodb').MongoClient
-const client = new MongoClient(process.env.S107D01_MONGO_01_READONLY, { useNewUrlParser: true })
-const db = {}
-client.connect()
-  .then(() => client.db('s107d01-mongo-01'))
-  .then(connection => db.structures = connection.collection('structures'))
-  .then(() => console.log('connection made'))
+const mongoDB = require('mongodb')
+const mClient = mongoDB.MongoClient
 
-db.getRecord = (status) => {
-  return db.structures.findOne({ status }, { sort: { updatedAt: -1 } })
+const dbFunc = (connectionString, dbName) => {
+  const client = new mClient(connectionString, { useNewUrlParser: true })
+  const dbObj = {}
+  dbObj.connected = client.connect()
+    .then(() => client.db(dbName))
+    .then(connection => dbObj.structures = connection.collection('structures'))
+    .then(() => console.log('connection made'))
+
+  dbObj.getRecord = (status) => {
+    return dbObj.structures.findOne({ status }, { sort: { updatedAt: -1 } })
+  }
+
+  dbObj.populateFramework = (doc, f) => {
+    const modifiedFramework = { ...f }
+    modifiedFramework.provider = doc.provider.find(p => p._id.toString() === f.provider.toString())
+    modifiedFramework.cat = doc.category.find(c => c._id.toString() === f.cat.toString())
+    return modifiedFramework
+  }
+
+  return dbObj
 }
 
-db.populateFramework = (doc, f) => {
-  const modifiedFramework = { ...f }
-  modifiedFramework.provider = doc.provider.find(p => p._id.toString() === f.provider.toString())
-  modifiedFramework.cat = doc.category.find(c => c._id.toString() === f.cat.toString())
-  return modifiedFramework
-}
-
-module.exports = db
+module.exports = dbFunc

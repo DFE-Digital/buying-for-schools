@@ -21,7 +21,8 @@
     "maxcomplexity": 6
   },
   "jest": {
-    "testResultsProcessor": "./node_modules/jest-junit-reporter"
+    "testResultsProcessor": "./node_modules/jest-junit-reporter",
+    "testPathIgnorePatterns": ["/node_modules/", "/app/dbTree"]
   },
   "author": "",
   "license": "ISC",
