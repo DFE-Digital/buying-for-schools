@@ -1,0 +1,24 @@
+{% extends "result.njk" %}
+{% import "macros/results.njk" as results %}
+
+{% block recommendation %}
+{{ results.recommendation(
+  'Education technology', 
+  'Based on your answers, we think you should use the Crown Commercial Service (CCS) framework.'
+) }}
+{% endblock %}
+
+{% block resultContent %}
+{{ results.offers([
+  'hardware',
+  'software',
+  'broadband fibre infrastructure',
+  'audio-visual equipment',
+  'related services'
+]) }}
+
+{{ results.benefits([
+  'a customer service team to help you',
+  'select a supplier for some purchases (this is called a direct award)'
+]) }}
+{% endblock %}

@@ -1,3 +1,5 @@
+process.env.AUTHUSER = ''
+
 const { server } = require('../../app/index')
 
 const { setWorldConstructor, AfterAll } = require("cucumber")
