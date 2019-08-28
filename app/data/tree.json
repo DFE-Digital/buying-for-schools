@@ -72,8 +72,7 @@
         "ref": "networking",
         "title": "Networking equipment",
         "result": [
-          "network",
-          "edtech"
+          "network"          
         ]
       },
       {
@@ -81,8 +80,7 @@
         "title": "Software",
         "result": [
           "software-licenses",
-          "ict-cloud",
-          "edtech"
+          "ict-cloud"          
         ]
       },
       {
@@ -90,8 +88,7 @@
         "title": "Hardware",
         "result": [
           "ict-cloud",
-          "ict-hardware",
-          "edtech"
+          "ict-hardware"          
         ]
       },
       {
@@ -100,8 +97,7 @@
         "result": [
           "photocopier-printer-scanner",
           "photocopier-printer-scanner-services",
-          "photocopier-printer-scanner-toner",
-          "edtech"
+          "photocopier-printer-scanner-toner"          
         ]
       }
     ],
@@ -457,8 +453,7 @@
         "next": "",
         "result": [
           "ict-cloud",
-          "ict-hardware",
-          "edtech"
+          "ict-hardware"          
         ]
       },
       {
@@ -466,8 +461,7 @@
         "title": "Cloud",
         "result": [
           "ict-cloud",
-          "digital-marketplace",
-          "edtech"
+          "digital-marketplace"          
         ]
       },
       {
@@ -476,8 +470,7 @@
         "result": [
           "photocopier-printer-scanner",
           "photocopier-printer-scanner-services",
-          "photocopier-printer-scanner-toner",
-          "edtech"
+          "photocopier-printer-scanner-toner"          
         ]
       }
     ],
