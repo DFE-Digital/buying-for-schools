@@ -15,17 +15,17 @@ Feature: Facilities management
       | Recruitment and HR                | /frameworks/type/on-going/services-categories/recruitment   |
 
   Scenario: Content on the fm-categories page
-    Given user is on page /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories
+    Given user is on page /frameworks/type/on-going/services-categories/facilities/fm-categories
     Then the service displays the following page content
       | Heading | What services are you looking for in facilities management and estates?  |
       | submit  | Continue |
     And have radio buttons
-      | Catering                          | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/catering           |
-      | Cleaning                          | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/support            |
-      | Construction consultancy          | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/construction       |
-      | Grounds maintenance               | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/grounds            |
-      | Maintenance                       | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/maintenance        |
-      | Removal and relocation            | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/removal-relocation |
-      | Security                          | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/security           |
-      | Waste                             | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/waste              |
-      | Workplace facilities management   | /frameworks/type/on-going/services-categories/facilities/bundle/specific/fm-categories/wfm                |
+      | Catering                          | /frameworks/type/on-going/services-categories/facilities/fm-categories/catering           |
+      | Cleaning                          | /frameworks/type/on-going/services-categories/facilities/fm-categories/support            |
+      | Construction consultancy          | /frameworks/type/on-going/services-categories/facilities/fm-categories/construction       |
+      | Grounds maintenance               | /frameworks/type/on-going/services-categories/facilities/fm-categories/grounds            |
+      | Maintenance                       | /frameworks/type/on-going/services-categories/facilities/fm-categories/maintenance        |
+      | Removal and relocation            | /frameworks/type/on-going/services-categories/facilities/fm-categories/removal-relocation |
+      | Security                          | /frameworks/type/on-going/services-categories/facilities/fm-categories/security           |
+      | Total facilities management   | /frameworks/type/on-going/services-categories/facilities/fm-categories/wfm                    |
+      | Waste                             | /frameworks/type/on-going/services-categories/facilities/fm-categories/waste              |

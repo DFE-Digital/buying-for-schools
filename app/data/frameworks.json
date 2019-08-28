@@ -36,14 +36,6 @@
     "expiry": "2020-01-31"
   },
   {
-    "ref": "ict-catalog",
-    "title": "The purchasing platform",
-    "supplier": "CCS",
-    "url": "https://purchasingplatform.crowncommercial.gov.uk/mp-welcome",
-    "cat": "ict",
-    "descr": "Suppliers of hardware, software and related services."
-  },
-  {
     "ref": "photocopier-printer-scanner",
     "title": "Multifunctional Devices, Managed Print and Content Services and Records and Information Management",
     "supplier": "CCS",

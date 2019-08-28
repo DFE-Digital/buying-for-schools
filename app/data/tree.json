@@ -72,101 +72,41 @@
         "ref": "networking",
         "title": "Networking equipment",
         "result": [
-          "network"
+          "network",
+          "edtech"
         ]
       },
       {
         "ref": "software",
         "title": "Software",
-        "next": "software-catalog"
+        "result": [
+          "software-licenses",
+          "ict-cloud",
+          "edtech"
+        ]
       },
       {
         "ref": "hardware",
         "title": "Hardware",
-        "next": "hardware-catalog"
+        "result": [
+          "ict-cloud",
+          "ict-hardware",
+          "edtech"
+        ]
       },
       {
         "ref": "mfd",
         "title": "Printers, copiers and multi-functional devices (MFDs)",
-        "next": "mfd-direct",
         "result": [
-          ""
+          "photocopier-printer-scanner",
+          "photocopier-printer-scanner-services",
+          "photocopier-printer-scanner-toner",
+          "edtech"
         ]
       }
     ],
     "used": true,
     "err": "Select which goods you are looking for"
-  },
-  {
-    "ref": "software-catalog",
-    "title": "Do you want to buy from an online catalogue?",
-    "hint": "A catalogue lets you search for and buy specific products online.",
-    "options": [
-      {
-        "ref": "yes",
-        "title": "Yes",
-        "result": [
-          "ict-catalog"
-        ]
-      },
-      {
-        "ref": "no",
-        "title": "No, I want a supplier to give me a quote",
-        "result": [
-          "software-licenses",
-          "ict-cloud"
-        ]
-      }
-    ],
-    "used": true,
-    "err": "Select yes if want to buy from an online catalogue"
-  },
-  {
-    "ref": "hardware-catalog",
-    "title": "Do you want to buy from an online catalogue?",
-    "hint": "A catalogue lets you search for and buy specific products online.",
-    "options": [
-      {
-        "ref": "yes",
-        "title": "Yes",
-        "result": [
-          "ict-catalog"
-        ]
-      },
-      {
-        "ref": "no",
-        "title": "No, I want a supplier to give me a quote",
-        "result": [
-          "ict-cloud",
-          "ict-hardware"
-        ]
-      }
-    ],
-    "used": true,
-    "err": "Select yes if want to buy from an online catalogue"
-  },
-  {
-    "ref": "mfd-direct",
-    "title": "Do you want to select a supplier directly without having to run a mini-competition?",
-    "options": [
-      {
-        "ref": "yes",
-        "title": "Yes",
-        "result": [
-          "photocopier-printer-scanner"
-        ]
-      },
-      {
-        "ref": "no",
-        "title": "No, I want multiple suppliers to give me quotes",
-        "result": [
-          "photocopier-printer-scanner-services",
-          "photocopier-printer-scanner-toner"
-        ]
-      }
-    ],
-    "used": true,
-    "err": "Select yes if want to select a supplier directly"
   },
   {
     "ref": "services-categories",
@@ -194,7 +134,7 @@
       {
         "ref": "facilities",
         "title": "Facilities management and estates",
-        "next": "bundle"
+        "next": "fm-categories"
       },
       {
         "ref": "ict",
@@ -415,26 +355,6 @@
     "hint": "This could involving multiple products or be across multiple sites."
   },
   {
-    "ref": "bundle",
-    "title": "Do you want to buy multiple services?",
-    "options": [
-      {
-        "ref": "multi-service",
-        "title": "Yes",
-        "result": [
-          "fmm"
-        ]
-      },
-      {
-        "ref": "specific",
-        "title": "No, I’d like to buy a specific service",
-        "next": "fm-categories"
-      }
-    ],
-    "used": true,
-    "err": "Select yes if you want to buy multiple services"
-  },
-  {
     "ref": "fm-categories",
     "title": "What services are you looking for in facilities management and estates?",
     "options": [
@@ -494,7 +414,7 @@
       },
       {
         "ref": "wfm",
-        "title": "Workplace facilities management",
+        "title": "Total facilities management",
         "result": [
           "fmm"
         ]
@@ -537,7 +457,8 @@
         "next": "",
         "result": [
           "ict-cloud",
-          "ict-hardware"
+          "ict-hardware",
+          "edtech"
         ]
       },
       {
@@ -545,13 +466,19 @@
         "title": "Cloud",
         "result": [
           "ict-cloud",
-          "digital-marketplace"
+          "digital-marketplace",
+          "edtech"
         ]
       },
       {
         "ref": "mfd",
         "title": "Printers, copiers and multifunctional devices (MFDs)",
-        "next": "service-mfd-direct"
+        "result": [
+          "photocopier-printer-scanner",
+          "photocopier-printer-scanner-services",
+          "photocopier-printer-scanner-toner",
+          "edtech"
+        ]
       }
     ],
     "used": true,
@@ -581,29 +508,6 @@
     ],
     "used": true,
     "err": "Select if you want general helpdesk or schools focused support"
-  },
-  {
-    "ref": "service-mfd-direct",
-    "title": "Do you want to select a supplier directly without having to run a mini-competition?",
-    "options": [
-      {
-        "ref": "yes",
-        "title": "Yes",
-        "result": [
-          "photocopier-printer-scanner"
-        ]
-      },
-      {
-        "ref": "no",
-        "title": "No, I want multiple suppliers to give me quotes",
-        "result": [
-          "photocopier-printer-scanner-services",
-          "photocopier-printer-scanner-toner"
-        ]
-      }
-    ],
-    "used": true,
-    "err": "Select yes if want to select a supplier directly"
   },
   {
     "ref": "financial-services",
