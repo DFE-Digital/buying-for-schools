@@ -232,7 +232,9 @@
       {
         "ref": "efficiency",
         "title": "Energy efficiency improvements",
-        "next": "efficiency"
+        "result": [ 
+          "national-energy-performance-contracting"
+        ]
       },
       {
         "ref": "efficiencyloans",

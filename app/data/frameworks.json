@@ -113,15 +113,7 @@
     "cat": "energy",
     "descr": "The RE:FIT framework streamlines the procurement process for energy services and helps retrofit energy efficiency and local energy generation measures to your buildings or estate, reducing annual energy expenditure and carbon emissions.",
     "expiry": "2020-04-19"
-  },
-  {
-    "ref": "retrofit",
-    "title": "Energy efficiency improvements from Retrofit",
-    "supplier": "Fusion 21",
-    "url": "https://www.fusion21.co.uk/",
-    "cat": "energy",
-    "descr": "Suppliers to complete improvement projects including insulation, heating and energy systems, energy efficient lighting, windows and doors."
-  },
+  }, 
   {
     "ref": "water",
     "title": "Water, wastewater and ancillary services",
