@@ -1,5 +1,5 @@
+const urljoin = require('url-join')
 const url = require('url')
-const path = require('path')
 
 const redirectToQuestion = app => (req, res) => {
   const { tree } = app.locals
@@ -10,7 +10,7 @@ const redirectToQuestion = app => (req, res) => {
   const branch = tree.getBranch(questionRef)
   const answer = branch.getOption(answerRef)
   const nxt = answer.getNext()
-  const nxtUrl = path.join(urlInfo.pathname, nxt)
+  const nxtUrl = urljoin(urlInfo.pathname, nxt)
   return res.redirect(302, nxtUrl)
 }
 
@@ -23,7 +23,7 @@ const redirectToResult = app => (req, res) => {
   const branch = tree.getBranch(questionRef)
   const answer = branch.getOption(answerRef)
   const result = answer.getResult()[0]
-  const nxtUrl = path.join(urlInfo.pathname, result)
+  const nxtUrl = urljoin(urlInfo.pathname, result)
   return res.redirect(302, nxtUrl)
 }
 

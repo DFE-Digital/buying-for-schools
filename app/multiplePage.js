@@ -1,5 +1,5 @@
+const urljoin = require('url-join')
 const url = require('url')
-const path = require('path')
 const nunjucks = require('nunjucks')
 
 const multiplePage = app => (req, res, next) => {
@@ -16,7 +16,7 @@ const multiplePage = app => (req, res, next) => {
     const resultList = results.map(r => {
       const result = frameworks.get(r)
       const resultJS = result.toObject()
-      resultJS.nextUrl = path.join(req.url, r)
+      resultJS.nextUrl = urljoin(req.url, r)
       return resultJS
     })
 

@@ -1,5 +1,5 @@
-const path = require('path')
-
+const urljoin = require('url-join')
+const url = require('url')
 const uniq = arr => {
   return arr.filter((v, i, self) => self.indexOf(v) === i)
 }
@@ -13,11 +13,11 @@ const getAllBranchPaths = (tree) => {
  
   const recursion = (basePath, qref) => {
     const branch = tree.getBranch(qref)
-    const questionPath = path.join(basePath, qref)
+    const questionPath = urljoin(basePath, qref)
     const options = branch.getOptions()
     questionPaths.push(questionPath)
     options.forEach(opt => {
-      const answerPath = path.join(questionPath, opt.getRef())
+      const answerPath = urljoin(questionPath, opt.getRef())
       const nxt = opt.getNext()
       const results = opt.getResult()
       if (nxt) {
@@ -31,7 +31,7 @@ const getAllBranchPaths = (tree) => {
           multiplePaths.push(answerPath)
         }
         results.forEach(res => {
-          resultPaths.push(path.join(answerPath, res))
+          resultPaths.push(urljoin(answerPath, res))
         })
       }
     })

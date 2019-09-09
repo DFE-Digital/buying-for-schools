@@ -1,4 +1,4 @@
-const path = require('path')
+const urljoin = require('url-join')
 const nunjucks = require('nunjucks')
 const dtr = require('./decisionTree/decisionTreeRoute')
 const url = require('url')
@@ -40,28 +40,29 @@ const routeDecisionTreePages = app => {
   // console.log(allPaths.results.length, 'result pages')
 
   allPaths.questions.forEach(q => {
-    app.get(path.join(frameworkPath, q), redirectIfAnswered)
-    app.get(path.join(frameworkPath, q), questionPage)
+    app.get(urljoin(frameworkPath, q), redirectIfAnswered)
+    app.get(urljoin(frameworkPath, q), questionPage)
   })
 
   allPaths.redirectToQuestion.forEach(a => {
-    app.get(path.join(frameworkPath, a), redirectToQuestion)
+    app.get(urljoin(frameworkPath, a), redirectToQuestion)
   })
 
   allPaths.redirectToResult.forEach(a => {
-    app.get(path.join(frameworkPath, a), redirectToResult)
+    app.get(urljoin(frameworkPath, a), redirectToResult)
   })
 
   allPaths.multiple.forEach(m => {
-    app.get(path.join(frameworkPath, m), multiplePage)
+    app.get(urljoin(frameworkPath, m), multiplePage)
   })
 
   allPaths.results.forEach(r => {
-    app.get(path.join(frameworkPath, r), resultPage)
+    app.get(urljoin(frameworkPath, r), resultPage)
   })
 
   app.get(frameworkPath, (req, res) => {
-    res.redirect(302, path.join(frameworkPath, tree.getFirst().getRef()))
+    console.log(frameworkPath, urljoin(frameworkPath, tree.getFirst().getRef()))
+    res.redirect(302, urljoin(frameworkPath, tree.getFirst().getRef()))
   })
 }
 

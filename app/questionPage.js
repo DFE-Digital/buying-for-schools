@@ -1,5 +1,5 @@
+const urljoin = require('url-join')
 const url = require('url')
-const path = require('path')
 const nunjucks = require('nunjucks')
 
 const questionPage = app => (req, res) => {
@@ -28,7 +28,7 @@ const questionPage = app => (req, res) => {
   }
 
   radioOptions.items = branch.getOptions().map(option => {
-    const optionUrl = path.join(urlInfo.pathname, option.getRef())
+    const optionUrl = urljoin(urlInfo.pathname, option.getRef())
     const optionHint = option.getHint()
     return {
       value: optionUrl,

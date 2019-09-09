@@ -1,5 +1,5 @@
+const urljoin = require('url-join')
 const url = require('url')
-const path = require('path')
 const nunjucks = require('nunjucks')
 const moment = require('moment')
 
@@ -47,7 +47,7 @@ const routeDealsPage = app => {
 
   const frameworks = app.locals.frameworks.getAll()
   frameworks.forEach(f => {
-    app.get(path.join('/framework', f.getRef()), dealPage(app, f))
+    app.get(urljoin('/framework', f.getRef()), dealPage(app, f))
   })
 
 }
