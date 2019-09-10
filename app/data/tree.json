@@ -369,47 +369,14 @@
         ]
       },
       {
-        "ref": "support",
+        "ref": "cleaning",
         "title": "Cleaning",
-        "next": "fm-support"
-      },
-      {
-        "ref": "catering",
-        "title": "Catering",
         "result": [
-          "fmm"
+          "cleaning"
         ]
       },
       {
-        "ref": "maintenance",
-        "title": "Maintenance",
-        "result": [
-          "fmm"
-        ]
-      },
-      {
-        "ref": "grounds",
-        "title": "Grounds maintenance",
-        "result": [
-          "fmm"
-        ]
-      },
-      {
-        "ref": "security",
-        "title": "Security",
-        "result": [
-          "fmm"
-        ]
-      },
-      {
-        "ref": "waste",
-        "title": "Waste",
-        "result": [
-          "fmm"
-        ]
-      },
-      {
-        "ref": "wfm",
+        "ref": "tfm",
         "title": "Total facilities management",
         "result": [
           "fmm"
@@ -418,30 +385,6 @@
     ],
     "used": true,
     "err": "Select which services you are looking for"
-  },
-  {
-    "ref": "fm-support",
-    "title": "What level of support are you looking for?",
-    "options": [
-      {
-        "ref": "helpdesk",
-        "hint": "For schools and MATs with knowledge or experience of procurement (only need minimal guidance).",
-        "title": "General helpdesk",
-        "result": [
-          "fmm"
-        ]
-      },
-      {
-        "ref": "specific",
-        "title": "Schools focused",
-        "hint": "Varying levels of support for schools and MATs with any level of knowledge or experience of procurement (including detailed end-to-end support).",
-        "result": [
-          "cleaning"
-        ]
-      }
-    ],
-    "used": true,
-    "err": "Select if you want general helpdesk or schools focused support"
   },
   {
     "ref": "ict-services",

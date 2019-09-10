@@ -20,12 +20,8 @@ Feature: Facilities management
       | Heading | What services are you looking for in facilities management and estates?  |
       | submit  | Continue |
     And have radio buttons
-      | Catering                          | /frameworks/type/on-going/services-categories/facilities/fm-categories/catering           |
-      | Cleaning                          | /frameworks/type/on-going/services-categories/facilities/fm-categories/support            |
+      | Cleaning                          | /frameworks/type/on-going/services-categories/facilities/fm-categories/cleaning           |
       | Construction consultancy          | /frameworks/type/on-going/services-categories/facilities/fm-categories/construction       |
-      | Grounds maintenance               | /frameworks/type/on-going/services-categories/facilities/fm-categories/grounds            |
-      | Maintenance                       | /frameworks/type/on-going/services-categories/facilities/fm-categories/maintenance        |
       | Removal and relocation            | /frameworks/type/on-going/services-categories/facilities/fm-categories/removal-relocation |
-      | Security                          | /frameworks/type/on-going/services-categories/facilities/fm-categories/security           |
-      | Total facilities management   | /frameworks/type/on-going/services-categories/facilities/fm-categories/wfm                    |
-      | Waste                             | /frameworks/type/on-going/services-categories/facilities/fm-categories/waste              |
+      | Total facilities management   | /frameworks/type/on-going/services-categories/facilities/fm-categories/tfm                    |
+      
