@@ -272,5 +272,14 @@
     "url": "https://www.salixfinance.co.uk/loans",
     "cat": "energy",
     "descr": "All maintained schools, academies, free schools and sixth form colleges can get interest-free loans to fund over 100 different technologies such as LED lighting, boiler replacements and insulation. Loans are designed to reduce your energy bills and have no upfront costs."
+  },
+  {
+    "ref": "edtech",
+    "title": "Education technology",
+    "supplier": "CCS",
+    "url": "https://www.crowncommercial.gov.uk/agreements/RM6103",
+    "cat": "ict",
+    "descr": "A single route for schools to buy ICT goods and services through one agreement.",
+    "expiry": "2022-10-06"
   }
 ]
